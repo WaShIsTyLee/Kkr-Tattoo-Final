@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,35 +11,42 @@
 <body>
 
     <nav class="main-nav">
-        <div class="nav-links nav-left">
-            <a href="#artista">Artista</a>
-            <a href="#">Horario</a>
-            <a href="#">Piezas</a>
-        </div>
-
+        
         <div class="nav-logo">
             <a href="#">KKR.TATTOO</a>
         </div>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-        <div class="nav-links nav-right">
+        <div class="nav-links" id="navLinks">
+            <a href="#artista">Artista</a>
+            <a href="#">Horario</a>
+            <a href="#">Piezas</a>
             <a href="#">Socios</a>
             <a href="#">Contacto</a>
         </div>
+        
     </nav>
 
     <section class="marble_header">
         <div class="header-content">
-            <p>Especialistas en Blackwork y realismo. </p>
+            <h1>Especialistas en Blackwork y Realismo</h1>
         </div>
     </section>
+    
     <div class="content-background">
+        
         <section id="artista" class="artista">
             <p class="artista-titulo">ARTISTA</p>
 
             <div class="artista-contenido">
 
                 <div class="artista-info-izquierda">
-                    <img src="Imagenes/Perfil/Juan.jpg" alt="Foto de Juan Gutierrez">
+                    <img src="Imagenes/Perfil/Juan.jpg" alt="Foto de Juan Gutierrez"> 
                     <p class="artista-nombre">Juan Gutierrez</p>
                 </div>
 
@@ -57,13 +64,18 @@
             </div>
         </section>
 
+        <section style="min-height: 40vh;"></section>
 
-        <section>
-
-
-            
-        </section>
     </div>
+
+    <script>
+        document.getElementById('menuToggle').onclick = function() {
+            var links = document.getElementById('navLinks');
+            var button = document.getElementById('menuToggle');
+            links.classList.toggle('active');
+            button.classList.toggle('active');
+        }
+    </script>
 
 </body>
 
