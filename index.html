@@ -68,14 +68,30 @@
 
     </div>
 
-    <script>
-        document.getElementById('menuToggle').onclick = function() {
-            var links = document.getElementById('navLinks');
-            var button = document.getElementById('menuToggle');
-            links.classList.toggle('active');
-            button.classList.toggle('active');
-        }
-    </script>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const links = navLinks.querySelectorAll('a'); // Selecciona todos los enlaces dentro del menú
+
+    // Función para alternar el menú (Abrir/Cerrar)
+    function toggleMenu() {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    }
+
+    // 1. Asigna la función de alternar al botón de hamburguesa
+    menuToggle.onclick = toggleMenu;
+
+    // 2. Asigna la función de cierre a cada enlace
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            // Verifica si el menú está abierto antes de intentar cerrarlo
+            if (navLinks.classList.contains('active')) {
+                toggleMenu(); // Llama a la misma función para cerrarlo
+            }
+        });
+    });
+</script>
 
 </body>
 
