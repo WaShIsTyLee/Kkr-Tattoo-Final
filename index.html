@@ -68,7 +68,7 @@
         <section class="mapa-horario">
             <div class="imagenestudio">
                 <div class="mapa">
-                    <h3> Encuéntranos</h3>
+                    <h3> Ubicación </h3>
                     <p><strong>Dirección:</strong> Av. Juan Carlos I 53, 14520 Fernán-Núñez, Córdoba</p>
 
                     <div
@@ -88,7 +88,7 @@
 
 
                 <div class="horario">
-                    <h3>Nuestro Horario</h3>
+                    <h3>Horario del Estudio</h3>
                     <ul>
                         <li><strong>Lunes:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
                         <li style="color: red;"><strong>Martes:</strong> Cerrado</li>
@@ -108,21 +108,17 @@
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-        const links = navLinks.querySelectorAll('a'); // Selecciona todos los enlaces dentro del menú
+        const links = navLinks.querySelectorAll('a'); 
 
-        // Función para alternar el menú (Abrir/Cerrar)
         function toggleMenu() {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
         }
 
-        // 1. Asigna la función de alternar al botón de hamburguesa
         menuToggle.onclick = toggleMenu;
 
-        // 2. Asigna la función de cierre a cada enlace
         links.forEach(link => {
             link.addEventListener('click', () => {
-                // Verifica si el menú está abierto antes de intentar cerrarlo
                 if (navLinks.classList.contains('active')) {
                     toggleMenu(); // Llama a la misma función para cerrarlo
                 }
