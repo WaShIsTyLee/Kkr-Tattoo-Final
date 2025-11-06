@@ -216,13 +216,11 @@ body {
 .mapa-horario {
     padding: 60px 20px; 
     text-align: center;
-    
-    /* 🌟 IMAGEN DE FONDO APLICADA */
-    background-image: url('Imagenes/Header_background/header_black_marble.jpg'); 
+        background-image: url('Imagenes/Header_background/header_black_marble.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    background-attachment: fixed; /* Efecto Parallax opcional */
+    background-attachment: fixed; 
 }
 
 .imagenestudio {
@@ -236,16 +234,14 @@ body {
 
 .mapa,
 .horario {
-    flex: 1; /* Permite que ambos elementos crezcan y ocupen el espacio equitativamente */
+    flex: 1; 
     padding: 20px;
-    /* Fondo opaco para asegurar la legibilidad sobre la imagen de fondo de la sección */
     background-color: #ffffff; 
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: left;
 }
 
-/* Estilos específicos del Mapa */
 .mapa h3 {
     font-size: 1.8em;
     color: #333;
@@ -256,7 +252,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Estilos específicos del Horario (Modo Lista) */
 .horario h3 {
     font-size: 1.8em;
     color: #333;
@@ -264,7 +259,7 @@ body {
 }
 
 .horario ul {
-    list-style: none; /* Elimina los puntos por defecto */
+    list-style: none; 
     padding: 0;
     margin: 0;
 }
@@ -283,7 +278,7 @@ body {
 .horario strong {
     color: #333;
     display: inline-block;
-    min-width: 80px; /* Para alinear mejor los días */
+    min-width: 80px; 
 }
 
 .horario em {
@@ -298,15 +293,13 @@ body {
 /* ====================================== */
 
 @media (max-width: 768px) {
-    /* --- Sección Mapa y Horario (Móvil) --- */
     .mapa-horario {
         padding: 30px 10px;
     }
 
     .imagenestudio {
-        /* Los elementos se apilan verticalmente */
         flex-direction: column;
-        gap: 20px; /* Menos espacio entre las secciones apiladas */
+        gap: 20px; 
         padding: 0 10px;
     }
 
@@ -322,9 +315,8 @@ body {
         padding: 8px 0;
     }
 
-    /* --- Navegación --- */
     .main-nav {
-        justify-content: space-between; /* Volvemos a space-between */
+        justify-content: space-between; 
         padding: 10px 20px;
     }
 
@@ -332,43 +324,39 @@ body {
         font-size: 1.2em;
     }
 
-    /* Mostrar botón de hamburguesa y ocultar enlaces por defecto */
     .menu-toggle {
-        display: block; /* Mostrar el botón en móvil */
+        display: block; 
         color: #ffffff;
-        z-index: 101; /* Asegurar que el botón esté sobre el menú */
+        z-index: 101; 
     }
 
     .nav-links {
-        /* Oculto por defecto, se mostrará al añadir la clase .active con JS */
         display: none;
         flex-direction: column;
-        position: fixed; /* Ocupa toda la pantalla */
+        position: fixed; 
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95); /* Fondo oscuro transparente */
-        padding-top: 100px; /* Espacio para el logo y botón */
+        background-color: rgba(0, 0, 0, 0.95); 
+        padding-top: 100px; 
         text-align: center;
         transition: transform 0.3s ease-in-out;
         transform: translateX(
             100%
-        ); /* Lo movemos fuera de la pantalla a la derecha */
+        ); 
     }
 
-    /* Estilo del menú al estar ACTIVO (mostrado) */
     .nav-links.active {
-        display: flex; /* Mostrar el menú */
-        transform: translateX(0); /* Deslizarlo hacia la pantalla */
+        display: flex; 
+        transform: translateX(0); 
     }
 
     .nav-links a {
         font-size: 1.5em;
-        margin: 15px 0; /* Más espacio vertical */
+        margin: 15px 0; 
     }
 
-    /* --- Header --- */
     .marble_header {
         height: 550px;
     }
@@ -377,7 +365,6 @@ body {
         font-size: 2em;
     }
 
-    /* --- Sección Artista --- */
     .artista {
         padding: 20px 0;
     }
@@ -388,20 +375,18 @@ body {
     }
 
     .artista-contenido {
-        /* 🔥 CORRECCIÓN: Stack vertical y centrado */
         flex-direction: column;
         padding: 10px;
-        align-items: center; /* Centrar elementos horizontalmente */
+        align-items: center; 
     }
 
     .artista-info-izquierda {
-        align-items: center; /* Centrar imagen y nombre */
+        align-items: center;
         margin-right: 0;
         margin-bottom: 30px;
     }
 
     .artista-info-izquierda img {
-        /* Reducir el tamaño de la imagen */
         width: 100%;
         max-width: 350px;
         height: auto;
@@ -410,7 +395,7 @@ body {
     }
 
     .artista-info-izquierda img:hover {
-        transform: none; /* Desactivar hover en táctil */
+        transform: none; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
@@ -419,7 +404,6 @@ body {
         font-size: 1.3em;
     }
 
-    /* --- Tarjeta de Historia --- */
     .artista-historia-card {
         width: 100%;
         max-width: 90%;
