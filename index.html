@@ -66,52 +66,49 @@
         </section>
 
         <section style="min-height: 40vh;"></section>
-
         <section class="horario">
-            <div class="table-responsive">
+            <div class="horario-container">
                 <h2>Horario de Apertura</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Horario de Mañanas</th>
-                            <th>Horario de Tardes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="Día">Lunes</td>
-                            <td data-label="Horario de Mañanas">09:00 - 14:00</td>
-                            <td data-label="Horario de Tardes">16:00 - 21:00</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Día">Martes</td>
-                            <td colspan="2" data-label="Horario Completo">Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Día">Miércoles</td>
-                            <td data-label="Horario de Mañanas">09:00 - 14:00</td>
-                            <td data-label="Horario de Tardes">16:00 - 21:00</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Día">Jueves</td>
-                            <td colspan="2" data-label="Horario Completo">Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Día">Viernes</td>
-                            <td data-label="Horario de Mañanas">09:00 - 14:00</td>
-                            <td data-label="Horario de Tardes">16:00 - 21:00</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Día">Sábado</td>
-                            <td colspan="2" data-label="Horario Completo">Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Día">Domingo</td>
-                            <td colspan="2" data-label="Horario Completo">Cerrado</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <ul class="dias-lista">
+                    <li class="dia-item abierto">
+                        <span class="dia-nombre">Lunes</span>
+                        <span class="horario-manana">09:00 - 14:00</span>
+                        <span class="horario-tarde">16:00 - 21:00</span>
+                    </li>
+
+                    <li class="dia-item cerrado">
+                        <span class="dia-nombre">Martes</span>
+                        <span class="horario-completo">CERRADO</span>
+                    </li>
+
+                    <li class="dia-item abierto">
+                        <span class="dia-nombre">Miércoles</span>
+                        <span class="horario-manana">09:00 - 14:00</span>
+                        <span class="horario-tarde">16:00 - 21:00</span>
+                    </li>
+
+                    <li class="dia-item cerrado">
+                        <span class="dia-nombre">Jueves</span>
+                        <span class="horario-completo">CERRADO</span>
+                    </li>
+
+                    <li class="dia-item abierto">
+                        <span class="dia-nombre">Viernes</span>
+                        <span class="horario-manana">09:00 - 14:00</span>
+                        <span class="horario-tarde">16:00 - 21:00</span>
+                    </li>
+
+                    <li class="dia-item cerrado">
+                        <span class="dia-nombre">Sábado</span>
+                        <span class="horario-completo">CERRADO</span>
+                    </li>
+
+                    <li class="dia-item cerrado">
+                        <span class="dia-nombre">Domingo</span>
+                        <span class="horario-completo">CERRADO</span>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>

@@ -8,14 +8,14 @@ section,
 nav,
 div,
 img {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 /* -------------------------------------- */
@@ -23,59 +23,61 @@ body {
 /* -------------------------------------- */
 
 .main-nav {
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100; /* Asegurar que la barra de navegación esté por encima */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    padding: 15px 30px;
-    color: #ffffff;
-    font-size: 20px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100; /* Asegurar que la barra de navegación esté por encima */
+  display: flex;
+  /* Cambiado de space-between a around para mejor distribución en algunos casos */
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 15px 30px;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1em;
-    transition: color 0.3s;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ffd700;
+  color: #ffd700;
 }
 
 .nav-logo a {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 /* -------------------------------------- */
 /* ESTILOS DEL BOTÓN DE HAMBURGUESA (ESCRITORIO) */
 /* -------------------------------------- */
 .menu-toggle {
-    display: none; /* Ocultar en escritorio */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+  display: none; /* Ocultar en escritorio */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .menu-toggle .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
+  /* Si usas el icono de hamburguesa con spans (como en el HTML proporcionado) */
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
 }
 
 /* -------------------------------------- */
@@ -83,28 +85,28 @@ body {
 /* -------------------------------------- */
 
 .marble_header {
-    /* Usa la ruta correcta de tu imagen */
-    background-image: url("Imagenes/Header_background/header_black_marble.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+  /* Usa la ruta correcta de tu imagen */
+  background-image: url("Imagenes/Header_background/header_black_marble.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }
 
 .header-content {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 .header-content h1 {
-    font-size: 3em; /* Para que el texto resalte más */
+  font-size: 3em; /* Para que el texto resalte más */
 }
 
 /* -------------------------------------- */
@@ -112,13 +114,13 @@ body {
 /* -------------------------------------- */
 
 .content-background {
-    /* Usa la ruta correcta de tu imagen */
-    background-image: url("Imagenes/Body/body_withe_marble.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    min-height: 50vh;
+  /* Usa la ruta correcta de tu imagen */
+  background-image: url("Imagenes/Body/body_withe_marble.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  min-height: 50vh;
 }
 
 /* -------------------------------------- */
@@ -126,178 +128,194 @@ body {
 /* -------------------------------------- */
 
 .artista {
-    text-align: center;
-    padding: 40px 0;
-    background-color: transparent;
+  text-align: center;
+  padding: 40px 0;
+  background-color: transparent;
 }
 
 .artista-titulo {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #333;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #333;
 }
 
 .artista-contenido {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  /* 🔥 CORRECCIÓN: Usar flex-start en escritorio está bien para separar elementos */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .artista-info-izquierda {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 40px;
 }
 
 .artista-info-izquierda img {
-    /* Ajuste de escritorio */
-    width: 400px;
-    height: 600px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: block;
+  /* Ajuste de escritorio */
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
 }
 
 .artista-info-izquierda img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .artista-nombre {
-    margin-top: 0;
-    font-size: 1.5em;
-    font-weight: 600;
-    color: #333;
-    text-align: left;
+  margin-top: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
 }
 
 /* ESTILOS DE LA TARJETA DE HISTORIA */
 .artista-historia-card {
-    flex-grow: 1;
-    border-radius: 5px;
-    max-width: 600px;
-    padding: 30px;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-align: left;
-    height: fit-content;
+  flex-grow: 1;
+  border-radius: 5px;
+  max-width: 600px;
+  padding: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  height: fit-content;
 }
 
 .artista-historia-card h3 {
-    font-size: 1.8em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #333;
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .artista-historia-card p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    color: #555;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #555;
 }
-
-/* -------------------------------------- */
-/* ESTILOS DE LA SECCIÓN HORARIO (.horario) - ESCRITORIO */
-/* -------------------------------------- */
-
 .horario {
-    padding: 60px 20px;
-    text-align: center;
-    color: #333;
+  /* Mantenemos el padding y el centrado del texto */
+  padding: 60px 20px;
+  text-align: center;
+  color: #333;
 }
 
 .horario h2 {
-    font-size: 2.5em;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #333;
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
+  font-size: 2.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
 }
 
 .horario h2::after {
-    content: "";
-    display: block;
-    width: 60%;
-    height: 3px;
-    background-color: #ffd700; /* Dorado */
-    margin: 10px auto 0;
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: #ffd700; /* Dorado */
+  margin: 10px auto 0;
 }
 
-/* Contenedor que permite el scroll horizontal en móvil */
-.table-responsive {
-    overflow-x: auto;
-    max-width: 100%;
+.horario-container {
+    max-width: 600px; 
     margin: 0 auto;
-}
-
-.horario table {
-    /* **ATENCIÓN:** Mínimo de 600px para evitar compresión excesiva */
-    width: 100%;
-    min-width: 600px; 
-    max-width: 900px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: transparent; 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 30px; 
 }
 
-.horario thead tr {
-    background-color: #333;
-    color: #ffffff;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.dias-lista {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
 }
 
-.horario th,
-.horario td {
-    padding: 15px 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-    /* Necesario para evitar saltos de línea en móvil */
-    white-space: nowrap; 
+.dia-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #eee; 
+  font-size: 1.1em;
+  transition: background-color 0.3s;
 }
 
-.horario tbody tr:nth-child(odd) {
-    background-color: rgba(249, 249, 249, 0.85);
+.dia-item:last-child {
+  border-bottom: none;
 }
 
-.horario tbody tr:hover {
-    background-color: rgba(240, 240, 240, 0.95);
+.dia-nombre {
+  font-weight: bold;
+  flex-basis: 25%; 
+  text-align: left;
+  color: #333;
 }
 
-/* Estilos de Estado */
-.horario td:last-child {
-    font-weight: bold;
+.horario-manana,
+.horario-tarde {
+  flex-grow: 1;
+  text-align: center;
+  color: #555;
 }
 
-.horario td:last-child:contains("Cerrado"),
-.horario td[colspan="2"]:contains("Cerrado") {
-    color: #cc0000; /* Rojo */
-    background-color: rgba(255, 230, 230, 0.8);
+.horario-completo {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #cc0000; /* Rojo oscuro para cerrado */
 }
 
-.horario td:last-child:contains("Abierto") {
-    color: #008000; /* Verde */
-    background-color: rgba(230, 255, 230, 0.8);
+/* Colores de estado (Etiquetas) - SIN SOMBREADO DE FONDO */
+.estado-tag {
+  font-weight: bold;
+  padding: 4px 8px; /* Mantenemos el padding para el espacio */
+  border-radius: 5px;
+  font-size: 0.9em;
+  flex-basis: 15%; /* Espacio fijo para el estado */
+  text-align: right;
+  /* QUITAMOS background-color aquí */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.dia-item.abierto .estado-tag {
+  color: #008000; /* Solo color de texto verde */
+}
+
+.dia-item.cerrado .estado-tag {
+  color: #cc0000; /* Solo color de texto rojo */
+}
+
+/* Efecto hover general */
+.dia-item:hover {
+  background-color: rgba(245, 245, 245, 0.9);
 }
 
 /* ====================================== */
@@ -305,127 +323,162 @@ body {
 /* ====================================== */
 
 @media (max-width: 768px) {
-    /* --- Navegación (sin cambios) --- */
-    .main-nav {
-        justify-content: space-between;
-        padding: 10px 20px;
-    }
+  /* --- Navegación --- */
+  .main-nav {
+    justify-content: space-between; /* Volvemos a space-between */
+    padding: 10px 20px;
+  }
+  .horario-container {
+    padding: 15px;
+    box-shadow: none;
+  }
 
-    .nav-logo a {
-        font-size: 1.2em;
-    }
+  .dia-item {
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
 
-    .menu-toggle {
-        display: block;
-        color: #ffffff;
-        z-index: 101;
-    }
+  .dia-nombre {
+    flex-basis: 50%;
+    text-align: left;
+    padding-left: 10px;
+  }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        padding-top: 100px;
-        text-align: center;
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(100%);
-    }
+  .estado-tag {
+    flex-basis: 50%;
+    text-align: right;
+    padding-right: 10px;
+  }
 
-    .nav-links.active {
-        display: flex;
-        transform: translateX(0);
-    }
+  .horario-manana,
+  .horario-tarde,
+  .horario-completo {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 0;
+    font-size: 1em;
+  }
 
-    .nav-links a {
-        font-size: 1.5em;
-        margin: 15px 0;
-    }
+  .horario-completo {
+    order: 3;
+  }
 
-    /* --- Header (sin cambios) --- */
-    .marble_header {
-        height: 550px;
-    }
+  .horario-manana {
+    flex-basis: 49%;
+    border-right: 1px solid #eee;
+  }
+  .horario-tarde {
+    flex-basis: 49%;
+  }
+  .nav-logo a {
+    font-size: 1.2em;
+  }
 
-    .header-content h1 {
-        font-size: 2em;
-    }
+  /* Mostrar botón de hamburguesa y ocultar enlaces por defecto */
+  .menu-toggle {
+    display: block; /* Mostrar el botón en móvil */
+    color: #ffffff;
+    z-index: 101; /* Asegurar que el botón esté sobre el menú */
+  }
 
-    /* --- Sección Artista (sin cambios) --- */
-    .artista {
-        padding: 20px 0;
-    }
+  .nav-links {
+    /* Oculto por defecto, se mostrará al añadir la clase .active con JS */
+    display: none;
+    flex-direction: column;
+    position: fixed; /* Ocupa toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo oscuro transparente */
+    padding-top: 100px; /* Espacio para el logo y botón */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(
+      100%
+    ); /* Lo movemos fuera de la pantalla a la derecha */
+  }
 
-    .artista-titulo {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-    }
+  /* Estilo del menú al estar ACTIVO (mostrado) */
+  .nav-links.active {
+    display: flex; /* Mostrar el menú */
+    transform: translateX(0); /* Deslizarlo hacia la pantalla */
+  }
 
-    .artista-contenido {
-        flex-direction: column;
-        padding: 10px;
-        align-items: center;
-    }
+  .nav-links a {
+    font-size: 1.5em;
+    margin: 15px 0; /* Más espacio vertical */
+  }
 
-    .artista-info-izquierda {
-        align-items: center;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
+  /* --- Header --- */
+  .marble_header {
+    height: 550px;
+  }
 
-    .artista-info-izquierda img {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        margin-bottom: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transform: none; /* Desactivar hover */
-    }
+  .header-content h1 {
+    font-size: 2em;
+  }
 
-    .artista-nombre {
-        text-align: center;
-        font-size: 1.3em;
-    }
+  /* --- Sección Artista --- */
+  .artista {
+    padding: 20px 0;
+  }
 
-    .artista-historia-card {
-        width: 100%;
-        max-width: 90%;
-        padding: 20px;
-    }
+  .artista-titulo {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
 
-    .artista-historia-card h3 {
-        font-size: 1.5em;
-    }
+  .artista-contenido {
+    /* 🔥 CORRECCIÓN: Stack vertical y centrado */
+    flex-direction: column;
+    padding: 10px;
+    align-items: center; /* Centrar elementos horizontalmente */
+  }
 
-    .artista-historia-card p {
-        font-size: 1em;
-    }
-    
-    /* -------------------------------------- */
-    /* 🛠️ AJUSTES DE HORARIO PARA SCROLL EN MÓVIL */
-    /* -------------------------------------- */
-    
-    .horario {
-        padding: 40px 0; /* Quitamos padding lateral para maximizar el área de la tabla */
-    }
+  .artista-info-izquierda {
+    align-items: center; /* Centrar imagen y nombre */
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 
-    .horario h2 {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-    }
+  .artista-info-izquierda img {
+    /* Reducir el tamaño de la imagen */
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
-    .horario th, .horario td {
-        /* Reducimos el padding y la fuente para que la tabla quepa mejor */
-        padding: 8px 5px;
-        font-size: 0.85em; 
-    }
-    
-    /* Importante: Mantenemos el comportamiento de tabla normal. 
-       El scroll horizontal se maneja con .table-responsive { overflow-x: auto; } */
-       
-    /* Eliminamos las reglas de display: block y data-label que generaban las "tarjetas" */
+  .artista-info-izquierda img:hover {
+    transform: none; /* Desactivar hover en táctil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .artista-nombre {
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  /* --- Tarjeta de Historia --- */
+  .artista-historia-card {
+    width: 100%;
+    max-width: 90%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .artista-historia-card h3 {
+    font-size: 1.5em;
+  }
+
+  .artista-historia-card p {
+    font-size: 1em;
+  }
 }
