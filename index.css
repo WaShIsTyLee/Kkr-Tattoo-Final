@@ -138,6 +138,7 @@ body {
 .artista-contenido {
     display: flex;
     justify-content: center; 
+    /* 🔥 CORRECCIÓN: Usar flex-start en escritorio está bien para separar elementos */
     align-items: flex-start; 
     width: 100%;
     max-width: 1200px; 
@@ -153,6 +154,7 @@ body {
 }
 
 .artista-info-izquierda img {
+    /* Ajuste de escritorio */
     width: 400px; 
     height: 600px; 
     object-fit: cover; 
@@ -176,6 +178,7 @@ body {
     text-align: left; 
 }
 
+/* ESTILOS DE LA TARJETA DE HISTORIA */
 .artista-historia-card {
     flex-grow: 1; 
     border-radius: 5px;
@@ -202,71 +205,79 @@ body {
     margin-bottom: 15px;
     color: #555;
 }
-
 /* -------------------------------------- */
 /* ESTILOS DE LA SECCIÓN HORARIO (.horario) */
 /* -------------------------------------- */
 
 .horario {
+    /* Centrar todo el contenido dentro de la sección */
     text-align: center;
     padding: 60px 20px;
-    max-width: 900px; 
-    margin: 0 auto; 
+    max-width: 900px; /* Limita el ancho de la tabla para que no se extienda demasiado */
+    margin: 0 auto; /* Centra la sección horizontalmente dentro del .content-background */
 }
 
 .horario h2 {
+    /* Centrar el título H2 */
     display: block;
     margin-bottom: 30px;
     font-size: 2.2em;
     font-weight: 800;
     text-transform: uppercase;
+    /* Usamos el mismo color que en .artista-titulo para mantener consistencia */
     color: #333; 
 }
 
 .horario table {
     width: 100%;
+    /* Utiliza 'collapse' para que los bordes se vean como uno solo, más limpio */
     border-collapse: collapse; 
     margin: 20px auto;
+    /* Sombra sutil para destacar la tabla, similar a .artista-info-izquierda */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    border-radius: 8px; 
-    overflow: hidden;
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen al contenido */
 }
 
 .horario th, .horario td {
     padding: 15px;
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd; /* Un borde sutil que no es negro */
 }
 
+/* Encabezado de la tabla */
 .horario thead th {
-    background-color: #333; 
+    background-color: #333; /* Fondo oscuro, siguiendo la estética del fondo marble_header */
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+/* Filas alternas para mejor legibilidad */
 .horario tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9; /* Color claro sobre el mármol blanco de fondo */
 }
 
 .horario tbody tr:nth-child(even) {
-    background-color: #ffffff; 
+    background-color: #ffffff; /* Blanco puro */
 }
 
-.horario tbody tr:nth-child(2),
-.horario tbody tr:nth-child(4),
-.horario tbody tr:nth-child(6), 
-.horario tbody tr:nth-child(7) 
+/* Estilo específico para los días cerrados (Martes, Jueves, Sábado, Domingo) */
+.horario tbody tr:nth-child(2), /* Martes */
+.horario tbody tr:nth-child(4), /* Jueves */
+.horario tbody tr:nth-child(6), /* Sábado */
+.horario tbody tr:nth-child(7)  /* Domingo */
 {
+    /* Color de fondo que indique "cerrado", usando un rojo suave */
     background-color: #ffeaea; 
-    color: #a00; 
+    color: #a00; /* Color de texto más oscuro (rojo) */
     font-weight: bold;
 }
 
+/* Estilo hover (opcional, si quieres que interactúe) */
 .horario tbody tr:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(6)):not(:nth-child(7)):hover {
-    background-color: #fff9e6; 
+    background-color: #fff9e6; /* Tono suave que imita el #ffd700 de los enlaces */
     cursor: default;
 }
-
 
 /* ====================================== */
 /* 🌟 MEDIA QUERY PARA MÓVILES (Max-width: 768px) */
@@ -274,8 +285,9 @@ body {
 
 @media (max-width: 768px) {
     
+    /* --- Navegación --- */
     .main-nav {
-        justify-content: space-between; 
+        justify-content: space-between; /* Volvemos a space-between */
         padding: 10px 20px; 
     }
     
@@ -283,36 +295,41 @@ body {
         font-size: 1.2em; 
     }
 
+    /* Mostrar botón de hamburguesa y ocultar enlaces por defecto */
     .menu-toggle {
-        display: block;
+        display: block; /* Mostrar el botón en móvil */
         color: #ffffff; 
-        z-index: 101; 
+        z-index: 101; /* Asegurar que el botón esté sobre el menú */
+    }
     
     .nav-links {
+        /* Oculto por defecto, se mostrará al añadir la clase .active con JS */
         display: none; 
         flex-direction: column;
-        position: fixed; 
+        position: fixed; /* Ocupa toda la pantalla */
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95); 
-        padding-top: 100px; 
+        background-color: rgba(0, 0, 0, 0.95); /* Fondo oscuro transparente */
+        padding-top: 100px; /* Espacio para el logo y botón */
         text-align: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(100%); 
+        transform: translateX(100%); /* Lo movemos fuera de la pantalla a la derecha */
     }
     
+    /* Estilo del menú al estar ACTIVO (mostrado) */
     .nav-links.active {
-        display: flex; 
-        transform: translateX(0); 
+        display: flex; /* Mostrar el menú */
+        transform: translateX(0); /* Deslizarlo hacia la pantalla */
     }
     
     .nav-links a {
         font-size: 1.5em;
-        margin: 15px 0; 
+        margin: 15px 0; /* Más espacio vertical */
     }
 
+    /* --- Header --- */
     .marble_header {
         height: 550px; 
     }
@@ -321,6 +338,7 @@ body {
         font-size: 2em; 
     }
 
+    /* --- Sección Artista --- */
     .artista {
         padding: 20px 0; 
     }
@@ -331,19 +349,20 @@ body {
     }
 
     .artista-contenido {
+        /* 🔥 CORRECCIÓN: Stack vertical y centrado */
         flex-direction: column;
         padding: 10px;
-        align-items: center; 
+        align-items: center; /* Centrar elementos horizontalmente */
     }
 
     .artista-info-izquierda {
-        align-items: center; 
+        align-items: center; /* Centrar imagen y nombre */
         margin-right: 0; 
         margin-bottom: 30px; 
     }
 
     .artista-info-izquierda img {
-       
+        /* Reducir el tamaño de la imagen */
         width: 100%; 
         max-width: 350px; 
         height: auto; 
@@ -352,7 +371,7 @@ body {
     }
     
     .artista-info-izquierda img:hover {
-        transform: none; 
+        transform: none; /* Desactivar hover en táctil */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     
@@ -361,6 +380,7 @@ body {
         font-size: 1.3em;
     }
 
+    /* --- Tarjeta de Historia --- */
     .artista-historia-card {
         width: 100%;
         max-width: 90%; 
@@ -376,5 +396,4 @@ body {
     .artista-historia-card p {
         font-size: 1em; 
     }
-}
 }

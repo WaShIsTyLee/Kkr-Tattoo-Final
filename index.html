@@ -65,8 +65,10 @@
             </div>
         </section>
 
+        <section style="min-height: 40vh;"></section>
+
         <section class="horario">
-            <h2>Apertura del Esudio</h2>
+            <h2>Horario de Apertura</h2>
             <table>
                 <thead>
                     <tr>
@@ -123,17 +125,23 @@
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-        const links = navLinks.querySelectorAll('a');
+        const links = navLinks.querySelectorAll('a'); // Selecciona todos los enlaces dentro del menú
 
+        // Función para alternar el menú (Abrir/Cerrar)
         function toggleMenu() {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
         }
+
+        // 1. Asigna la función de alternar al botón de hamburguesa
         menuToggle.onclick = toggleMenu;
+
+        // 2. Asigna la función de cierre a cada enlace
         links.forEach(link => {
             link.addEventListener('click', () => {
+                // Verifica si el menú está abierto antes de intentar cerrarlo
                 if (navLinks.classList.contains('active')) {
-                    toggleMenu();
+                    toggleMenu(); // Llama a la misma función para cerrarlo
                 }
             });
         });
