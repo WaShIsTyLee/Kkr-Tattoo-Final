@@ -11,11 +11,11 @@
 <body>
 
     <nav class="main-nav">
-        
+
         <div class="nav-logo">
             <a href="#">KKR.TATTOO</a>
         </div>
-        
+
         <button class="menu-toggle" aria-label="Toggle navigation" id="menuToggle">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -29,7 +29,7 @@
             <a href="#">Socios</a>
             <a href="#">Contacto</a>
         </div>
-        
+
     </nav>
 
     <section class="marble_header">
@@ -37,22 +37,23 @@
             <h1>Especialistas en Blackwork y Realismo</h1>
         </div>
     </section>
-    
+
     <div class="content-background">
-        
+
         <section id="artista" class="artista">
             <p class="artista-titulo">ARTISTA</p>
 
             <div class="artista-contenido">
 
                 <div class="artista-info-izquierda">
-                    <img src="Imagenes/Perfil/Juan.jpg" alt="Foto de Juan Gutierrez"> 
+                    <img src="Imagenes/Perfil/Juan.jpg" alt="Foto de Juan Gutierrez">
                     <p class="artista-nombre">Juan Gutierrez</p>
                 </div>
 
                 <div class="artista-historia-card">
                     <h3>Trayectoria y Estilo</h3>
-                    <p>Juan Gutiérrez es un <i>especialista en Blackwork y Realismo</i>, con más de 10 años de experiencia
+                    <p>Juan Gutiérrez es un <i>especialista en Blackwork y Realismo</i>, con más de 10 años de
+                        experiencia
                         en el sector. Su enfoque se centra en el detalle minucioso y el uso magistral del contraste de
                         negros y grises, creando piezas de alto impacto y durabilidad. Ha participado en convenciones
                         internacionales, siendo reconocido por su habilidad para transformar ideas complejas en arte
@@ -64,34 +65,79 @@
             </div>
         </section>
 
-        <section style="min-height: 40vh;"></section>
-
+        <section class="horario">
+            <h2>Apertura del Esudio</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario de Mañanas</th>
+                        <th>Horario de Tardes</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>09:00 - 14:00</td>
+                        <td>16:00 - 21:00</td>
+                        <td>Abierto</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td colspan="2">Cerrado</td>
+                        <td>Cerrado</td>
+                    </tr>
+                    <tr>
+                        <td>Miércoles</td>
+                        <td>09:00 - 14:00</td>
+                        <td>16:00 - 21:00</td>
+                        <td>Abierto</td>
+                    </tr>
+                    <tr>
+                        <td>Jueves</td>
+                        <td colspan="2">Cerrado</td>
+                        <td>Cerrado</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>09:00 - 14:00</td>
+                        <td>16:00 - 21:00</td>
+                        <td>Abierto</td>
+                    </tr>
+                    <tr>
+                        <td>Sábado</td>
+                        <td colspan="2">Cerrado</td>
+                        <td>Cerrado</td>
+                    </tr>
+                    <tr>
+                        <td>Domingo</td>
+                        <td colspan="2">Cerrado</td>
+                        <td>Cerrado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    const links = navLinks.querySelectorAll('a'); // Selecciona todos los enlaces dentro del menú
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const links = navLinks.querySelectorAll('a');
 
-    // Función para alternar el menú (Abrir/Cerrar)
-    function toggleMenu() {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    }
-
-    // 1. Asigna la función de alternar al botón de hamburguesa
-    menuToggle.onclick = toggleMenu;
-
-    // 2. Asigna la función de cierre a cada enlace
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            // Verifica si el menú está abierto antes de intentar cerrarlo
-            if (navLinks.classList.contains('active')) {
-                toggleMenu(); // Llama a la misma función para cerrarlo
-            }
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+        menuToggle.onclick = toggleMenu;
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 

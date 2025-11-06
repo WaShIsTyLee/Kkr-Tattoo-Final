@@ -138,7 +138,6 @@ body {
 .artista-contenido {
     display: flex;
     justify-content: center; 
-    /* 🔥 CORRECCIÓN: Usar flex-start en escritorio está bien para separar elementos */
     align-items: flex-start; 
     width: 100%;
     max-width: 1200px; 
@@ -154,7 +153,6 @@ body {
 }
 
 .artista-info-izquierda img {
-    /* Ajuste de escritorio */
     width: 400px; 
     height: 600px; 
     object-fit: cover; 
@@ -178,7 +176,6 @@ body {
     text-align: left; 
 }
 
-/* ESTILOS DE LA TARJETA DE HISTORIA */
 .artista-historia-card {
     flex-grow: 1; 
     border-radius: 5px;
@@ -206,6 +203,70 @@ body {
     color: #555;
 }
 
+/* -------------------------------------- */
+/* ESTILOS DE LA SECCIÓN HORARIO (.horario) */
+/* -------------------------------------- */
+
+.horario {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.horario h2 {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333; 
+}
+
+.horario table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    overflow: hidden;
+}
+
+.horario th, .horario td {
+    padding: 15px;
+    border: 1px solid #ddd; 
+}
+
+.horario thead th {
+    background-color: #333; 
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.horario tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+
+.horario tbody tr:nth-child(even) {
+    background-color: #ffffff; 
+}
+
+.horario tbody tr:nth-child(2),
+.horario tbody tr:nth-child(4),
+.horario tbody tr:nth-child(6), 
+.horario tbody tr:nth-child(7) 
+{
+    background-color: #ffeaea; 
+    color: #a00; 
+    font-weight: bold;
+}
+
+.horario tbody tr:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(6)):not(:nth-child(7)):hover {
+    background-color: #fff9e6; 
+    cursor: default;
+}
+
 
 /* ====================================== */
 /* 🌟 MEDIA QUERY PARA MÓVILES (Max-width: 768px) */
@@ -213,9 +274,8 @@ body {
 
 @media (max-width: 768px) {
     
-    /* --- Navegación --- */
     .main-nav {
-        justify-content: space-between; /* Volvemos a space-between */
+        justify-content: space-between; 
         padding: 10px 20px; 
     }
     
@@ -223,41 +283,36 @@ body {
         font-size: 1.2em; 
     }
 
-    /* Mostrar botón de hamburguesa y ocultar enlaces por defecto */
     .menu-toggle {
-        display: block; /* Mostrar el botón en móvil */
+        display: block;
         color: #ffffff; 
-        z-index: 101; /* Asegurar que el botón esté sobre el menú */
-    }
+        z-index: 101; 
     
     .nav-links {
-        /* Oculto por defecto, se mostrará al añadir la clase .active con JS */
         display: none; 
         flex-direction: column;
-        position: fixed; /* Ocupa toda la pantalla */
+        position: fixed; 
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95); /* Fondo oscuro transparente */
-        padding-top: 100px; /* Espacio para el logo y botón */
+        background-color: rgba(0, 0, 0, 0.95); 
+        padding-top: 100px; 
         text-align: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(100%); /* Lo movemos fuera de la pantalla a la derecha */
+        transform: translateX(100%); 
     }
     
-    /* Estilo del menú al estar ACTIVO (mostrado) */
     .nav-links.active {
-        display: flex; /* Mostrar el menú */
-        transform: translateX(0); /* Deslizarlo hacia la pantalla */
+        display: flex; 
+        transform: translateX(0); 
     }
     
     .nav-links a {
         font-size: 1.5em;
-        margin: 15px 0; /* Más espacio vertical */
+        margin: 15px 0; 
     }
 
-    /* --- Header --- */
     .marble_header {
         height: 550px; 
     }
@@ -266,7 +321,6 @@ body {
         font-size: 2em; 
     }
 
-    /* --- Sección Artista --- */
     .artista {
         padding: 20px 0; 
     }
@@ -277,20 +331,19 @@ body {
     }
 
     .artista-contenido {
-        /* 🔥 CORRECCIÓN: Stack vertical y centrado */
         flex-direction: column;
         padding: 10px;
-        align-items: center; /* Centrar elementos horizontalmente */
+        align-items: center; 
     }
 
     .artista-info-izquierda {
-        align-items: center; /* Centrar imagen y nombre */
+        align-items: center; 
         margin-right: 0; 
         margin-bottom: 30px; 
     }
 
     .artista-info-izquierda img {
-        /* Reducir el tamaño de la imagen */
+       
         width: 100%; 
         max-width: 350px; 
         height: auto; 
@@ -299,7 +352,7 @@ body {
     }
     
     .artista-info-izquierda img:hover {
-        transform: none; /* Desactivar hover en táctil */
+        transform: none; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     
@@ -308,7 +361,6 @@ body {
         font-size: 1.3em;
     }
 
-    /* --- Tarjeta de Historia --- */
     .artista-historia-card {
         width: 100%;
         max-width: 90%; 
@@ -324,4 +376,5 @@ body {
     .artista-historia-card p {
         font-size: 1em; 
     }
+}
 }
