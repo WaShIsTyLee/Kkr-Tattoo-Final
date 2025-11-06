@@ -216,7 +216,7 @@ body {
 .mapa-horario {
     padding: 60px 20px; 
     text-align: center;
-        background-image: url('Imagenes/Header_background/header_black_marble.jpg'); 
+    background-image: url('Imagenes/Header_background/header_black_marble.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -293,6 +293,8 @@ body {
 /* ====================================== */
 
 @media (max-width: 768px) {
+  
+
     .mapa-horario {
         padding: 30px 10px;
     }
@@ -318,6 +320,11 @@ body {
     .main-nav {
         justify-content: space-between; 
         padding: 10px 20px;
+        position: fixed; /* Ahora fijo en móvil */
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo para que el contenido no se vea */
+        top: 0;
+        left: 0;
+        z-index: 1000; 
     }
 
     .nav-logo a {
@@ -327,7 +334,7 @@ body {
     .menu-toggle {
         display: block; 
         color: #ffffff;
-        z-index: 101; 
+        z-index: 1001; 
     }
 
     .nav-links {

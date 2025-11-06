@@ -24,7 +24,7 @@
 
         <div class="nav-links" id="navLinks">
             <a href="#artista">Artista</a>
-            <a href="#">Horario</a>
+            <a href="#estudio">Estudio</a>
             <a href="#">Piezas</a>
             <a href="#">Socios</a>
             <a href="#">Contacto</a>
@@ -65,7 +65,7 @@
             </div>
         </section>
 
-        <section class="mapa-horario">
+        <section id="estudio" class="mapa-horario">
             <div class="imagenestudio">
                 <div class="mapa">
                     <h3> Ubicación </h3>
@@ -118,9 +118,25 @@
         menuToggle.onclick = toggleMenu;
 
         links.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    toggleMenu(); // Llama a la misma función para cerrarlo
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault(); 
+
+                    const targetElement = document.querySelector(href);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+
+                        if (navLinks.classList.contains('active')) {
+                            toggleMenu();
+                        }
+                    }
+                } else if (navLinks.classList.contains('active')) {
+                    toggleMenu();
                 }
             });
         });
