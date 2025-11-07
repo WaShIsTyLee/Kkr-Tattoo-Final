@@ -22,16 +22,15 @@
             <span class="bar"></span>
         </button>
 
-        <div class="nav-links" id="navLinks">
-            <a href="#artista">Artista</a>
-            <a href="#estudio">Estudio</a>
-            <a href="#">Piezas</a>
-            <a href="#">Socios</a>
-            <a href="#">Contacto</a>
-        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#artista" class="nav-link-tinta">Artista</a></li>
+            <li><a href="#estudio" class="nav-link-tinta">Estudio</a></li>
+            <li><a href="#">Piezas</a></li>
+            <li><a href="#">Socios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
 
     </nav>
-
     <section class="marble_header">
         <div class="header-content">
             <h1>Especialistas en Blackwork y Realismo</h1>
@@ -52,9 +51,9 @@
 
                 <div class="artista-historia-card">
                     <h3>Trayectoria y Estilo</h3>
-                    <p>Juan Gutiérrez es un <i>especialista en Blackwork y Realismo</i>, con más de 10 años de
-                        experiencia
-                        en el sector. Su enfoque se centra en el detalle minucioso y el uso magistral del contraste de
+                    <p>Juan Gutiérrez <i>especialista en Realismo y Surrealismo</i>, con más de 8 años de
+                        experiencia, comenzando su carrrera en 2017
+                        en el mundo del tatuaje. Se centra en el detalle minucioso y el uso magistral del contraste de
                         negros y grises, creando piezas de alto impacto y durabilidad. Ha participado en convenciones
                         internacionales, siendo reconocido por su habilidad para transformar ideas complejas en arte
                         permanente. </p>
@@ -65,8 +64,24 @@
             </div>
         </section>
 
+        <section class="piezas"></section>
+
         <section id="estudio" class="mapa-horario">
             <div class="imagenestudio">
+
+                <div class="horario">
+                    <h3>Horario del Estudio</h3>
+                    <ul>
+                        <li><strong>Lunes:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
+                        <li style="color: red;"><strong>Martes:</strong> Cerrado</li>
+                        <li><strong>Miércoles:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
+                        <li style="color: red;"><strong>Jueves:</strong> Cerrado</li>
+                        <li><strong>Viernes:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
+                        <li style="color: red;"><strong>Sábado:</strong> Cerrado</li>
+                        <li style="color: red;"><strong>Domingo:</strong> Cerrado</li>
+                    </ul>
+                    <p><em>Las citas seran atendidas por Whatsapp</em></p>
+                </div>
                 <div class="mapa">
                     <h3> Ubicación </h3>
                     <p><strong>Dirección:</strong> Av. Juan Carlos I 53, 14520 Fernán-Núñez, Córdoba</p>
@@ -85,21 +100,6 @@
                         Ver en Google Maps
                     </a>
                 </div>
-
-
-                <div class="horario">
-                    <h3>Horario del Estudio</h3>
-                    <ul>
-                        <li><strong>Lunes:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
-                        <li style="color: red;"><strong>Martes:</strong> Cerrado</li>
-                        <li><strong>Miércoles:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
-                        <li style="color: red;"><strong>Jueves:</strong> Cerrado</li>
-                        <li><strong>Viernes:</strong> 9:00 - 14:00 y 16:00 - 21:00</li>
-                        <li style="color: red;"><strong>Sábado:</strong> Cerrado</li>
-                        <li style="color: red;"><strong>Domingo:</strong> Cerrado</li>
-                    </ul>
-                    <p><em>Las citas seran atendidas por Whatsapp</em></p>
-                </div>
             </div>
         </section>
         <section class="Contacto" style="min-height: 1000px;"></section>
@@ -108,7 +108,8 @@
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-        const links = navLinks.querySelectorAll('a'); 
+        const links = navLinks.querySelectorAll('a');
+        const navBar = document.querySelector('.main-nav'); // Selecciona la barra de navegación
 
         function toggleMenu() {
             navLinks.classList.toggle('active');
@@ -118,14 +119,14 @@
         menuToggle.onclick = toggleMenu;
 
         links.forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                
+
                 if (href.startsWith('#') && href.length > 1) {
-                    e.preventDefault(); 
+                    e.preventDefault();
 
                     const targetElement = document.querySelector(href);
-                    
+
                     if (targetElement) {
                         targetElement.scrollIntoView({
                             behavior: 'smooth'
@@ -140,6 +141,16 @@
                 }
             });
         });
+
+        // 🌟 NUEVO CÓDIGO PARA CAMBIAR EL FONDO CON SCROLL 🌟
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) { // Cambia a las 50px de desplazamiento
+                navBar.classList.add('scrolled');
+            } else {
+                navBar.classList.remove('scrolled');
+            }
+        });
+
     </script>
 
 </body>

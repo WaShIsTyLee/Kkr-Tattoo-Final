@@ -7,7 +7,9 @@ p,
 section,
 nav,
 div,
-img {
+img,
+ul,
+li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,11 +25,12 @@ body {
 /* -------------------------------------- */
 
 .main-nav {
-    background-color: transparent;
-    position: absolute;
+    background-color: transparent; 
+    position: fixed; 
     top: 0;
     left: 0;
-    z-index: 100; /* Asegurar que la barra de navegación esté por encima */
+    right: 0; 
+    z-index: 1000;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -35,18 +38,31 @@ body {
     padding: 15px 30px;
     color: #ffffff;
     font-size: 20px;
+    /* Transición suave para el cambio de fondo al hacer scroll */
+    transition: background-color 0.3s; 
+}
+
+/* Estilo cuando el usuario ha scrolleado (aplicado por JavaScript) */
+.main-nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.nav-links {
+    list-style: none; 
+    display: flex;
+    gap: 30px; 
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #ffffff; /* Color inicial del texto: Blanco */
     text-decoration: none;
-    margin: 0 15px;
     font-size: 1em;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffd700;
+    padding: 5px 0; 
+    display: block; 
+    position: relative; 
+    /* Transiciones para el nuevo efecto de movimiento y brillo */
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s; 
 }
 
 .nav-logo a {
@@ -58,11 +74,45 @@ body {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
+/* --- INICIO: EFECTO TINTA/FIRMA Y RELUCIMIENTO --- */
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background: transparent; 
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    
+    transform: scaleX(0); 
+    transform-origin: bottom left;
+    
+    box-shadow: 0 1px 5px rgba(239, 184, 16, 0.2); 
+}
+
+.nav-links a:hover {
+    color: #ffffff; 
+    transform: scale(1.08) translateY(-3px); 
+    text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    /* Línea de tinta en color #efb810 */
+    background: #efb810; 
+    box-shadow: 0 0 10px rgba(239, 184, 16, 0.8), 0 0 20px rgba(239, 184, 16, 0.5); 
+}
+
+/* --- FIN: EFECTO TINTA/FIRMA Y RELUCIMIENTO --- */
+
+
 /* -------------------------------------- */
 /* ESTILOS DEL BOTÓN DE HAMBURGUESA (ESCRITORIO) */
 /* -------------------------------------- */
 .menu-toggle {
-    display: none; /* Ocultar en escritorio */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
@@ -83,6 +133,7 @@ body {
 /* -------------------------------------- */
 
 .marble_header {
+    padding-top: 60px; 
     background-image: url("Imagenes/Header_background/header_black_marble.jpg");
     background-size: cover;
     background-position: center;
@@ -103,7 +154,7 @@ body {
 }
 
 .header-content h1 {
-    font-size: 3em; /* Para que el texto resalte más */
+    font-size: 3em; 
 }
 
 /* -------------------------------------- */
@@ -157,7 +208,6 @@ body {
 }
 
 .artista-info-izquierda img {
-    /* Ajuste de escritorio */
     width: 400px;
     height: 600px;
     object-fit: cover;
@@ -224,11 +274,11 @@ body {
 }
 
 .imagenestudio {
-    display: flex; /* Habilitar Flexbox */
-    justify-content: center; /* Centrar el contenido horizontalmente */
-    align-items: flex-start; /* Alinear elementos al inicio verticalmente */
-    gap: 40px; /* Espacio entre el mapa y el horario */
-    max-width: 1000px; /* Ancho máximo para el contenedor principal */
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 40px; 
+    max-width: 1000px; 
     margin: 0 auto;
 }
 
@@ -293,7 +343,15 @@ body {
 /* ====================================== */
 
 @media (max-width: 768px) {
-  
+    
+    .marble_header {
+        padding-top: 50px; 
+        height: 550px;
+    }
+
+    .header-content h1 {
+        font-size: 2em;
+    }
 
     .mapa-horario {
         padding: 30px 10px;
@@ -320,8 +378,8 @@ body {
     .main-nav {
         justify-content: space-between; 
         padding: 10px 20px;
-        position: fixed; /* Ahora fijo en móvil */
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo para que el contenido no se vea */
+        position: fixed; 
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo siempre oscuro en móvil */
         top: 0;
         left: 0;
         z-index: 1000; 
@@ -349,9 +407,8 @@ body {
         padding-top: 100px; 
         text-align: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(
-            100%
-        ); 
+        transform: translateX(100%); 
+        gap: 0; 
     }
 
     .nav-links.active {
@@ -359,19 +416,38 @@ body {
         transform: translateX(0); 
     }
 
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
     .nav-links a {
         font-size: 1.5em;
-        margin: 15px 0; 
+        padding: 15px 0; 
     }
 
-    .marble_header {
-        height: 550px;
+    /* Efectos de hover/active en móvil */
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #ffffff; 
+        transform: scale(1.08) translateY(-3px); 
+        text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
     }
 
-    .header-content h1 {
-        font-size: 2em;
+    .nav-links a::after {
+        display: block; 
+        height: 2px; 
+        bottom: 5px; 
     }
 
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+        transform: scaleX(1);
+        background: #efb810; 
+    }
+
+
+    /* ESTILOS DE SECCIÓN ARTISTA (Móvil) */
     .artista {
         padding: 20px 0;
     }
@@ -399,11 +475,7 @@ body {
         height: auto;
         margin-bottom: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .artista-info-izquierda img:hover {
         transform: none; 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .artista-nombre {
