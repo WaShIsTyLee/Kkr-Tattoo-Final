@@ -106,8 +106,8 @@
     </div>
 
     <div class="whatsapp-float">
-        <a href="https://api.whatsapp.com/message/2H7A7RPDXUD7P1?autoload=1&app_absent=0" target="_blank"
-            id="whatsappLink" title="Reserva tu cita aquí">
+        <a href="https://api.whatsapp.com/send?phone=34606732394" target="_blank" id="whatsappLink"
+            title="Reserva tu cita aquí">
             <i class="fab fa-whatsapp"></i>
             <span class="badge" id="whatsappBadge">1</span>
         </a>
@@ -157,12 +157,12 @@
                 navBar.classList.remove('scrolled');
             }
         });
-        
+
         // 💬 CÓDIGO PARA EL BADGE DE WHATSAPP (SE ACTIVA CADA 5 SEGUNDOS) 💬
         const whatsappBadge = document.getElementById('whatsappBadge');
-        
+
         // Aseguramos que el badge sea visible al inicio
-        whatsappBadge.classList.add('active'); 
+        whatsappBadge.classList.add('active');
 
         function toggleBadge() {
             whatsappBadge.classList.toggle('active');
