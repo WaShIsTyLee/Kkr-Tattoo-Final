@@ -151,6 +151,7 @@ body {
 /* -------------------------------------- */
 
 .content-background {
+    /* Fondo de mármol blanco para las secciones internas */
     background-image: url("Imagenes/Body/body_withe_marble.jpg");
     background-size: cover;
     background-position: center;
@@ -166,7 +167,7 @@ body {
 .artista {
     text-align: center;
     padding: 40px 0;
-    background-color: transparent;
+    background-color: transparent; /* Permite ver el fondo de .content-background */
 }
 
 .artista-titulo {
@@ -415,6 +416,188 @@ body {
     }
 }
 
+/* ==================================== */
+/* === ESTILOS SECCIÓN PIEZAS (GALERÍA) === */
+/* ==================================== */
+
+.seccion-piezas {
+    padding: 60px 20px;
+    background-color: transparent; 
+    text-align: center;
+    min-height: 80vh; 
+}
+
+.piezas-titulo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* --- Botones de Filtro --- */
+
+.filtro-botones {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px; 
+}
+
+.filtro-btn {
+    background-color: #fff; 
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    text-transform: capitalize;
+}
+
+.filtro-btn:hover {
+    background-color: #eee;
+}
+
+/* Estilo para el botón activo */
+.filtro-btn.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+    transform: translateY(-2px);
+}
+
+/* --- Galería de Imágenes --- */
+
+.galeria-piezas {
+    display: grid;
+    /* CORRECCIÓN: Tamaño de columna más contenido */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* --- CORRECCIÓN CLAVE PARA CENTRAR LAS CARDS EN MÓVIL --- */
+    justify-content: center; 
+}
+
+.pieza-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+    cursor: pointer;
+    opacity: 1;
+    display: block;
+}
+
+/* CLASE PARA OCULTAR ELEMENTOS FILTRADOS */
+.pieza-card.hidden-by-filter {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.pieza-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pieza-card img {
+    width: 100%;
+    /* Manteniendo la proporción vertical */
+    height: auto; 
+    aspect-ratio: 4 / 5; 
+    object-fit: cover; 
+    display: block;
+}
+
+.card-caption {
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==================================== */
+/* === ESTILOS MODAL (Galería en grande) === */
+/* ==================================== */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    padding-top: 60px; /* Espacio desde la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Permite desplazamiento si la imagen es muy grande */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente oscuro */
+    transition: opacity 0.3s ease;
+}
+
+/* Contenido del Modal (La imagen) */
+.modal-contenido {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%; /* Limita la altura de la imagen */
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    border-radius: 8px;
+    /* Cursor para indicar que se puede hacer zoom (o mover) */
+    cursor: zoom-in; 
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* El texto de la descripción (caption) */
+#captionModal {
+    margin: 20px auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+/* El botón para cerrar (x) */
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Animación de entrada */
+.modal-contenido, #captionModal {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
 /* ====================================== */
 /* 🌟 MEDIA QUERY PARA MÓVILES (Max-width: 768px) */
 /* ====================================== */
@@ -571,5 +754,15 @@ body {
 
     .artista-historia-card p {
         font-size: 1em;
+    }
+    
+    /* Media Queries para Modal en pantallas pequeñas (Aseguramos que el modal se vea bien) */
+    .modal-contenido {
+        width: 100%;
+    }
+    .cerrar {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
     }
 }
