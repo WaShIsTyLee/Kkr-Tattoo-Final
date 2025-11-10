@@ -105,6 +105,13 @@
         <section class="Contacto" style="min-height: 1000px;"></section>
     </div>
 
+    <div class="whatsapp-float">
+        <a href="https://api.whatsapp.com/message/2H7A7RPDXUD7P1?autoload=1&app_absent=0" target="_blank"
+            id="whatsappLink" title="Reserva tu cita aquí">
+            <i class="fab fa-whatsapp"></i>
+            <span class="badge" id="whatsappBadge">1</span>
+        </a>
+    </div>
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -142,7 +149,7 @@
             });
         });
 
-        // 🌟 NUEVO CÓDIGO PARA CAMBIAR EL FONDO CON SCROLL 🌟
+        // 🌟 CÓDIGO PARA CAMBIAR EL FONDO CON SCROLL 🌟
         window.addEventListener('scroll', function () {
             if (window.scrollY > 50) { // Cambia a las 50px de desplazamiento
                 navBar.classList.add('scrolled');
@@ -150,6 +157,19 @@
                 navBar.classList.remove('scrolled');
             }
         });
+        
+        // 💬 CÓDIGO PARA EL BADGE DE WHATSAPP (SE ACTIVA CADA 5 SEGUNDOS) 💬
+        const whatsappBadge = document.getElementById('whatsappBadge');
+        
+        // Aseguramos que el badge sea visible al inicio
+        whatsappBadge.classList.add('active'); 
+
+        function toggleBadge() {
+            whatsappBadge.classList.toggle('active');
+        }
+
+        // Alternar el badge (mostrar/ocultar) cada 5 segundos
+        setInterval(toggleBadge, 5000);
 
     </script>
 
