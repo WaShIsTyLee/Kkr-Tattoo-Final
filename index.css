@@ -644,24 +644,40 @@ body {
 
 /* 🆕 NUEVO: Pseudo-elemento para el fondo reflejado */
 .main-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Mover el fondo detrás del contenido */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Mover el fondo detras del contenido */
 
-  /* Aplica la imagen de fondo */
-  background-image: url("Imagenes/Header_background/header_black_marble.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    /* Aplica la imagen de fondo */
+    background-image: url("Imagenes/Header_background/header_black_marble.jpg");
+    background-size: cover;
+    /* CAMBIO CLAVE: BAJAR LA IMAGEN VERTICALMENTE */
+    background-position: center 80%;
+    background-repeat: no-repeat;
 
-  /* 🌟 EL TRUCO: Refleja la imagen de fondo horizontalmente */
-  transform: scaleX(-1);
+    /* EL TRUCO: Refleja la imagen de fondo horizontalmente */
+    transform: scaleX(-1);
+    
+    /* Nota: Se mantiene el desenfoque si lo habias aplicado antes, sino puedes quitar estas dos lineas */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.footer-col.footer-links {
+  text-align: center; 
+}
+.footer-col.footer-links ul {
+  display: inline-block;
+  text-align: left; 
 }
 
+.footer-col.footer-links li {
+
+  justify-content: flex-start; 
+}
 .footer-col {
   width: 23%;
   margin-bottom: 30px;

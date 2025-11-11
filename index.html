@@ -27,14 +27,13 @@
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#artista">Artista</a></li>
-            <li><a href="#estudio">Estudio</a></li>
             <li><a href="#piezas">Piezas</a></li>
+            <li><a href="#estudio">Estudio</a></li>
             <li><a href="#">Sponsors</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-
     </nav>
-    
+
     <section class="marble_header">
         <div class="header-content">
             <h1>Especialistas en Blackwork y Realismo</h1>
@@ -81,8 +80,7 @@
 
             <div class="galeria-piezas">
                 <div class="pieza-card realismo blackwork">
-                    <img src="Imagenes/Tatuajes/Imagen1Album1.jpg"
-                        alt="Tatuaje que combina Realismo y Blackwork">
+                    <img src="Imagenes/Tatuajes/Imagen1Album1.jpg" alt="Tatuaje que combina Realismo y Blackwork">
                     <p class="card-caption">Realismo y Contraste</p>
                 </div>
                 <div class="pieza-card surrealismo">
@@ -93,7 +91,7 @@
                     <img src="Imagenes/Tatuajes/Anime-01.jpg" alt="Tatuaje Ejemplo">
                     <p class="card-caption">Tatto de Ejemplo</p>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="estudio" class="mapa-horario">
@@ -113,11 +111,16 @@
                         <li style="color: red;"><strong>Domingo:</strong> Cerrado</li>
                     </ul>
                     <p><em>Las citas seran atendidas por Whatsapp</em></p>
+                    <br>
                 </div>
 
                 <div class="mapa">
                     <h3> Ubicación </h3>
                     <p><strong>Dirección:</strong> Av. Juan Carlos I 53, 14520 Fernán-Núñez, Córdoba</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Juan+Carlos+I+53,+14520+Fernán-Núñez,+Córdoba"
+                        target="_blank" style="display: block; margin-top: 10px; color: #efb810;">
+                        Ver en Google Maps
+                    </a>
 
                     <div
                         style="border: 1px solid #ccc; height: auto; background-color: #f0f0f0; padding: 5px; border-radius: 10px;">
@@ -128,15 +131,12 @@
                         </iframe>
                     </div>
 
-                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Juan+Carlos+I+53,+14520+Fernán-Núñez,+Córdoba"
-                        target="_blank" style="display: block; margin-top: 10px; color: #efb810;">
-                        Ver en Google Maps
-                    </a>
+
                 </div>
 
             </div>
         </section>
-        
+
     </div>
 
     <footer id="contacto" class="main-footer">
@@ -158,27 +158,23 @@
             </ul>
         </div>
 
-        <div class="footer-col footer-links">
-            <h3 class="footer-title">Apartados Web</h3>
-            <ul>
-                <li><a href="#artista">Artista</a></li>
-                <li><a href="#estudio">Estudio</a></li>
-                <li><a href="#piezas">Piezas</a></li>
-                <li><a href="#">Sponsors</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
+ 
 
         <div class="footer-col footer-social">
             <h3 class="footer-title">Síguenos En</h3>
             <div class="social-icons">
-                <a href="https://www.instagram.com/kkr.tattoo/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/Juangutierrez.kkr13/?locale=es_ES" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.tiktok.com/@kkrtattoo" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/kkr.tattoo/" target="_blank" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Juangutierrez.kkr13/?locale=es_ES" target="_blank" title="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@kkrtattoo" target="_blank" title="TikTok"><i
+                        class="fab fa-tiktok"></i></a>
             </div>
 
             <div class="footer-brand">
-                <p>KKR.TATTOO © 2025 <br> <a href="https://www.linkedin.com/in/juan-j%C3%A9sus-l%C3%B3pez-solano-5b0133232/">Desarrollado por Juan Jesús López Solano</a></p>
+                <p>KKR.TATTOO © 2025 <br> <a
+                        href="https://www.linkedin.com/in/juan-j%C3%A9sus-l%C3%B3pez-solano-5b0133232/">Desarrollado por
+                        Juan Jesús López Solano</a></p>
             </div>
         </div>
     </footer>
@@ -191,7 +187,7 @@
 
     <div class="whatsapp-float">
         <a href="https://api.whatsapp.com/send?phone=34606732394" target="_blank" title="Escríbenos por WhatsApp">
-            <i class="fab fa-whatsapp"></i> 
+            <i class="fab fa-whatsapp"></i>
             <span class="badge active">1</span> </a>
     </div>
 
@@ -253,7 +249,7 @@
             function filterPieces(filter) {
                 galleryCards.forEach(card => {
                     card.classList.remove('hidden-by-filter');
-                    card.style.display = 'block'; 
+                    card.style.display = 'block';
                     card.style.opacity = '1';
                 });
 
@@ -264,7 +260,7 @@
 
                         setTimeout(() => {
                             card.style.display = 'none';
-                        }, 500); 
+                        }, 500);
 
                     } else {
                         card.classList.remove('hidden-by-filter');
@@ -314,11 +310,11 @@
             }
 
             modalImg.onclick = function (event) {
-                event.stopPropagation(); 
+                event.stopPropagation();
 
                 if (!zoomActivo) {
                     this.style.transform = 'scale(1.5)';
-                    this.style.cursor = 'grab'; 
+                    this.style.cursor = 'grab';
                     zoomActivo = true;
                 } else {
                     this.style.transform = 'scale(1)';
