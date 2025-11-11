@@ -1,4 +1,3 @@
-/* Importar la librería de Font Awesome para el icono de WhatsApp */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 /* RESET BÁSICO */
@@ -13,14 +12,14 @@ div,
 img,
 ul,
 li {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 /* -------------------------------------- */
@@ -28,93 +27,93 @@ body {
 /* -------------------------------------- */
 
 .main-nav {
-  background-color: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  padding: 15px 30px;
-  color: #ffffff;
-  font-size: 20px;
-  transition: background-color 0.3s;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-size: 20px;
+    transition: background-color 0.3s;
 }
 
 .main-nav.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1em;
-  padding: 5px 0;
-  display: block;
-  position: relative;
-  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 0;
+    display: block;
+    position: relative;
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
 }
 
 .nav-logo a {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-  letter-spacing: 2px;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: transparent;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: scaleX(0);
-  transform-origin: bottom left;
-  box-shadow: 0 1px 5px rgba(239, 184, 16, 0.2);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    box-shadow: 0 1px 5px rgba(239, 184, 16, 0.2);
 }
 
 .nav-links a:hover {
-  color: #ffffff;
-  transform: scale(1.08) translateY(-3px);
-  text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
+    color: #ffffff;
+    transform: scale(1.08) translateY(-3px);
+    text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
 }
 
 .nav-links a:hover::after {
-  transform: scaleX(1);
-  background: #efb810;
-  box-shadow: 0 0 10px rgba(239, 184, 16, 0.8), 0 0 20px rgba(239, 184, 16, 0.5);
+    transform: scaleX(1);
+    background: #efb810;
+    box-shadow: 0 0 10px rgba(239, 184, 16, 0.8), 0 0 20px rgba(239, 184, 16, 0.5);
 }
 
 .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
 }
 
 .menu-toggle .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  background-color: #ffffff;
-  transition: all 0.3s ease-in-out;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
 }
 
 /* -------------------------------------- */
@@ -122,28 +121,28 @@ body {
 /* -------------------------------------- */
 
 .marble_header {
-  padding-top: 60px;
-  background-image: url("Imagenes/Header_background/header_black_marble.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+    padding-top: 60px;
+    background-image: url("Imagenes/Header_background/header_black_marble.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
 .header-content {
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 .header-content h1 {
-  font-size: 3em;
+    font-size: 3em;
 }
 
 /* -------------------------------------- */
@@ -151,13 +150,12 @@ body {
 /* -------------------------------------- */
 
 .content-background {
-  /* Fondo de mármol blanco para las secciones internas */
-  background-image: url("Imagenes/Body/body_withe_marble.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
-  background-attachment: scroll;
-  min-height: 50vh;
+    background-image: url("Imagenes/Body/body_withe_marble.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    min-height: 50vh;
 }
 
 /* -------------------------------------- */
@@ -165,87 +163,87 @@ body {
 /* -------------------------------------- */
 
 .artista {
-  text-align: center;
-  padding: 40px 0;
-  background-color: transparent;
+    text-align: center;
+    padding: 40px 0;
+    background-color: transparent;
 }
 
 .artista-titulo {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 30px;
-  font-size: 2.2em;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #333;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333;
 }
 
 .artista-contenido {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .artista-info-izquierda {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 40px;
 }
 
 .artista-info-izquierda img {
-  width: 400px;
-  height: 600px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: block;
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
 }
 
 .artista-info-izquierda img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .artista-nombre {
-  margin-top: 0;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #333;
-  text-align: left;
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
 }
 
 .artista-historia-card {
-  flex-grow: 1;
-  border-radius: 5px;
-  max-width: 600px;
-  padding: 30px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: left;
-  height: fit-content;
+    flex-grow: 1;
+    border-radius: 5px;
+    max-width: 600px;
+    padding: 30px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    height: fit-content;
 }
 
 .artista-historia-card h3 {
-  font-size: 1.8em;
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #333;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .artista-historia-card p {
-  font-size: 1.1em;
-  margin-bottom: 15px;
-  color: #555;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
 }
 
 /* -------------------------------------- */
@@ -253,89 +251,86 @@ body {
 /* -------------------------------------- */
 
 .mapa-horario {
-  padding: 60px 20px;
-  text-align: center;
-  /* QUITAMOS EL FONDO NEGRO Y DEJAMOS EL TRANSPARENTE PARA USAR EL DE .content-background */
-  background-image: none;
-  background-color: transparent;
-  background-attachment: scroll;
+    padding: 60px 20px;
+    text-align: center;
+    background-image: none;
+    background-color: transparent;
+    background-attachment: scroll;
 }
 
-/* NUEVO: Título para la sección de estudio (Mismo estilo que .artista-titulo) */
 .estudio-titulo {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 30px;
-  font-size: 2.2em;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #333;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333;
 }
 
 .imagenestudio {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .mapa,
 .horario {
-  flex: 1;
-  padding: 20px;
-  /* Fondo semi-transparente para que el contenido sea legible sobre el mármol blanco */
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: left;
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
 
 .mapa h3 {
-  font-size: 1.8em;
-  color: #333;
-  margin-bottom: 15px;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .mapa p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .horario h3 {
-  font-size: 1.8em;
-  color: #333;
-  margin-bottom: 15px;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .horario ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .horario li {
-  padding: 10px 0;
-  border-bottom: 1px dashed #eee;
-  color: #555;
-  font-size: 1.1em;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    color: #555;
+    font-size: 1.1em;
 }
 
 .horario li:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .horario strong {
-  color: #333;
-  display: inline-block;
-  min-width: 80px;
+    color: #333;
+    display: inline-block;
+    min-width: 80px;
 }
 
 .horario em {
-  display: block;
-  margin-top: 15px;
-  font-size: 0.9em;
-  color: #888;
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #888;
 }
 
 /* -------------------------------------- */
@@ -343,88 +338,96 @@ body {
 /* -------------------------------------- */
 
 .whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1000;
-  animation: floatAnimation 2.5s ease-in-out infinite;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    animation: floatAnimation 2.5s ease-in-out infinite;
 }
 
 .whatsapp-float a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-  height: 55px;
-  background-color: #25d366;
-  color: white;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  font-size: 28px;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .whatsapp-float a:hover {
-  transform: scale(1.1) translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 .whatsapp-float a[title]:hover::before {
-  content: attr(title);
-  position: absolute;
-  right: 65px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #efb810;
-  color: black;
-  padding: 6px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
-  font-size: 14px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    content: attr(title);
+    position: absolute;
+    right: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #efb810;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* --- ESTILOS DE BADGE ACTUALIZADOS PARA EL PARPADEO --- */
 .whatsapp-float .badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: #ff0000;
-  color: white;
-  border: 2px solid white;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: bold;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff0000; /* Rojo de notificación */
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+    
+    /* Propiedad clave para la animación suave */
+    transition: opacity 0.5s ease-in-out; 
 }
 
+/* Estado activo: Visible (el JavaScript lo alterna cada 5s) */
 .whatsapp-float .badge.active {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1; 
 }
+
+/* Estado inactivo: Oculto (el JavaScript lo usa cuando quita la clase 'active') */
+.whatsapp-float .badge:not(.active) {
+    opacity: 0; 
+}
+/* ----------------------------------------------------- */
 
 @keyframes floatAnimation {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* ==================================== */
@@ -432,113 +435,102 @@ body {
 /* ==================================== */
 
 .seccion-piezas {
-  padding: 60px 20px;
-  background-color: transparent;
-  text-align: center;
-  min-height: 80vh;
+    padding: 60px 20px;
+    background-color: transparent;
+    text-align: center;
+    min-height: 80vh;
 }
 
 .piezas-titulo {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 40px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
 }
 
-/* --- Botones de Filtro --- */
-
 .filtro-botones {
-  margin-bottom: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .filtro-btn {
-  background-color: #fff;
-  color: #333;
-  border: 2px solid #333;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
-  transition: background-color 0.3s, color 0.3s, transform 0.1s;
-  text-transform: capitalize;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    text-transform: capitalize;
 }
 
 .filtro-btn:hover {
-  background-color: #eee;
+    background-color: #eee;
 }
 
-/* Estilo para el botón activo */
 .filtro-btn.active {
-  background-color: #333;
-  color: #fff;
-  border-color: #333;
-  transform: translateY(-2px);
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+    transform: translateY(-2px);
 }
 
-/* --- Galería de Imágenes --- */
 
 .galeria-piezas {
-  display: grid;
-  /* CORRECCIÓN: Tamaño de columna más contenido */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  /* --- CORRECCIÓN CLAVE PARA CENTRAR LAS CARDS EN MÓVIL --- */
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .pieza-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  /* 🎨 OPTIMIZACIÓN: Añadir 'will-change' para preparar al navegador */
-  will-change: transform, opacity;
-  transition: transform 0.3s ease-in-out, opacity 0.5s ease;
-  cursor: pointer;
-  opacity: 1;
-  display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    will-change: transform, opacity;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+    cursor: pointer;
+    opacity: 1;
+    display: block;
 }
 
 .pieza-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* 🎨 CLASE PARA OCULTAR ELEMENTOS FILTRADOS (OPTIMIZADA) */
 .pieza-card.hidden-by-filter {
-  opacity: 0;
-  /* Aceleración por hardware: al combinar transform y opacity se optimiza */
-  transform: scale(0.9);
-  /* Se asegura que la transición se aplique a transform y opacity */
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
 }
 
 .pieza-card img {
-  width: 100%;
-  /* Manteniendo la proporción vertical */
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
 }
 
 .card-caption {
-  padding: 15px;
-  font-size: 1.1em;
-  font-weight: 700;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* ==================================== */
@@ -546,77 +538,72 @@ body {
 /* ==================================== */
 
 .modal {
-  display: none; /* Oculto por defecto */
-  position: fixed;
-  z-index: 2000; /* Asegura que esté por encima de todo */
-  padding-top: 60px; /* Espacio desde la parte superior */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* Permite desplazamiento si la imagen es muy grande */
-  background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente oscuro */
-  transition: opacity 0.3s ease;
+    display: none; 
+    position: fixed;
+    z-index: 2000; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    transition: opacity 0.3s ease;
 }
 
-/* Contenido del Modal (La imagen) */
 .modal-contenido {
-  margin: auto;
-  display: block;
-  width: 90%;
-  max-width: 900px;
-  max-height: 90%; /* Limita la altura de la imagen */
-  object-fit: contain; /* Asegura que la imagen se vea completa */
-  border-radius: 8px;
-  /* Cursor para indicar que se puede hacer zoom (o mover) */
-  cursor: zoom-in;
-  transition: transform 0.3s ease-in-out;
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%; 
+    object-fit: contain; 
+    border-radius: 8px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* El texto de la descripción (caption) */
 #captionModal {
-  margin: 20px auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  font-size: 1.2em;
+    margin: 20px auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2em;
 }
 
-/* El botón para cerrar (x) */
 .cerrar {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .cerrar:hover,
 .cerrar:focus {
-  color: #bbb;
-  text-decoration: none;
+    color: #bbb;
+    text-decoration: none;
 }
 
-/* Animación de entrada */
 .modal-contenido,
 #captionModal {
-  animation-name: zoom;
-  animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 /* ====================================== */
@@ -624,25 +611,18 @@ body {
 /* ====================================== */
 
 .main-footer {
-  /* El contenedor principal debe ser relativo para posicionar el pseudo-elemento */
-  position: relative;
-
-  /* El color de fondo es un fallback si la imagen falla */
-  background-color: #000000;
-  color: #ffffff;
-  padding: 50px 5%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-top: 5px solid #efb810;
-
-  /* Aseguramos que el contenido del footer esté sobre la imagen de fondo */
-  z-index: 1;
-  /* Eliminamos las propiedades de background del elemento principal */
-  background-image: none;
+    position: relative;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 50px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 5px solid #efb810;
+    z-index: 1;
+    background-image: none;
 }
 
-/* 🆕 NUEVO: Pseudo-elemento para el fondo reflejado */
 .main-footer::before {
     content: "";
     position: absolute;
@@ -650,124 +630,274 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Mover el fondo detras del contenido */
-
-    /* Aplica la imagen de fondo */
+    z-index: -1; 
     background-image: url("Imagenes/Header_background/header_black_marble.jpg");
     background-size: cover;
-    /* CAMBIO CLAVE: BAJAR LA IMAGEN VERTICALMENTE */
     background-position: center 80%;
     background-repeat: no-repeat;
-
-    /* EL TRUCO: Refleja la imagen de fondo horizontalmente */
     transform: scaleX(-1);
-    
-    /* Nota: Se mantiene el desenfoque si lo habias aplicado antes, sino puedes quitar estas dos lineas */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 .footer-col.footer-links {
-  text-align: center; 
+    text-align: center; 
 }
 .footer-col.footer-links ul {
-  display: inline-block;
-  text-align: left; 
+    display: inline-block;
+    text-align: left; 
 }
 
 .footer-col.footer-links li {
 
-  justify-content: flex-start; 
+    justify-content: flex-start; 
 }
 .footer-col {
-  width: 23%;
-  margin-bottom: 30px;
-  min-width: 250px;
+    width: 23%;
+    margin-bottom: 30px;
+    min-width: 250px;
 }
 
 .footer-title {
-  font-size: 1.4em;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  border-bottom: 2px solid #efb810;
-  padding-bottom: 5px;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 2px solid #efb810;
+    padding-bottom: 5px;
 }
 
 .main-footer ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .main-footer li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .main-footer a {
-  color: #f9f9f9;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #f9f9f9;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .main-footer a:hover {
-  color: #efb810;
+    color: #efb810;
 }
 
 .main-footer i {
-  margin-right: 10px;
-  color: #efb810;
-  font-size: 1.1em;
+    margin-right: 10px;
+    color: #efb810;
+    font-size: 1.1em;
 }
 
-/* --- ÍCONOS SOCIALES (Centrado Corregido) --- */
 .social-icons {
-  margin-top: 15px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 .social-icons a {
-  /* Contenedor Flex para centrar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 40px;
-  height: 40px;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  color: #ffffff;
-  font-size: 1.2em;
-  transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
 }
 
-/* Regla para centrar el icono interno */
 .social-icons a i {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
 .social-icons a:hover {
-  background-color: #efb71000;
-  color: #000000;
-  transform: translateY(-3px);
+    background-color: #efb71000;
+    color: #000000;
+    transform: translateY(-3px);
 }
 
-/* --- DERECHOS DE AUTOR --- */
 .footer-brand {
-  margin-top: 30px;
-  width: 100%;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 20px;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
 }
 
 .footer-brand p {
-  font-size: 0.9em;
-  opacity: 0.7;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+/* --- Sección Sponsors Interactiva (Fondo Mármol Blanco) --- */
+
+.seccion-sponsors {
+    padding: 60px 0;
+    text-align: center;
+    color: #333; /* Texto principal oscuro para contrastar con el fondo blanco */
+    overflow: hidden;
+    
+    /* FONDO DE MÁRMOL BLANCO */
+    /* **IMPORTANTE:** Reemplaza 'Imagenes/Fondos/marmol_blanco.jpg' con la ruta correcta de tu imagen de fondo. */
+    background-image: url('Imagenes/Fondos/marmol_blanco.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+.sponsors-titulo {
+    font-size: 2.5rem;
+    color: #333; /* Título oscuro */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sponsors-subtitulo {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #555; /* Subtítulo gris oscuro */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.sponsors-container-interactivo {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 400px; /* Altura mínima para mostrar las imágenes */
+    padding: 0 10px;
+    /* Damos un color sólido a los contenedores para distinguirlos del fondo de mármol */
+    background-color: rgba(0, 0, 0, 0.05); /* Ligeramente gris transparente sobre el mármol */
+}
+
+.sponsor-interactivo-card {
+    flex-grow: 1; /* Todos crecen por igual inicialmente */
+    flex-basis: 33.33%; 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    /* Transición CLAVE para el efecto de crecimiento */
+    transition: flex-grow 0.5s ease-in-out; 
+    border-right: 1px solid rgba(0, 0, 0, 0.1); /* Separador sutil */
+}
+
+.sponsor-interactivo-card:last-child {
+    border-right: none;
+}
+
+/* 🔄 Efecto de Expansión y Contracción */
+.sponsors-container-interactivo:hover .sponsor-interactivo-card {
+    flex-grow: 1; 
+}
+
+.sponsors-container-interactivo .sponsor-interactivo-card:hover {
+    flex-grow: 3; 
+}
+
+
+/* Estilos para la imagen de fondo */
+.sponsor-imagen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* MODIFICADO: Usa 'contain' para que la imagen se ajuste completamente */
+    background-size: contain; 
+    
+    /* MANTENIDO: Usa 'no-repeat' para evitar que se repita la imagen */
+    background-repeat: no-repeat;
+    
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    filter: grayscale(100%) brightness(0.9); 
+    transition: filter 0.5s ease-in-out;
+}
+/* Efecto al hacer hover: color */
+.sponsor-interactivo-card:hover .sponsor-imagen {
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Estilos para el texto (Ajuste para contraste) */
+.sponsor-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    /* MODIFICADO: Fondo más oscuro para que el texto dorado/blanco resalte */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5));
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra de texto añadida */
+    text-align: left;
+    transform: translateY(100%); 
+    transition: transform 0.5s ease-in-out;
+    z-index: 10; 
+}
+
+.sponsor-interactivo-card:hover .sponsor-info {
+    transform: translateY(0); 
+}
+
+.sponsor-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #efb810; /* Color dorado/amarillo */
+    font-weight: 700; /* Ligeramente más grueso para resaltar */
+}
+
+.sponsor-info p {
+    margin: 5px 0 10px 0;
+    font-size: 0.9rem;
+    color: #fff; /* Texto en blanco */
+}
+
+.sponsor-info .fab.fa-instagram {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.sponsor-interactivo-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    z-index: 5;
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .sponsors-container-interactivo {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .sponsor-interactivo-card {
+        flex-basis: 200px; 
+        flex-grow: 1;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .sponsor-imagen {
+        filter: grayscale(0%) brightness(1); 
+    }
+    .sponsor-info {
+        transform: translateY(0);
+        /* Oscurecemos completamente el fondo en móvil para legibilidad total */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+    }
 }
 
 /* ====================================== */
@@ -775,187 +905,188 @@ body {
 /* ====================================== */
 
 @media (max-width: 1100px) {
-  /* Ajuste para tablets en el footer */
-  .footer-col {
-    width: 48%;
-  }
+    .footer-col {
+        width: 48%;
+    }
 }
 
 @media (max-width: 600px) {
-  /* Ajuste para móviles en el footer */
-  .main-footer {
-    padding: 40px 10%;
-  }
-  .footer-col {
-    width: 100%;
-    min-width: auto;
-    margin-bottom: 25px;
-  }
-  .footer-brand {
-    margin-top: 10px;
-  }
+    .main-footer {
+        padding: 40px 10%;
+    }
+    .footer-col {
+        width: 100%;
+        min-width: auto;
+        margin-bottom: 25px;
+    }
+    .footer-brand {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 768px) {
-  .marble_header {
-    padding-top: 50px;
-    height: 550px;
-  }
+    .marble_header {
+        padding-top: 50px;
+        height: 550px;
+    }
 
-  .header-content h1 {
-    font-size: 2em;
-  }
+    .header-content h1 {
+        font-size: 2em;
+    }
 
-  .mapa-horario {
-    padding: 30px 10px;
-  }
+    .mapa-horario {
+        padding: 30px 10px;
+    }
 
-  .imagenestudio {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10px;
-  }
+    .imagenestudio {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
 
-  .mapa,
-  .horario {
-    width: 100%;
-    max-width: none;
-    padding: 15px;
-  }
+    .mapa,
+    .horario {
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+    }
 
-  .horario li {
-    font-size: 1em;
-    padding: 8px 0;
-  }
+    .horario li {
+        font-size: 1em;
+        padding: 8px 0;
+    }
 
-  .main-nav {
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+    .horario strong {
+        font-size: 1em; /* Asegurar que no se reduzca más */
+    }
 
-  .nav-logo a {
-    font-size: 1.2em;
-  }
+    .main-nav {
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.8);
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
 
-  .menu-toggle {
-    display: block;
-    color: #ffffff;
-    z-index: 1001;
-  }
+    .nav-logo a {
+        font-size: 1.2em;
+    }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding-top: 100px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%);
-    gap: 0;
-  }
+    .menu-toggle {
+        display: block;
+        color: #ffffff;
+        z-index: 1001;
+    }
 
-  .nav-links.active {
-    display: flex;
-    transform: translateX(0);
-  }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding-top: 100px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        gap: 0;
+    }
 
-  .nav-links li {
-    width: 100%;
-    margin: 10px 0;
-  }
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
 
-  .nav-links a {
-    font-size: 1.5em;
-    padding: 15px 0;
-  }
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+    }
 
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: #ffffff;
-    transform: scale(1.08) translateY(-3px);
-    text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
-  }
+    .nav-links a {
+        font-size: 1.5em;
+        padding: 15px 0;
+    }
 
-  .nav-links a::after {
-    display: block;
-    height: 2px;
-    bottom: 5px;
-  }
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #ffffff;
+        transform: scale(1.08) translateY(-3px);
+        text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
+    }
 
-  .nav-links a:hover::after,
-  .nav-links a.active::after {
-    transform: scaleX(1);
-    background: #efb810;
-  }
+    .nav-links a::after {
+        display: block;
+        height: 2px;
+        bottom: 5px;
+    }
 
-  .artista {
-    padding: 20px 0;
-  }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+        transform: scaleX(1);
+        background: #efb810;
+    }
 
-  .artista-titulo {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
+    .artista {
+        padding: 20px 0;
+    }
 
-  .artista-contenido {
-    flex-direction: column;
-    padding: 10px;
-    align-items: center;
-  }
+    .artista-titulo {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
 
-  .artista-info-izquierda {
-    align-items: center;
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
+    .artista-contenido {
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+    }
 
-  .artista-info-izquierda img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transform: none;
-  }
+    .artista-info-izquierda {
+        align-items: center;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
 
-  .artista-nombre {
-    text-align: center;
-    font-size: 1.3em;
-  }
+    .artista-info-izquierda img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transform: none;
+    }
 
-  .artista-historia-card {
-    width: 100%;
-    max-width: 90%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .artista-nombre {
+        text-align: center;
+        font-size: 1.3em;
+    }
 
-  .artista-historia-card h3 {
-    font-size: 1.5em;
-  }
+    .artista-historia-card {
+        width: 100%;
+        max-width: 90%;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .artista-historia-card p {
-    font-size: 1em;
-  }
+    .artista-historia-card h3 {
+        font-size: 1.5em;
+    }
 
-  /* Media Queries para Modal en pantallas pequeñas (Aseguramos que el modal se vea bien) */
-  .modal-contenido {
-    width: 100%;
-  }
-  .cerrar {
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-  }
+    .artista-historia-card p {
+        font-size: 1em;
+    }
+
+    .modal-contenido {
+        width: 100%;
+    }
+    .cerrar {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
 }

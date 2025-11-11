@@ -28,8 +28,8 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#artista">Artista</a></li>
             <li><a href="#piezas">Piezas</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
             <li><a href="#estudio">Estudio</a></li>
-            <li><a href="#">Sponsors</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -93,7 +93,49 @@
                 </div>
             </div>
         </section>
+        
+        <section id="sponsors" class="seccion-sponsors">
+            <h2 class="sponsors-titulo">Nuestros Colaboradores Premium</h2>
+            <p class="sponsors-subtitulo">Una red de profesionales que garantizan la calidad superior de cada obra.</p>
 
+            <div class="sponsors-container-interactivo">
+
+                <div class="sponsor-interactivo-card">
+                    <a href="https://www.instagram.com/tau_tau_supplies/" target="_blank" rel="noopener noreferrer">
+                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/tautau.png');"></div>
+                        <div class="sponsor-info">
+                            <h3>@tau_tau_supplies</h3>
+                            <p>Suministros de Tatuaje</p>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sponsor-interactivo-card">
+                    <a href="https://www.instagram.com/jarana/" target="_blank" rel="noopener noreferrer">
+                        <div class="sponsor-imagen" style="background-image: url('Imagenes/image.png');"></div>
+                        <div class="sponsor-info">
+                            <h3>@jarana</h3>
+                            <p>Artistas Invitados & Equipos</p>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sponsor-interactivo-card">
+                    <a href="https://www.instagram.com/sunninkofficial/" target="_blank" rel="noopener noreferrer">
+                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/sunnik.png');"></div>
+                        <div class="sponsor-info">
+                            <h3>@sunninkofficial</h3>
+                            <p>Productos Exclusivos para Tinta</p>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
         <section id="estudio" class="mapa-horario">
 
             <h2 class="artista-titulo">El Estudio</h2>
@@ -158,7 +200,7 @@
             </ul>
         </div>
 
- 
+
 
         <div class="footer-col footer-social">
             <h3 class="footer-title">Síguenos En</h3>
@@ -179,8 +221,8 @@
         </div>
     </footer>
 
-    <div id="modalGaleria" class="modal">  
-        <span class="cerrar" id="cerrarModal">×</span>
+    <div id="modalGaleria" class="modal">
+        <span class="cerrar" id="cerrarModal">x</span>
         <img class="modal-contenido" id="imgModal">
         <div id="captionModal"></div>
     </div>
@@ -324,6 +366,23 @@
             }
 
             filterPieces('todos');
+
+            /* --- CÓDIGO NUEVO: Efecto de parpadeo (blink) para el badge de WhatsApp --- */
+            const whatsappBadge = document.querySelector('.whatsapp-float .badge');
+            
+            // Función para alternar la visibilidad del badge
+            function toggleBadgeVisibility() {
+                // Usamos className para alternar una clase CSS que controla la opacidad/visibilidad
+                whatsappBadge.classList.toggle('active');
+            }
+
+            // Iniciamos el intervalo: llama a toggleBadgeVisibility cada 5000 milisegundos (5 segundos)
+            if (whatsappBadge) {
+                // En lugar de manipular el estilo directamente, alternamos la clase 'active'
+                setInterval(toggleBadgeVisibility, 5000); 
+            }
+            /* -------------------------------------------------------------------------- */
+
         });
     </script>
 
