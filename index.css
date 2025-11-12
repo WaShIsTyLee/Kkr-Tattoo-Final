@@ -516,7 +516,10 @@ body {
 .jarana-ajuste {
     background-size: 80%;
 }
-
+.tautau-ajuste {
+    background-size: 70%; 
+    background-repeat: no-repeat;
+}
 .sponsor-interactivo-card:hover .sponsor-imagen {
     filter: grayscale(0%) brightness(1);
 }
