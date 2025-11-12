@@ -514,7 +514,7 @@ body {
     transition: filter 0.5s ease-in-out;
 }
 .jarana-ajuste {
-    background-position: center 20%; 
+    background-size: 80%;
 }
 
 .sponsor-interactivo-card:hover .sponsor-imagen {
