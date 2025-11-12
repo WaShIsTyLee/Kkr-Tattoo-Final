@@ -13,6 +13,7 @@
 
 <body>
 
+    <!-- TODO Navegación Principal -->
     <nav class="main-nav">
 
         <div class="nav-logo">
@@ -34,14 +35,17 @@
         </ul>
     </nav>
 
+    <!-- TODO Header Principal -->
     <section class="marble_header">
         <div class="header-content">
-            <h1>Especialistas en Blackwork y Realismo</h1>
+            <h1>Especialista en Realismo y Surrealismo</h1>
         </div>
     </section>
 
+    <!-- TODO Contenido Principal -->
     <div class="content-background">
 
+        <!-- TODO Sección Artista -->
         <section id="artista" class="artista">
             <p class="artista-titulo">ARTISTA</p>
 
@@ -67,6 +71,7 @@
             </div>
         </section>
 
+        <!--TODO Seccion Piezas-->
         <section id="piezas" class="seccion-piezas">
             <p class="piezas-titulo">PIEZAS</p>
 
@@ -93,7 +98,8 @@
                 </div>
             </div>
         </section>
-        
+
+        <!--TODO Seccion Sponsors-->
         <section id="sponsors" class="seccion-sponsors">
             <h2 class="sponsors-titulo">Nuestros Colaboradores Premium</h2>
             <p class="sponsors-subtitulo">Una red de profesionales que garantizan la calidad superior de cada obra.</p>
@@ -102,7 +108,8 @@
 
                 <div class="sponsor-interactivo-card">
                     <a href="https://www.instagram.com/tau_tau_supplies/" target="_blank" rel="noopener noreferrer">
-                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/sunnik.png');"></div>
+                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/tautau.png');">
+                        </div>
                         <div class="sponsor-info">
                             <h3>@tau_tau_supplies</h3>
                             <p>Suministros de Tatuaje</p>
@@ -113,7 +120,9 @@
 
                 <div class="sponsor-interactivo-card">
                     <a href="https://www.instagram.com/jarana/" target="_blank" rel="noopener noreferrer">
-                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/sunnik.png');"></div>
+                        <div class="sponsor-imagen jarana-ajuste"
+                            style="background-image: url('Imagenes/Sponsors/jarana.png');">
+                        </div>
                         <div class="sponsor-info">
                             <h3>@jarana</h3>
                             <p>Artistas Invitados & Equipos</p>
@@ -124,7 +133,8 @@
 
                 <div class="sponsor-interactivo-card">
                     <a href="https://www.instagram.com/sunninkofficial/" target="_blank" rel="noopener noreferrer">
-                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/sunnik.png');"></div>
+                        <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/sunnik.png');">
+                        </div>
                         <div class="sponsor-info">
                             <h3>@sunninkofficial</h3>
                             <p>Productos Exclusivos para Tinta</p>
@@ -135,7 +145,8 @@
 
             </div>
         </section>
-        
+
+        <!--TODO Seccion Estudio contiene Mapa y Horario-->
         <section id="estudio" class="mapa-horario">
 
             <h2 class="artista-titulo">El Estudio</h2>
@@ -181,6 +192,7 @@
 
     </div>
 
+    <!--TODO Seccion Footer Contacto-->
     <footer id="contacto" class="main-footer">
         <div class="footer-col footer-about">
             <h3 class="footer-title">KKR.TATTOO</h3>
@@ -221,12 +233,14 @@
         </div>
     </footer>
 
+    <!-- TODO Modal Galería de Piezas (La imagen en grande con la X para cerrar) -->
     <div id="modalGaleria" class="modal">
         <span class="cerrar" id="cerrarModal">x</span>
         <img class="modal-contenido" id="imgModal">
         <div id="captionModal"></div>
     </div>
 
+    <!-- TODO Botón Flotante de WhatsApp -->
     <div class="whatsapp-float">
         <a href="https://api.whatsapp.com/send?phone=34606732394" target="_blank" title="Escríbenos por WhatsApp">
             <i class="fab fa-whatsapp"></i>
@@ -366,22 +380,14 @@
             }
 
             filterPieces('todos');
-
-            /* --- CÓDIGO NUEVO: Efecto de parpadeo (blink) para el badge de WhatsApp --- */
             const whatsappBadge = document.querySelector('.whatsapp-float .badge');
-            
-            // Función para alternar la visibilidad del badge
+
             function toggleBadgeVisibility() {
-                // Usamos className para alternar una clase CSS que controla la opacidad/visibilidad
                 whatsappBadge.classList.toggle('active');
             }
-
-            // Iniciamos el intervalo: llama a toggleBadgeVisibility cada 5000 milisegundos (5 segundos)
             if (whatsappBadge) {
-                // En lugar de manipular el estilo directamente, alternamos la clase 'active'
-                setInterval(toggleBadgeVisibility, 5000); 
+                setInterval(toggleBadgeVisibility, 5000);
             }
-            /* -------------------------------------------------------------------------- */
 
         });
     </script>

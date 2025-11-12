@@ -1,6 +1,9 @@
+/* ================================================= */
+/* 01. GENERAL Y RESET */
+/* ================================================= */
+
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
-/* RESET BÁSICO */
 body,
 h1,
 h2,
@@ -22,9 +25,9 @@ body {
     line-height: 1.6;
 }
 
-/* -------------------------------------- */
-/* ESTILOS DE LA BARRA DE NAVEGACIÓN (.main-nav) */
-/* -------------------------------------- */
+/** ================================================= */
+/** 02. NAVEGACIÓN (NAV) Y MENÚ MÓVIL */
+/** ================================================= */
 
 .main-nav {
     background-color: transparent;
@@ -48,6 +51,15 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+.nav-logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -62,15 +74,6 @@ body {
     display: block;
     position: relative;
     transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
-}
-
-.nav-logo a {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .nav-links a::after {
@@ -99,6 +102,7 @@ body {
     box-shadow: 0 0 10px rgba(239, 184, 16, 0.8), 0 0 20px rgba(239, 184, 16, 0.5);
 }
 
+/** Estilos para el botón de menú hamburguesa (Móvil) */
 .menu-toggle {
     display: none;
     background: none;
@@ -116,9 +120,10 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* -------------------------------------- */
-/* ESTILOS DEL HEADER CON IMAGEN DE FONDO */
-/* -------------------------------------- */
+
+/** ================================================= */
+/** 03. ENCABEZADO PRINCIPAL (HEADER) */
+/** ================================================= */
 
 .marble_header {
     padding-top: 60px;
@@ -145,9 +150,9 @@ body {
     font-size: 3em;
 }
 
-/* -------------------------------------- */
-/* CONTENEDOR DE FONDO POST-HEADER */
-/* -------------------------------------- */
+/** ================================================= */
+/** 04. FONDO DEL CONTENIDO (BODY MARBLE) */
+/** ================================================= */
 
 .content-background {
     background-image: url("Imagenes/Body/body_withe_marble.jpg");
@@ -158,9 +163,9 @@ body {
     min-height: 50vh;
 }
 
-/* -------------------------------------- */
-/* ESTILOS DE LA SECCIÓN ARTISTA (.artista) */
-/* -------------------------------------- */
+/** ================================================= */
+/** 05. SECCIÓN ARTISTA (#artista) */
+/** ================================================= */
 
 .artista {
     text-align: center;
@@ -246,193 +251,10 @@ body {
     color: #555;
 }
 
-/* -------------------------------------- */
-/* ESTILOS DE LA SECCIÓN MAPA Y HORARIO (.mapa-horario) - Fondo Blanco de Mármol */
-/* -------------------------------------- */
 
-.mapa-horario {
-    padding: 60px 20px;
-    text-align: center;
-    background-image: none;
-    background-color: transparent;
-    background-attachment: scroll;
-}
-
-.estudio-titulo {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #333;
-}
-
-.imagenestudio {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.mapa,
-.horario {
-    flex: 1;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: left;
-}
-
-.mapa h3 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.mapa p {
-    margin-bottom: 10px;
-}
-
-.horario h3 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.horario ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.horario li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #eee;
-    color: #555;
-    font-size: 1.1em;
-}
-
-.horario li:last-child {
-    border-bottom: none;
-}
-
-.horario strong {
-    color: #333;
-    display: inline-block;
-    min-width: 80px;
-}
-
-.horario em {
-    display: block;
-    margin-top: 15px;
-    font-size: 0.9em;
-    color: #888;
-}
-
-/* -------------------------------------- */
-/* ESTILOS DE WHATSAPP FLOTANTE */
-/* -------------------------------------- */
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-    animation: floatAnimation 2.5s ease-in-out infinite;
-}
-
-.whatsapp-float a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 55px;
-    height: 55px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    font-size: 28px;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-    position: relative;
-}
-
-.whatsapp-float a:hover {
-    transform: scale(1.1) translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-}
-
-.whatsapp-float a[title]:hover::before {
-    content: attr(title);
-    position: absolute;
-    right: 65px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #efb810;
-    color: black;
-    padding: 6px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-    font-size: 14px;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* --- ESTILOS DE BADGE ACTUALIZADOS PARA EL PARPADEO --- */
-.whatsapp-float .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #ff0000; /* Rojo de notificación */
-    color: white;
-    border: 2px solid white;
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    z-index: 10;
-    
-    /* Propiedad clave para la animación suave */
-    transition: opacity 0.5s ease-in-out; 
-}
-
-/* Estado activo: Visible (el JavaScript lo alterna cada 5s) */
-.whatsapp-float .badge.active {
-    opacity: 1; 
-}
-
-/* Estado inactivo: Oculto (el JavaScript lo usa cuando quita la clase 'active') */
-.whatsapp-float .badge:not(.active) {
-    opacity: 0; 
-}
-/* ----------------------------------------------------- */
-
-@keyframes floatAnimation {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-/* ==================================== */
-/* === ESTILOS SECCIÓN PIEZAS (GALERÍA) === */
-/* ==================================== */
+/** ================================================= */
+/** 06. SECCIÓN GALERÍA DE PIEZAS (#piezas) Y MODAL */
+/** ================================================= */
 
 .seccion-piezas {
     padding: 60px 20px;
@@ -450,6 +272,7 @@ body {
     text-transform: uppercase;
 }
 
+/** --- Botones de Filtro --- */
 .filtro-botones {
     margin-bottom: 40px;
     display: flex;
@@ -482,7 +305,7 @@ body {
     transform: translateY(-2px);
 }
 
-
+/** --- Galería --- */
 .galeria-piezas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
@@ -533,10 +356,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ==================================== */
-/* === ESTILOS MODAL (Galería en grande) === */
-/* ==================================== */
-
+/** --- Modal de Imagen --- */
 .modal {
     display: none; 
     position: fixed;
@@ -606,9 +426,222 @@ body {
     }
 }
 
-/* ====================================== */
-/* 🌟 FOOTER 🌟 */
-/* ====================================== */
+
+/** ================================================= */
+/** 07. SECCIÓN SPONSORS (#sponsors) */
+/** ================================================= */
+
+  .seccion-sponsors {
+      padding: 60px 0;
+      text-align: center;
+      color: #333; 
+      overflow: hidden;
+      background-image: url('Imagenes/Fondos/marmol_blanco.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; 
+  }
+
+.sponsors-titulo {
+    font-size: 2.5rem;
+    color: #333; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sponsors-subtitulo {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #555; 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.sponsors-container-interactivo {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 400px; 
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+.sponsor-interactivo-card {
+    flex-grow: 1; 
+    flex-basis: 33.33%; 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex-grow 0.5s ease-in-out; 
+    border-right: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+.sponsor-interactivo-card:last-child {
+    border-right: none;
+}
+
+.sponsors-container-interactivo:hover .sponsor-interactivo-card {
+    flex-grow: 1; 
+}
+
+.sponsors-container-interactivo .sponsor-interactivo-card:hover {
+    flex-grow: 3; 
+}
+
+.sponsor-interactivo-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    z-index: 5;
+}
+
+.sponsor-imagen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    filter: grayscale(100%) brightness(0.9); 
+    transition: filter 0.5s ease-in-out;
+}
+.jarana-ajuste {
+    background-position: center 20%; 
+}
+
+.sponsor-interactivo-card:hover .sponsor-imagen {
+    filter: grayscale(0%) brightness(1);
+}
+
+.sponsor-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5));
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    text-align: left;
+    transform: translateY(100%); 
+    transition: transform 0.5s ease-in-out;
+    z-index: 10; 
+}
+
+.sponsor-interactivo-card:hover .sponsor-info {
+    transform: translateY(0); 
+}
+
+.sponsor-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #efb810; 
+    font-weight: 700; 
+}
+
+.sponsor-info p {
+    margin: 5px 0 10px 0;
+    font-size: 0.9rem;
+    color: #fff; 
+}
+
+.sponsor-info .fab.fa-instagram {
+    font-size: 1.8rem;
+    color: white;
+}
+
+
+/** ================================================= */
+/** 08. SECCIÓN ESTUDIO (#estudio / .mapa-horario) */
+/** ================================================= */
+
+.mapa-horario {
+    padding: 60px 20px;
+    text-align: center;
+    background-image: none;
+    background-color: transparent;
+    background-attachment: scroll;
+}
+
+.estudio-titulo {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.imagenestudio {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mapa,
+.horario {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.mapa h3, .horario h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.mapa p {
+    margin-bottom: 10px;
+}
+
+.horario ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horario li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.horario li:last-child {
+    border-bottom: none;
+}
+
+.horario strong {
+    color: #333;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.horario em {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/** ================================================= */
+/** 09. FOOTER Y CONTACTO (#contacto) */
+/** ================================================= */
 
 .main-footer {
     position: relative;
@@ -639,18 +672,7 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
-.footer-col.footer-links {
-    text-align: center; 
-}
-.footer-col.footer-links ul {
-    display: inline-block;
-    text-align: left; 
-}
 
-.footer-col.footer-links li {
-
-    justify-content: flex-start; 
-}
 .footer-col {
     width: 23%;
     margin-bottom: 30px;
@@ -738,193 +760,119 @@ body {
     opacity: 0.7;
 }
 
-/* --- Sección Sponsors Interactiva (Fondo Mármol Blanco) --- */
-
-.seccion-sponsors {
-    padding: 60px 0;
-    text-align: center;
-    color: #333; /* Texto principal oscuro para contrastar con el fondo blanco */
-    overflow: hidden;
-    
-    /* FONDO DE MÁRMOL BLANCO */
-    /* **IMPORTANTE:** Reemplaza 'Imagenes/Fondos/marmol_blanco.jpg' con la ruta correcta de tu imagen de fondo. */
-    background-image: url('Imagenes/Fondos/marmol_blanco.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
+/** Estilos específicos para alineación en móviles */
+.footer-col.footer-links {
+    text-align: center; 
+}
+.footer-col.footer-links ul {
+    display: inline-block;
+    text-align: left; 
+}
+.footer-col.footer-links li {
+    justify-content: flex-start; 
 }
 
-.sponsors-titulo {
-    font-size: 2.5rem;
-    color: #333; /* Título oscuro */
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+/** ================================================= */
+/** 10. ELEMENTOS FLOTANTES (WHATSAPP) Y ANIMACIONES */
+/** ================================================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    animation: floatAnimation 2.5s ease-in-out infinite;
 }
 
-.sponsors-subtitulo {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    color: #555; /* Subtítulo gris oscuro */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-}
-
-.sponsors-container-interactivo {
+.whatsapp-float a {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    min-height: 400px; /* Altura mínima para mostrar las imágenes */
-    padding: 0 10px;
-    /* Damos un color sólido a los contenedores para distinguirlos del fondo de mármol */
-    background-color: rgba(0, 0, 0, 0.05); /* Ligeramente gris transparente sobre el mármol */
-}
-
-.sponsor-interactivo-card {
-    flex-grow: 1; /* Todos crecen por igual inicialmente */
-    flex-basis: 33.33%; 
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    /* Transición CLAVE para el efecto de crecimiento */
-    transition: flex-grow 0.5s ease-in-out; 
-    border-right: 1px solid rgba(0, 0, 0, 0.1); /* Separador sutil */
-}
-
-.sponsor-interactivo-card:last-child {
-    border-right: none;
-}
-
-/* 🔄 Efecto de Expansión y Contracción */
-.sponsors-container-interactivo:hover .sponsor-interactivo-card {
-    flex-grow: 1; 
-}
-
-.sponsors-container-interactivo .sponsor-interactivo-card:hover {
-    flex-grow: 3; 
-}
-
-
-/* Estilos para la imagen de fondo */
-.sponsor-imagen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    /* MODIFICADO: Usa 'contain' para que la imagen se ajuste completamente */
-    background-size: contain; 
-    
-    /* MANTENIDO: Usa 'no-repeat' para evitar que se repita la imagen */
-    background-repeat: no-repeat;
-    
-    background-position: center; /* Centra la imagen dentro del contenedor */
-    filter: grayscale(100%) brightness(0.9); 
-    transition: filter 0.5s ease-in-out;
-}
-/* Efecto al hacer hover: color */
-.sponsor-interactivo-card:hover .sponsor-imagen {
-    filter: grayscale(0%) brightness(1);
-}
-
-/* Estilos para el texto (Ajuste para contraste) */
-.sponsor-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    /* MODIFICADO: Fondo más oscuro para que el texto dorado/blanco resalte */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5));
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra de texto añadida */
-    text-align: left;
-    transform: translateY(100%); 
-    transition: transform 0.5s ease-in-out;
-    z-index: 10; 
-}
-
-.sponsor-interactivo-card:hover .sponsor-info {
-    transform: translateY(0); 
-}
-
-.sponsor-info h3 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #efb810; /* Color dorado/amarillo */
-    font-weight: 700; /* Ligeramente más grueso para resaltar */
-}
-
-.sponsor-info p {
-    margin: 5px 0 10px 0;
-    font-size: 0.9rem;
-    color: #fff; /* Texto en blanco */
-}
-
-.sponsor-info .fab.fa-instagram {
-    font-size: 1.8rem;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
     color: white;
-}
-
-.sponsor-interactivo-card a {
-    display: block;
-    width: 100%;
-    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    font-size: 28px;
     text-decoration: none;
-    color: white;
+    transition: transform 0.3s ease;
     position: relative;
-    z-index: 5;
 }
 
-/* Media Query para dispositivos pequeños */
+.whatsapp-float a:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.whatsapp-float a[title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    right: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #efb810;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff0000; 
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.whatsapp-float .badge.active {
+    opacity: 1; 
+}
+
+.whatsapp-float .badge:not(.active) {
+    opacity: 0; 
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/** ================================================= */
+/** 11. MEDIA QUERIES (RESPONSIVIDAD) */
+/** ================================================= */
+
+/** --- Estilos para pantallas pequeñas (General) --- */
 @media (max-width: 768px) {
-    .sponsors-container-interactivo {
-        flex-direction: column;
-        min-height: auto;
-    }
-    .sponsor-interactivo-card {
-        flex-basis: 200px; 
-        flex-grow: 1;
-        border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .sponsor-imagen {
-        filter: grayscale(0%) brightness(1); 
-    }
-    .sponsor-info {
-        transform: translateY(0);
-        /* Oscurecemos completamente el fondo en móvil para legibilidad total */
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
-    }
-}
-
-/* ====================================== */
-/* 🌟 MEDIA QUERY PARA MÓVILES (Max-width: 768px) */
-/* ====================================== */
-
-@media (max-width: 1100px) {
-    .footer-col {
-        width: 48%;
-    }
-}
-
-@media (max-width: 600px) {
-    .main-footer {
-        padding: 40px 10%;
-    }
-    .footer-col {
-        width: 100%;
-        min-width: auto;
-        margin-bottom: 25px;
-    }
-    .footer-brand {
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 768px) {
+    
+    /** NAV y Menú Móvil */
     .marble_header {
         padding-top: 50px;
         height: 550px;
@@ -932,32 +880,6 @@ body {
 
     .header-content h1 {
         font-size: 2em;
-    }
-
-    .mapa-horario {
-        padding: 30px 10px;
-    }
-
-    .imagenestudio {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .mapa,
-    .horario {
-        width: 100%;
-        max-width: none;
-        padding: 15px;
-    }
-
-    .horario li {
-        font-size: 1em;
-        padding: 8px 0;
-    }
-
-    .horario strong {
-        font-size: 1em; /* Asegurar que no se reduzca más */
     }
 
     .main-nav {
@@ -1030,6 +952,7 @@ body {
         background: #efb810;
     }
 
+    /** Sección Artista */
     .artista {
         padding: 20px 0;
     }
@@ -1080,7 +1003,8 @@ body {
     .artista-historia-card p {
         font-size: 1em;
     }
-
+    
+    /** Galería Modal */
     .modal-contenido {
         width: 100%;
     }
@@ -1088,5 +1012,71 @@ body {
         top: 10px;
         right: 20px;
         font-size: 30px;
+    }
+
+    /** Sección Estudio */
+    .mapa-horario {
+        padding: 30px 10px;
+    }
+
+    .imagenestudio {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .mapa,
+    .horario {
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+    }
+
+    .horario li {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    .horario strong {
+        font-size: 1em; 
+    }
+
+    /** Sección Sponsors */
+    .sponsors-container-interactivo {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .sponsor-interactivo-card {
+        flex-basis: 200px; 
+        flex-grow: 1;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .sponsor-imagen {
+        filter: grayscale(0%) brightness(1); 
+    }
+    .sponsor-info {
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
+    }
+
+    /** Footer */
+    .main-footer {
+        padding: 40px 10%;
+    }
+    .footer-col {
+        width: 100%;
+        min-width: auto;
+        margin-bottom: 25px;
+    }
+    .footer-brand {
+        margin-top: 10px;
+    }
+}
+
+/** --- Estilos para Footer en Tablet/Desktop (ajuste de columnas) --- */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .footer-col {
+        width: 48%; 
     }
 }
