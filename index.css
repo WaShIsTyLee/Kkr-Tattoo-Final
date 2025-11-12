@@ -25,9 +25,26 @@ body {
     line-height: 1.6;
 }
 
-/** ================================================= */
-/** 02. NAVEGACIÓN (NAV) Y MENÚ MÓVIL */
-/** ================================================= */
+/* --- TÍTULOS DE SECCIÓN UNIFICADOS --- */
+.artista-titulo, 
+.piezas-titulo, 
+.estudio-titulo, 
+.sponsors-titulo {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 30px; /* Espacio debajo del título */
+    font-size: 2.5em; /* Tamaño unificado */
+    font-weight: 800; /* Negrita */
+    text-transform: uppercase;
+    color: #333; /* Color negro oscuro unificado */
+    letter-spacing: 2px;
+    font-family: Arial, sans-serif; 
+}
+/* -------------------------------------- */
+
+/* ================================================= */
+/* 02. NAVEGACIÓN (NAV) Y MENÚ MÓVIL */
+/* ================================================= */
 
 .main-nav {
     background-color: transparent;
@@ -121,9 +138,9 @@ body {
 }
 
 
-/** ================================================= */
-/** 03. ENCABEZADO PRINCIPAL (HEADER) */
-/** ================================================= */
+/* ================================================= */
+/* 03. ENCABEZADO PRINCIPAL (HEADER) */
+/* ================================================= */
 
 .marble_header {
     padding-top: 60px;
@@ -150,9 +167,9 @@ body {
     font-size: 3em;
 }
 
-/** ================================================= */
-/** 04. FONDO DEL CONTENIDO (BODY MARBLE) */
-/** ================================================= */
+/* ================================================= */
+/* 04. FONDO DEL CONTENIDO (BODY MARBLE) */
+/* ================================================= */
 
 .content-background {
     background-image: url("Imagenes/Body/body_withe_marble.jpg");
@@ -163,9 +180,9 @@ body {
     min-height: 50vh;
 }
 
-/** ================================================= */
-/** 05. SECCIÓN ARTISTA (#artista) */
-/** ================================================= */
+/* ================================================= */
+/* 05. SECCIÓN ARTISTA (#artista) */
+/* ================================================= */
 
 .artista {
     text-align: center;
@@ -173,15 +190,7 @@ body {
     background-color: transparent;
 }
 
-.artista-titulo {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #333;
-}
+/* .artista-titulo se define en la Sección 01 */
 
 .artista-contenido {
     display: flex;
@@ -252,9 +261,9 @@ body {
 }
 
 
-/** ================================================= */
-/** 06. SECCIÓN GALERÍA DE PIEZAS (#piezas) Y MODAL */
-/** ================================================= */
+/* ================================================= */
+/* 06. SECCIÓN GALERÍA DE PIEZAS (#piezas) Y MODAL */
+/* ================================================= */
 
 .seccion-piezas {
     padding: 60px 20px;
@@ -263,14 +272,7 @@ body {
     min-height: 80vh;
 }
 
-.piezas-titulo {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 40px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-}
+/* .piezas-titulo se define en la Sección 01 */
 
 /** --- Botones de Filtro --- */
 .filtro-botones {
@@ -427,28 +429,22 @@ body {
 }
 
 
-/** ================================================= */
-/** 07. SECCIÓN SPONSORS (#sponsors) */
-/** ================================================= */
+/* ================================================= */
+/* 07. SECCIÓN SPONSORS (#sponsors) */
+/* ================================================= */
 
-  .seccion-sponsors {
-      padding: 60px 0;
-      text-align: center;
-      color: #333; 
-      overflow: hidden;
-      background-image: url('Imagenes/Fondos/marmol_blanco.jpg'); 
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed; 
-  }
-
-.sponsors-titulo {
-    font-size: 2.5rem;
+.seccion-sponsors {
+    padding: 60px 0;
+    text-align: center;
     color: #333; 
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    overflow: hidden;
+    background-image: url('Imagenes/Fondos/marmol_blanco.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
 }
+
+/* .sponsors-titulo se define en la Sección 01 */
 
 .sponsors-subtitulo {
     font-size: 1.1rem;
@@ -507,19 +503,24 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-size: cover; 
+    background-size: cover; /* Configuración base */
     background-repeat: no-repeat;
     background-position: center; 
     filter: grayscale(100%) brightness(0.9); 
     transition: filter 0.5s ease-in-out;
 }
+
+/* --- AJUSTES ESPECÍFICOS DE IMAGEN --- */
 .jarana-ajuste {
     background-size: 80%;
+    background-position: center; /* Baja la imagen de Jarana */
 }
 .tautau-ajuste {
     background-size: 70%; 
     background-repeat: no-repeat;
 }
+/* -------------------------------------- */
+
 .sponsor-interactivo-card:hover .sponsor-imagen {
     filter: grayscale(0%) brightness(1);
 }
@@ -561,9 +562,9 @@ body {
 }
 
 
-/** ================================================= */
-/** 08. SECCIÓN ESTUDIO (#estudio / .mapa-horario) */
-/** ================================================= */
+/* ================================================= */
+/* 08. SECCIÓN ESTUDIO (#estudio / .mapa-horario) */
+/* ================================================= */
 
 .mapa-horario {
     padding: 60px 20px;
@@ -573,15 +574,7 @@ body {
     background-attachment: scroll;
 }
 
-.estudio-titulo {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #333;
-}
+/* .estudio-titulo se define en la Sección 01 */
 
 .imagenestudio {
     display: flex;
@@ -642,9 +635,9 @@ body {
     color: #888;
 }
 
-/** ================================================= */
-/** 09. FOOTER Y CONTACTO (#contacto) */
-/** ================================================= */
+/* ================================================= */
+/* 09. FOOTER Y CONTACTO (#contacto) */
+/* ================================================= */
 
 .main-footer {
     position: relative;
@@ -776,9 +769,9 @@ body {
 }
 
 
-/** ================================================= */
-/** 10. ELEMENTOS FLOTANTES (WHATSAPP) Y ANIMACIONES */
-/** ================================================= */
+/* ================================================= */
+/* 10. ELEMENTOS FLOTANTES (WHATSAPP) Y ANIMACIONES */
+/* ================================================= */
 
 .whatsapp-float {
     position: fixed;
@@ -868,9 +861,9 @@ body {
 }
 
 
-/** ================================================= */
-/** 11. MEDIA QUERIES (RESPONSIVIDAD) */
-/** ================================================= */
+/* ================================================= */
+/* 11. MEDIA QUERIES (RESPONSIVIDAD) */
+/* ================================================= */
 
 /** --- Estilos para pantallas pequeñas (General) --- */
 @media (max-width: 768px) {
@@ -960,7 +953,10 @@ body {
         padding: 20px 0;
     }
 
-    .artista-titulo {
+    .artista-titulo,
+    .piezas-titulo,
+    .sponsors-titulo,
+    .estudio-titulo {
         font-size: 1.8em;
         margin-bottom: 20px;
     }
@@ -1062,6 +1058,7 @@ body {
         transform: translateY(0);
         background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
     }
+    /* El ajuste de sponsors se hereda bien */
 
     /** Footer */
     .main-footer {
