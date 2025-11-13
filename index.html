@@ -13,21 +13,17 @@
 
 <body>
 
-    <!-- TODO Navegación Principal -->
     <nav class="main-nav">
-
         <div class="nav-logo">
             <a href="#">
                 <img src="/Imagenes/Header_background/titulo.png" alt="KKR Tattoo Logo" class="logo-img">
             </a>
         </div>
-
         <button class="menu-toggle" aria-label="Toggle navigation" id="menuToggle">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
-
         <ul class="nav-links" id="navLinks">
             <li><a href="#artista">Artista</a></li>
             <li><a href="#piezas">Piezas</a></li>
@@ -37,27 +33,22 @@
         </ul>
     </nav>
 
-    <!-- TODO Header Principal -->
     <section class="marble_header">
         <div class="header-content">
             <h1>Especialista en Realismo y Surrealismo</h1>
         </div>
-
         <ul class="social header-social-list">
-
             <li data-tooltip="Instagram"
                 style="--bg: linear-gradient(-45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)">
                 <a href="https://www.instagram.com/kkr.tattoo/" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
             </li>
-
             <li data-tooltip="Facebook" style="--bg: #1877F2">
                 <a href="https://www.facebook.com/Juangutierrez.kkr13/?locale=es_ES" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </li>
-
             <li data-tooltip="TikTok" style="--bg: #000000">
                 <a href="https://www.tiktok.com/@kkrtattoo" aria-label="TikTok">
                     <i class="fab fa-tiktok"></i>
@@ -66,20 +57,15 @@
         </ul>
     </section>
 
-    <!-- TODO Contenido Principal -->
     <div class="content-background">
 
-        <!-- TODO Sección Artista -->
         <section id="artista" class="artista">
             <p class="artista-titulo">ARTISTA</p>
-
             <div class="artista-contenido">
-
                 <div class="artista-info-izquierda">
                     <img src="Imagenes/Perfil/Juan.jpg" alt="Foto de Juan Gutierrez">
                     <p class="artista-nombre">Juan Gutierrez</p>
                 </div>
-
                 <div class="artista-historia-card">
                     <h3>Trayectoria y Estilo</h3>
                     <p>Juan Gutiérrez <i>especialista en Realismo y Surrealismo</i>, con más de 8 años de
@@ -91,41 +77,110 @@
                     <p>Si buscas una pieza que combine la elegancia del blanco y negro con la profundidad del
                         hiperrealismo, Juan es el artista ideal para tu proyecto.</p>
                 </div>
-
             </div>
         </section>
 
-        <!--TODO Seccion Piezas-->
         <section id="piezas" class="seccion-piezas">
             <p class="piezas-titulo">PIEZAS</p>
 
             <div class="filtro-botones">
-                <button class="filtro-btn active" data-filter="todos">Todos</button>
+                <button class="filtro-btn active" data-filter="all">Todos</button>
                 <button class="filtro-btn" data-filter="realismo">Realismo</button>
                 <button class="filtro-btn" data-filter="surrealismo">Surrealismo</button>
-                <button class="filtro-btn" data-filter="blackwork">Blackwork</button>
-                <button class="filtro-btn" data-filter="anime">Ejemplo</button>
+                <button class="filtro-btn" data-filter="retrato">Retrato</button>
+                <button class="filtro-btn" data-filter="animales">Animales</button>
             </div>
 
             <div class="galeria-piezas">
-                <div class="pieza-card realismo blackwork">
-                    <img src="Imagenes/Tatuajes/Imagen1Album1.jpg" alt="Tatuaje que combina Realismo y Blackwork">
-                    <p class="card-caption">Realismo y Contraste</p>
+                
+                <div class="pieza-card" data-category="retrato">
+                    <img src="Imagenes/Tatuajes/Imagen_01_ejemplo.jpg" alt="Retrato 1">
+                    <div class="card-caption">Retrato Realista I</div>
                 </div>
-                <div class="pieza-card surrealismo">
-                    <img src="Imagenes/Tatuajes/Imagen2Album1.jpg" alt="Tatuaje Surrealista, Ojo con Elementos">
-                    <p class="card-caption">Composición Surrealista</p>
+
+                <div class="pieza-card" data-category="animales">
+                    <img src="Imagenes/Tatuajes/Imagen_02_ejemplo.jpg" alt="Animales 1">
+                    <div class="card-caption">Lobo Blanco</div>
                 </div>
-                <div class="pieza-card anime">
-                    <img src="Imagenes/Tatuajes/Anime-01.jpg" alt="Tatuaje Ejemplo">
-                    <p class="card-caption">Tatto de Ejemplo</p>
+
+                <div class="pieza-card" data-category="surrealismo">
+                    <img src="Imagenes/Tatuajes/Imagen_03_ejemplo.jpg" alt="Surrealismo 1">
+                    <div class="card-caption">Reloj de Arena Surreal</div>
                 </div>
+
+                <div class="pieza-card" data-category="realismo">
+                    <img src="Imagenes/Tatuajes/Imagen_04_ejemplo.jpg" alt="Realismo 2">
+                    <div class="card-caption">Realismo Fino</div>
+                </div>
+
+                <div class="pieza-card" data-category="retrato">
+                    <img src="Imagenes/Tatuajes/Imagen_05_ejemplo.jpg" alt="Retrato con Elementos">
+                    <div class="card-caption">Retrato con Elementos</div>
+                </div>
+
+                <div class="pieza-card" data-category="animales">
+                    <img src="Imagenes/Tatuajes/Imagen_06_ejemplo.jpg" alt="Animales 2">
+                    <div class="card-caption">Pantera Negra</div>
+                </div>
+
+                <div class="pieza-card" data-category="realismo">
+                    <img src="Imagenes/Tatuajes/Imagen_07_ejemplo.jpg" alt="Realismo 3">
+                    <div class="card-caption">Composición Oscura</div>
+                </div>
+
+                <div class="pieza-card" data-category="surrealismo">
+                    <img src="Imagenes/Tatuajes/Imagen_08_ejemplo.jpg" alt="Surrealismo Animal">
+                    <div class="card-caption">Ojo con Águila</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="retrato">
+                    <img src="Imagenes/Tatuajes/Imagen_09_ejemplo.jpg" alt="Retrato 2">
+                    <div class="card-caption">Retrato de Figura Clásica</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="realismo">
+                    <img src="Imagenes/Tatuajes/Imagen_10_ejemplo.jpg" alt="Realismo 4">
+                    <div class="card-caption">Estampa de Batalla</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="surrealismo">
+                    <img src="Imagenes/Tatuajes/Imagen_11_ejemplo.jpg" alt="Surrealismo 2">
+                    <div class="card-caption">Mano y Llama</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="animales">
+                    <img src="Imagenes/Tatuajes/Imagen_12_ejemplo.jpg" alt="Animales 3">
+                    <div class="card-caption">Búho en Vuelo</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="realismo">
+                    <img src="Imagenes/Tatuajes/Imagen_13_ejemplo.jpg" alt="Realismo 5">
+                    <div class="card-caption">Retrato con Geometría</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="surrealismo">
+                    <img src="Imagenes/Tatuajes/Imagen_14_ejemplo.jpg" alt="Surrealismo 3">
+                    <div class="card-caption">Paisaje Onírico</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="animales">
+                    <img src="Imagenes/Tatuajes/Imagen_15_ejemplo.jpg" alt="Animales 4">
+                    <div class="card-caption">Tigre y Humo</div>
+                </div>
+
+                <div class="pieza-card hidden-initial" data-category="retrato">
+                    <img src="Imagenes/Tatuajes/Imagen_16_ejemplo.jpg" alt="Retrato 4">
+                    <div class="card-caption">Retrato con Textura</div>
+                </div>
+
             </div>
+            <div class="ver-mas-container">
+                <button id="mostrarMasBtn" class="primary-btn">Mostrar Más Piezas</button>
+            </div>
+
         </section>
 
-        <!--TODO Seccion Sponsors-->
         <section id="sponsors" class="seccion-sponsors">
-
             <h2 class="sponsors-titulo">
                 Nuestros Colaboradores
             </h2>
@@ -134,7 +189,6 @@
                 máxima calidad.
             </p>
             <div class="sponsors-container-interactivo">
-
                 <div class="sponsor-interactivo-card">
                     <a href="https://www.instagram.com/tau_tau_supplies/" target="_blank" rel="noopener noreferrer">
                         <div class="sponsor-imagen tautau-ajuste"
@@ -147,7 +201,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="sponsor-interactivo-card">
                     <a href="https://www.instagram.com/jarana.eu/" target="_blank" rel="noopener noreferrer">
                         <div class="sponsor-imagen jarana-ajuste"
@@ -160,7 +213,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="sponsor-interactivo-card">
                     <a href="https://www.instagram.com/sunninkofficial/" target="_blank" rel="noopener noreferrer">
                         <div class="sponsor-imagen" style="background-image: url('Imagenes/Sponsors/sunnik.png');">
@@ -172,15 +224,11 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </section>
 
-        <!--TODO Seccion Estudio contiene Mapa y Horario-->
         <section id="estudio" class="mapa-horario">
-
             <h2 class="artista-titulo">El Estudio</h2>
-
             <div class="imagenestudio">
                 <div class="horario">
                     <h3>Horario del Estudio</h3>
@@ -196,7 +244,6 @@
                     <p><em>Las citas seran atendidas por Whatsapp</em></p>
                     <br>
                 </div>
-
                 <div class="mapa">
                     <h3> Ubicación </h3>
                     <p><strong>Dirección:</strong> Av. Juan Carlos I 53, 14520 Fernán-Núñez, Córdoba</p>
@@ -204,7 +251,6 @@
                         target="_blank" style="display: block; margin-top: 10px; color: #efb810;">
                         Ver en Google Maps
                     </a>
-
                     <div
                         style="border: 1px solid #ccc; height: auto; background-color: #f0f0f0; padding: 5px; border-radius: 10px;">
                         <iframe
@@ -213,16 +259,11 @@
                             loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-
-
                 </div>
-
             </div>
         </section>
-
     </div>
 
-    <!--TODO Seccion Footer Contacto-->
     <footer id="contacto" class="main-footer">
         <div class="footer-col footer-about">
             <h3 class="footer-title">KKR.TATTOO</h3>
@@ -233,7 +274,6 @@
                 garantizando calidad y profesionalidad.
             </p>
         </div>
-
         <div class="footer-col footer-contact">
             <h3 class="footer-title">Datos de Contacto</h3>
             <ul>
@@ -241,9 +281,6 @@
                 <li><i class="fas fa-phone-alt"></i> <a href="tel:+34606732394">606 73 23 94</a></li>
             </ul>
         </div>
-
-
-
         <div class="footer-col footer-social">
             <h3 class="footer-title">Síguenos En</h3>
             <div class="social-icons">
@@ -254,7 +291,6 @@
                 <a href="https://www.tiktok.com/@kkrtattoo" target="_blank" title="TikTok"><i
                         class="fab fa-tiktok"></i></a>
             </div>
-
             <div class="footer-brand">
                 <p>KKR.TATTOO © 2025 <br> <a
                         href="https://www.linkedin.com/in/juan-j%C3%A9sus-l%C3%B3pez-solano-5b0133232/">Desarrollado por
@@ -263,18 +299,17 @@
         </div>
     </footer>
 
-    <!-- TODO Modal Galería de Piezas (La imagen en grande con la X para cerrar) -->
     <div id="modalGaleria" class="modal">
         <span class="cerrar" id="cerrarModal">x</span>
         <img class="modal-contenido" id="imgModal">
         <div id="captionModal"></div>
     </div>
 
-    <!-- TODO Botón Flotante de WhatsApp -->
     <div class="whatsapp-float">
         <a href="https://api.whatsapp.com/send?phone=34606732394" target="_blank" title="Escríbenos por WhatsApp">
             <i class="fab fa-whatsapp"></i>
-            <span class="badge active">1</span> </a>
+            <span class="badge active">1</span>
+        </a>
     </div>
 
     <script>
@@ -332,43 +367,98 @@
             const closeBtn = document.getElementById('cerrarModal');
             let zoomActivo = false;
 
-            function filterPieces(filter) {
-                galleryCards.forEach(card => {
-                    card.classList.remove('hidden-by-filter');
-                    card.style.display = 'block';
-                    card.style.opacity = '1';
+            // ➡️ Lógica para Mostrar Más ⬅️
+            const mostrarMasBtn = document.getElementById('mostrarMasBtn');
+
+            mostrarMasBtn.addEventListener('click', () => {
+                // Selecciona las tarjetas que inicialmente están ocultas
+                const hiddenCards = document.querySelectorAll('.pieza-card.hidden-initial');
+
+                hiddenCards.forEach(card => {
+                    // Muestra la tarjeta y la elimina de la lista de ocultas iniciales
+                    card.classList.remove('hidden-initial');
+                    card.style.display = 'block'; // Asegura que esté visible
+                    setTimeout(() => {
+                        card.style.opacity = '1'; // Inicia la transición de opacidad
+                    }, 10);
                 });
 
+                // Oculta el botón "Mostrar Más" después de mostrar las piezas
+                mostrarMasBtn.style.display = 'none';
+            });
+            // ------------------------------------
+
+            /**
+             * FUNCIÓN DE FILTRADO (ACTUALIZADA)
+             * Modificamos la condición para requerir una coincidencia de categoría EXACTA
+             * para evitar la mezcla entre Realismo y Surrealismo.
+             */
+            function filterPieces(filter) {
+
                 galleryCards.forEach(card => {
-                    if (filter !== 'todos' && !card.classList.contains(filter)) {
-                        card.classList.add('hidden-by-filter');
+                    const categories = card.getAttribute('data-category');
+                    const isHiddenInitial = card.classList.contains('hidden-initial'); // Si está en el grupo oculto
+                    
+                    // --- CORRECCIÓN CLAVE AQUÍ ---
+                    // Antes: categories.includes(filter) (Permite 'realismo' si hay 'realismosurrealismo')
+                    // Ahora: categories === filter (Requiere coincidencia exacta)
+                    const shouldShow = filter === 'all' || categories === filter;
+                    // -----------------------------
+
+                    card.classList.remove('hidden-by-filter');
+                    card.style.opacity = '1';
+
+                    if (!shouldShow || (filter === 'all' && isHiddenInitial)) {
+                        // Ocultar si NO cumple el filtro O si estamos en "Todos" y pertenece al grupo oculto
                         card.style.opacity = '0';
+                        card.classList.add('hidden-by-filter');
 
                         setTimeout(() => {
                             card.style.display = 'none';
-                        }, 500);
+                        }, 300);
+
+                        // Mostrar el botón 'Mostrar Más' solo si volvemos al filtro 'all' y hay elementos ocultos
+                        if (filter === 'all' && isHiddenInitial) {
+                             mostrarMasBtn.style.display = 'block';
+                        }
+
 
                     } else {
-                        card.classList.remove('hidden-by-filter');
+                        // Mostrar si cumple el filtro
                         card.style.display = 'block';
                         setTimeout(() => {
                             card.style.opacity = '1';
                         }, 10);
+
+                        // Ocultar el botón 'Mostrar Más' cuando se aplica un filtro específico
+                        if (filter !== 'all') {
+                            mostrarMasBtn.style.display = 'none';
+                        }
                     }
                 });
+
+                // Asegurar que el botón "Mostrar Más" se muestre si volvemos a "Todos" y hay elementos ocultos.
+                if (filter === 'all' && document.querySelector('.pieza-card.hidden-initial:not(.hidden-by-filter)')) {
+                    mostrarMasBtn.style.display = 'block';
+                } else if (filter !== 'all') {
+                    // Si el filtro específico está activo, ocultamos "Mostrar Más"
+                    mostrarMasBtn.style.display = 'none';
+                }
             }
 
+            // Lógica para los Botones de Filtro
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
+
                     const filterValue = this.getAttribute('data-filter');
                     filterPieces(filterValue);
                 });
             });
 
 
-
+            // Lógica para abrir el Modal de Galería
             galleryCards.forEach(card => {
                 card.addEventListener('click', function () {
                     const img = this.querySelector('img');
@@ -385,19 +475,19 @@
                 });
             });
 
+            // Cerrar Modal
             closeBtn.onclick = function () {
                 modal.style.display = "none";
             }
-
             modal.onclick = function (event) {
                 if (event.target === modal) {
                     modal.style.display = "none";
                 }
             }
 
+            // Zoom en el Modal
             modalImg.onclick = function (event) {
                 event.stopPropagation();
-
                 if (!zoomActivo) {
                     this.style.transform = 'scale(1.5)';
                     this.style.cursor = 'grab';
@@ -409,9 +499,11 @@
                 }
             }
 
-            filterPieces('todos');
-            const whatsappBadge = document.querySelector('.whatsapp-float .badge');
+            // Inicializar: Mostrar las 8 primeras piezas y el botón "Mostrar Más"
+            filterPieces('all');
 
+            // Lógica del Badge de WhatsApp
+            const whatsappBadge = document.querySelector('.whatsapp-float .badge');
             function toggleBadgeVisibility() {
                 whatsappBadge.classList.toggle('active');
             }
