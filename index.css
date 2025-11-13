@@ -23,6 +23,10 @@ li {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    /* ------------------------------------------- */
+    /* ✅ SOLUCIÓN AL SCROLL HORIZONTAL NO DESEADO */
+    overflow-x: hidden; 
+    /* ------------------------------------------- */
 }
 
 /* --- TÍTULOS DE SECCIÓN UNIFICADOS --- */
@@ -151,10 +155,113 @@ body {
     width: 100%;
     height: 800px;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+}
+/* --- NUEVOS ESTILOS PARA EL EFECTO SOCIAL EN EL HEADER --- */
+
+/* Adaptación del body para el fondo de tu marble_header */
+.marble_header {
+    position: relative; /* Esencial para el posicionamiento absoluto */
+    /* Otros estilos de tu marble_header */
+}
+
+/* * 1. CLASES PRINCIPALES PARA EL EFECTO (Extraídas de tu ejemplo)
+ * Se adaptan los colores iniciales para que sean blancos sobre el header oscuro
+ */
+
+.social {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+.social li {
+    position: relative;
+    flex-basis: 4.5rem; /* Tamaño del círculo */
+}
+
+.social li::after {
+    position: absolute;
+    content: attr(data-tooltip);
+    inset: -45% auto auto 50%;
+    z-index: 100; /* Asegurar que el tooltip esté sobre todo */
+    translate: -50%;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    color: #fff;
+    background: var(--bg, #070707);
+    border-radius: 0.25rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: inset 0.4s cubic-bezier(0.47, 2, 0.41, 1.5),
+        visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.social li:has(a:hover, a:focus-visible)::after {
+    opacity: 1;
+    visibility: visible;
+    inset-block-start: -60%;
+}
+
+.social a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    font-size: 1.75rem;
+    color: #fff; /* Íconos blancos por defecto para el header */
+    border: 2px solid #fff; /* Borde blanco para el header */
+    border-radius: 100%;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.social a > i {
+    position: relative;
+    z-index: 1;
+}
+
+.social a::after {
+    position: absolute;
+    content: "";
+    inset: 100% 0 0;
+    background: var(--bg, #070707);
+    pointer-events: none;
+    transition: inset 0.3s ease-in-out;
+}
+
+.social a:hover,
+.social a:focus-visible {
+    color: #fff; /* El ícono permanece blanco o cambia, adaptamos al blanco para que destaque */
+    border-color: transparent; /* El borde desaparece al hacer hover */
+}
+
+.social a:hover::after,
+.social a:focus-visible::after {
+    inset-block-start: 0;
+}
+
+/* * 2. POSICIONAMIENTO ESPECÍFICO EN EL HEADER 
+ * Usamos la clase auxiliar 'header-social-list'
+ */
+.header-social-list {
+    position: absolute;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    /* Reajustar la posición de los círculos si es necesario */
+    flex-direction: row; /* Asegura que estén en una fila */
+    align-items: center; /* Centra verticalmente los elementos si tienen diferente altura */
+    /* Elimina 'flex-flow: wrap;' de '.social' o asegúrate de que el contenedor es lo suficientemente ancho si hay muchos iconos */
 }
 
 .header-content {
@@ -947,6 +1054,43 @@ body {
         transform: scaleX(1);
         background: #efb810;
     }
+    
+    /* ---------------------------------------------------- */
+    /* ✅ ÍCONOS SOCIALES DEL HEADER (MÓVIL) */
+    /* ---------------------------------------------------- */
+    .header-social-list {
+        /* Centrar en pantallas estrechas */
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%); 
+    }
+
+    .social {
+        /* FUERZA LA HORIZONTALIDAD: Evita que los iconos salten de línea */
+        flex-wrap: nowrap; 
+        flex-direction: row; 
+        gap: 0.8rem; 
+        /* QUITAR el overflow-x: auto; para que se recorte y se confíe en el body: overflow-x: hidden; */
+    }
+
+    .social li {
+        /* Reducir el tamaño del contenedor y evita que se encojan */
+        flex-basis: 3rem; /* Tamaño del círculo reducido (antes 4.5rem) */
+        flex-shrink: 0; /* IMPEDIR QUE LOS ELEMENTOS SE ENCOJAN */
+    }
+
+    .social a {
+        /* Reducir el tamaño de la fuente (ícono) */
+        font-size: 1.25rem; /* Ícono más pequeño (antes 1.75rem) */
+        border-width: 1px;
+    }
+
+    .social li:has(a:hover, a:focus-visible)::after {
+        /* Ajustar la posición del tooltip */
+        inset-block-start: -75%;
+    }
+    /* ---------------------------------------------------- */
+
 
     /** Sección Artista */
     .artista {
