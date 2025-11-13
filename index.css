@@ -23,10 +23,7 @@ li {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    /* ------------------------------------------- */
-    /* ✅ SOLUCIÓN AL SCROLL HORIZONTAL NO DESEADO */
     overflow-x: hidden; 
-    /* ------------------------------------------- */
 }
 
 /* --- TÍTULOS DE SECCIÓN UNIFICADOS --- */
@@ -36,15 +33,14 @@ body {
 .sponsors-titulo {
     display: block;
     margin-top: 0;
-    margin-bottom: 30px; /* Espacio debajo del título */
-    font-size: 2.5em; /* Tamaño unificado */
-    font-weight: 800; /* Negrita */
+    margin-bottom: 30px; 
+    font-size: 2.5em; 
+    font-weight: 800; 
     text-transform: uppercase;
-    color: #333; /* Color negro oscuro unificado */
+    color: #333; 
     letter-spacing: 2px;
     font-family: Arial, sans-serif; 
 }
-/* -------------------------------------- */
 
 /* ================================================= */
 /* 02. NAVEGACIÓN (NAV) Y MENÚ MÓVIL */
@@ -73,17 +69,27 @@ body {
 }
 
 .nav-logo a {
-    font-size: 1.5em;
-    font-weight: bold;
+    /* Mantenemos el 'a' como contenedor */
     color: #ffffff;
     text-decoration: none;
-    letter-spacing: 2px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    display: block; 
+}
+
+/* ➡️ ESTILOS PARA LA IMAGEN DEL LOGO */
+.nav-logo .logo-img {
+    height: 45px; /* Define la altura de tu logo */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-logo a:hover .logo-img {
+    transform: scale(1.05); /* Efecto sutil al pasar el ratón */
 }
 
 .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Por defecto, en escritorio es flex (fila) */
     gap: 30px;
 }
 
@@ -125,7 +131,7 @@ body {
 
 /** Estilos para el botón de menú hamburguesa (Móvil) */
 .menu-toggle {
-    display: none;
+    display: none; /* Oculto en escritorio */
     background: none;
     border: none;
     cursor: pointer;
@@ -140,7 +146,6 @@ body {
     background-color: #ffffff;
     transition: all 0.3s ease-in-out;
 }
-
 
 /* ================================================= */
 /* 03. ENCABEZADO PRINCIPAL (HEADER) */
@@ -161,36 +166,28 @@ body {
     text-align: center;
     color: white;
 }
-/* --- NUEVOS ESTILOS PARA EL EFECTO SOCIAL EN EL HEADER --- */
 
-/* Adaptación del body para el fondo de tu marble_header */
-.marble_header {
-    position: relative; /* Esencial para el posicionamiento absoluto */
-    /* Otros estilos de tu marble_header */
-}
-
-/* * 1. CLASES PRINCIPALES PARA EL EFECTO (Extraídas de tu ejemplo)
- * Se adaptan los colores iniciales para que sean blancos sobre el header oscuro
- */
-
+/* --- ÍCONOS SOCIALES --- */
 .social {
     display: flex;
     justify-content: center;
-    flex-flow: wrap;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
     gap: 1rem;
     list-style: none;
 }
 
 .social li {
     position: relative;
-    flex-basis: 4.5rem; /* Tamaño del círculo */
+    flex-basis: 4.5rem; 
+    flex-shrink: 0; 
 }
 
 .social li::after {
     position: absolute;
     content: attr(data-tooltip);
     inset: -45% auto auto 50%;
-    z-index: 100; /* Asegurar que el tooltip esté sobre todo */
+    z-index: 100; 
     translate: -50%;
     padding: 0.25rem 0.75rem;
     font-size: 0.875rem;
@@ -217,8 +214,8 @@ body {
     align-items: center;
     aspect-ratio: 1;
     font-size: 1.75rem;
-    color: #fff; /* Íconos blancos por defecto para el header */
-    border: 2px solid #fff; /* Borde blanco para el header */
+    color: #fff; 
+    border: 2px solid #fff; 
     border-radius: 100%;
     text-decoration: none;
     outline: none;
@@ -242,8 +239,8 @@ body {
 
 .social a:hover,
 .social a:focus-visible {
-    color: #fff; /* El ícono permanece blanco o cambia, adaptamos al blanco para que destaque */
-    border-color: transparent; /* El borde desaparece al hacer hover */
+    color: #fff; 
+    border-color: transparent; 
 }
 
 .social a:hover::after,
@@ -251,17 +248,14 @@ body {
     inset-block-start: 0;
 }
 
-/* * 2. POSICIONAMIENTO ESPECÍFICO EN EL HEADER 
- * Usamos la clase auxiliar 'header-social-list'
- */
+/* --- POSICIONAMIENTO SOCIAL EN HEADER --- */
 .header-social-list {
     position: absolute;
-    bottom: 20px; /* Distancia desde la parte inferior */
-    right: 20px; /* Distancia desde la derecha */
-    /* Reajustar la posición de los círculos si es necesario */
-    flex-direction: row; /* Asegura que estén en una fila */
-    align-items: center; /* Centra verticalmente los elementos si tienen diferente altura */
-    /* Elimina 'flex-flow: wrap;' de '.social' o asegúrate de que el contenedor es lo suficientemente ancho si hay muchos iconos */
+    bottom: 20px; 
+    right: 20px; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
 }
 
 .header-content {
@@ -296,8 +290,6 @@ body {
     padding: 40px 0;
     background-color: transparent;
 }
-
-/* .artista-titulo se define en la Sección 01 */
 
 .artista-contenido {
     display: flex;
@@ -378,8 +370,6 @@ body {
     text-align: center;
     min-height: 80vh;
 }
-
-/* .piezas-titulo se define en la Sección 01 */
 
 /** --- Botones de Filtro --- */
 .filtro-botones {
@@ -551,8 +541,6 @@ body {
     background-attachment: fixed; 
 }
 
-/* .sponsors-titulo se define en la Sección 01 */
-
 .sponsors-subtitulo {
     font-size: 1.1rem;
     margin-bottom: 40px;
@@ -586,13 +574,10 @@ body {
     border-right: none;
 }
 
-.sponsors-container-interactivo:hover .sponsor-interactivo-card {
-    flex-grow: 1; 
-}
-
-.sponsors-container-interactivo .sponsor-interactivo-card:hover {
+.sponsor-interactivo-card:hover {
     flex-grow: 3; 
 }
+
 
 .sponsor-interactivo-card a {
     display: block;
@@ -610,7 +595,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-size: cover; /* Configuración base */
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center; 
     filter: grayscale(100%) brightness(0.9); 
@@ -620,13 +605,12 @@ body {
 /* --- AJUSTES ESPECÍFICOS DE IMAGEN --- */
 .jarana-ajuste {
     background-size: 80%;
-    background-position: center; /* Baja la imagen de Jarana */
+    background-position: center; 
 }
 .tautau-ajuste {
     background-size: 70%; 
     background-repeat: no-repeat;
 }
-/* -------------------------------------- */
 
 .sponsor-interactivo-card:hover .sponsor-imagen {
     filter: grayscale(0%) brightness(1);
@@ -681,8 +665,6 @@ body {
     background-attachment: scroll;
 }
 
-/* .estudio-titulo se define en la Sección 01 */
-
 .imagenestudio {
     display: flex;
     justify-content: center;
@@ -702,7 +684,8 @@ body {
     text-align: left;
 }
 
-.mapa h3, .horario h3 {
+.mapa h3, 
+.horario h3 {
     font-size: 1.8em;
     color: #333;
     margin-bottom: 15px;
@@ -975,7 +958,7 @@ body {
 /** --- Estilos para pantallas pequeñas (General) --- */
 @media (max-width: 768px) {
     
-    /** NAV y Menú Móvil */
+    /** NAV y Menú Móvil - CORRECCIÓN CRÍTICA DE MENÚ MÓVIL */
     .marble_header {
         padding-top: 50px;
         height: 550px;
@@ -988,25 +971,27 @@ body {
     .main-nav {
         justify-content: space-between;
         padding: 10px 20px;
+        /* Aseguramos la posición fija y fondo negro */
         position: fixed;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.95);
         top: 0;
         left: 0;
         z-index: 1000;
     }
 
-    .nav-logo a {
-        font-size: 1.2em;
+    .nav-logo .logo-img {
+        height: 40px; /* Ajuste para móvil */
     }
 
     .menu-toggle {
-        display: block;
-        color: #ffffff;
+        display: block; /* Muestra el botón de hamburguesa */
         z-index: 1001;
     }
-
+    
+    /* ESTILOS DE LA LISTA DE ENLACES (OCULTO/ABIERTO) */
     .nav-links {
-        display: none;
+        /* Estado por defecto (OCULTO) */
+        display: flex; /* Debe ser flex para column */
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -1017,13 +1002,13 @@ body {
         padding-top: 100px;
         text-align: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(100%);
+        transform: translateX(100%); /* Deslizado fuera de la pantalla (a la derecha) */
         gap: 0;
     }
 
     .nav-links.active {
-        display: flex;
-        transform: translateX(0);
+        /* Estado ABierto (MOSTRADO) */
+        transform: translateX(0); /* Deslizado a la posición visible */
     }
 
     .nav-links li {
@@ -1036,8 +1021,7 @@ body {
         padding: 15px 0;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a:hover {
         color: #ffffff;
         transform: scale(1.08) translateY(-3px);
         text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
@@ -1049,15 +1033,12 @@ body {
         bottom: 5px;
     }
 
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
+    .nav-links a:hover::after {
         transform: scaleX(1);
         background: #efb810;
     }
     
-    /* ---------------------------------------------------- */
-    /* ✅ ÍCONOS SOCIALES DEL HEADER (MÓVIL) */
-    /* ---------------------------------------------------- */
+    /* --- ÍCONOS SOCIALES DEL HEADER (MÓVIL) --- */
     .header-social-list {
         /* Centrar en pantallas estrechas */
         bottom: 10px;
@@ -1066,22 +1047,18 @@ body {
     }
 
     .social {
-        /* FUERZA LA HORIZONTALIDAD: Evita que los iconos salten de línea */
         flex-wrap: nowrap; 
         flex-direction: row; 
         gap: 0.8rem; 
-        /* QUITAR el overflow-x: auto; para que se recorte y se confíe en el body: overflow-x: hidden; */
     }
 
     .social li {
-        /* Reducir el tamaño del contenedor y evita que se encojan */
-        flex-basis: 3rem; /* Tamaño del círculo reducido (antes 4.5rem) */
-        flex-shrink: 0; /* IMPEDIR QUE LOS ELEMENTOS SE ENCOJAN */
+        flex-basis: 3rem; 
+        flex-shrink: 0; 
     }
 
     .social a {
-        /* Reducir el tamaño de la fuente (ícono) */
-        font-size: 1.25rem; /* Ícono más pequeño (antes 1.75rem) */
+        font-size: 1.25rem; 
         border-width: 1px;
     }
 
@@ -1089,7 +1066,6 @@ body {
         /* Ajustar la posición del tooltip */
         inset-block-start: -75%;
     }
-    /* ---------------------------------------------------- */
 
 
     /** Sección Artista */
@@ -1195,14 +1171,14 @@ body {
         border-right: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
+    /* Mantenemos el color en móvil sin hover para mejor visibilidad en la columna */
     .sponsor-imagen {
         filter: grayscale(0%) brightness(1); 
     }
     .sponsor-info {
-        transform: translateY(0);
+        transform: translateY(0); /* Mostrar siempre en móvil */
         background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
     }
-    /* El ajuste de sponsors se hereda bien */
 
     /** Footer */
     .main-footer {
