@@ -358,14 +358,13 @@ body {
   margin-bottom: 15px;
   color: #555;
 }
-
 /* ================================================= */
 /* 06. SECCIÓN GALERÍA DE PIEZAS (#piezas) Y MODAL */
 /* ================================================= */
 
 /*
  * ---------------------------------------------------------------------
- * MODAL DE GALERÍA EXPANDIDO (AJUSTE CRÍTICO: object-fit: cover)
+ * MODAL DE GALERÍA EXPANDIDO
  * ---------------------------------------------------------------------
  */
 
@@ -378,8 +377,8 @@ body {
     flex-direction: column;
     padding: 0; 
     border: 1px solid #888;
-    width: 90%;
-    max-width: 900px;
+    width: 70%;
+    max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.4);
     animation-name: animatetop;
     animation-duration: 0.4s;
@@ -415,6 +414,9 @@ body {
     flex-grow: 1; 
     border-radius: 8px 8px 0 0; 
     background-color: #000;
+    
+    /* 💡 AJUSTE DE ALTURA PARA ASEGURAR ESPACIO VISIBLE */
+    height: 80vh; /* Altura fija para el carrusel (ej: 80% de la altura de la ventana) */
     max-height: 100%; 
 }
 
@@ -440,8 +442,8 @@ body {
     width: 100%;
     height: 100%; 
     
-    /* 💥 CAMBIO CLAVE: Usa 'cover' para llenar el contenedor, recortando el exceso */
-    object-fit: cover; 
+    /* ✅ SOLUCIÓN CLAVE: Usar 'contain' para que la imagen/video se ajuste sin recortarse */
+    object-fit: contain; 
     
     display: block;
     margin: 0 auto;
@@ -1144,272 +1146,303 @@ body {
     transform: translateY(0px);
   }
 }
-
 /* ================================================= */
 /* 11. MEDIA QUERIES (RESPONSIVIDAD) */
 /* ================================================= */
 
 /** --- Estilos para pantallas pequeñas (General) --- */
 @media (max-width: 860px) {
-  /** NAV y Menú Móvil - CORRECCIÓN CRÍTICA DE MENÚ MÓVIL */
-  .marble_header {
-    padding-top: 50px;
-    height: 550px;
-  }
+    /** NAV y Menú Móvil - CORRECCIÓN CRÍTICA DE MENÚ MÓVIL */
+    .marble_header {
+        padding-top: 50px;
+        height: 550px;
+    }
 
-  .header-content h1 {
-    font-size: 2em;
-  }
+    .header-content h1 {
+        font-size: 2em;
+    }
 
-  .main-nav {
-    justify-content: space-between;
-    padding: 10px 20px;
-    /* Aseguramos la posición fija y fondo negro */
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.95);
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+    .main-nav {
+        justify-content: space-between;
+        padding: 10px 20px;
+        /* Aseguramos la posición fija y fondo negro */
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.95);
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
 
-  .nav-logo .logo-img {
-    height: 30px; /* Ajuste para móvil */
-  }
+    .nav-logo .logo-img {
+        height: 30px;
+        /* Ajuste para móvil */
+    }
 
-  .menu-toggle {
-    display: block; /* Muestra el botón de hamburguesa */
-    z-index: 1001;
-  }
+    .menu-toggle {
+        display: block;
+        /* Muestra el botón de hamburguesa */
+        z-index: 1001;
+    }
 
-  /* ESTILOS DE LA LISTA DE ENLACES (OCULTO/ABIERTO) */
-  .nav-links {
-    /* Estado por defecto (OCULTO) */
-    display: flex; /* Debe ser flex para column */
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding-top: 100px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(
-      100%
-    ); /* Deslizado fuera de la pantalla (a la derecha) */
-    gap: 0;
-  }
+    /* ESTILOS DE LA LISTA DE ENLACES (OCULTO/ABIERTO) */
+    .nav-links {
+        /* Estado por defecto (OCULTO) */
+        display: flex;
+        /* Debe ser flex para column */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding-top: 100px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(
+            100%
+        );
+        /* Deslizado fuera de la pantalla (a la derecha) */
+        gap: 0;
+    }
 
-  .nav-links.active {
-    /* Estado ABierto (MOSTRADO) */
-    transform: translateX(0); /* Deslizado a la posición visible */
-  }
+    .nav-links.active {
+        /* Estado ABierto (MOSTRADO) */
+        transform: translateX(0);
+        /* Deslizado a la posición visible */
+    }
 
-  .nav-links li {
-    width: 100%;
-    margin: 10px 0;
-  }
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+    }
 
-  .nav-links a {
-    font-size: 1.5em;
-    padding: 15px 0;
-  }
+    .nav-links a {
+        font-size: 1.5em;
+        padding: 15px 0;
+    }
 
-  .nav-links a:hover {
-    color: #ffffff;
-    transform: scale(1.08) translateY(-3px);
-    text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
-  }
+    .nav-links a:hover {
+        color: #ffffff;
+        transform: scale(1.08) translateY(-3px);
+        text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
+    }
 
-  .nav-links a::after {
-    display: block;
-    height: 2px;
-    bottom: 5px;
-  }
+    .nav-links a::after {
+        display: block;
+        height: 2px;
+        bottom: 5px;
+    }
 
-  .nav-links a:hover::after {
-    transform: scaleX(1);
-    background: #efb810;
-  }
+    .nav-links a:hover::after {
+        transform: scaleX(1);
+        background: #efb810;
+    }
 
-  /* --- ÍCONOS SOCIALES DEL HEADER (MÓVIL) --- */
-  .header-social-list {
-    /* Centrar en pantallas estrechas */
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
-  }
+    /* --- ÍCONOS SOCIALES DEL HEADER (MÓVIL) --- */
+    .header-social-list {
+        /* Centrar en pantallas estrechas */
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%);
+    }
 
-  .social {
-    flex-wrap: nowrap;
-    flex-direction: row;
-    gap: 0.8rem;
-  }
+    .social {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 0.8rem;
+    }
 
-  .social li {
-    flex-basis: 3rem;
-    flex-shrink: 0;
-  }
+    .social li {
+        flex-basis: 3rem;
+        flex-shrink: 0;
+    }
 
-  .social a {
-    font-size: 1.25rem;
-    border-width: 1px;
-  }
+    .social a {
+        font-size: 1.25rem;
+        border-width: 1px;
+    }
 
-  .social li:has(a:hover, a:focus-visible)::after {
-    /* Ajustar la posición del tooltip */
-    inset-block-start: -75%;
-  }
+    .social li:has(a:hover, a:focus-visible)::after {
+        /* Ajustar la posición del tooltip */
+        inset-block-start: -75%;
+    }
 
-  /** Sección Artista */
-  .artista {
-    padding: 20px 0;
-  }
+    /** Sección Artista */
+    .artista {
+        padding: 20px 0;
+    }
 
-  .artista-titulo,
-  .piezas-titulo,
-  .sponsors-titulo,
-  .estudio-titulo {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
+    .artista-titulo,
+    .piezas-titulo,
+    .sponsors-titulo,
+    .estudio-titulo {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
 
-  .artista-contenido {
-    flex-direction: column;
-    padding: 10px;
-    align-items: center;
-  }
+    .artista-contenido {
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+    }
 
-  .artista-info-izquierda {
-    align-items: center;
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
+    .artista-info-izquierda {
+        align-items: center;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
 
-  .artista-info-izquierda img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transform: none;
-  }
+    .artista-info-izquierda img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transform: none;
+    }
 
-  .artista-nombre {
-    text-align: center;
-    font-size: 1.3em;
-  }
+    .artista-nombre {
+        text-align: center;
+        font-size: 1.3em;
+    }
 
-  .artista-historia-card {
-    width: 100%;
-    max-width: 90%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    .artista-historia-card {
+        width: 100%;
+        max-width: 90%;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .artista-historia-card h3 {
-    font-size: 1.5em;
-  }
+    .artista-historia-card h3 {
+        font-size: 1.5em;
+    }
 
-  .artista-historia-card p {
-    font-size: 1em;
-  }
+    .artista-historia-card p {
+        font-size: 1em;
+    }
 
-  /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL */
-  .galeria-piezas {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
+    /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL */
+    .galeria-piezas {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
 
-  /** Galería Modal */
-  .modal-contenido {
-    width: 100%;
-  }
-  .cerrar {
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-  }
+    /* ------------------------------------------- */
+    /* ✅ AJUSTE MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
+    /* ------------------------------------------- */
+    
+    .modal-contenido-expandido {
+        width: 95%;
+        max-width: 95vw;
+        max-height: 98vh; /* Se asegura que el modal sea grande en altura */
+    }
 
-  /** Sección Estudio */
-  .mapa-horario {
-    padding: 30px 10px;
-  }
+    .carousel-container {
+        /* Asegura que el carrusel utilice la altura completa disponible del modal */
+        height: 100%;
+        /* 98vh (altura del modal) - 50px (espacio aproximado para el caption) */
+        max-height: calc(98vh - 50px);
+    }
+    
+    /* ------------------------------------------- */
+    
+    /** Galería Modal (Modal simple de una sola imagen) */
+    .modal-contenido {
+        width: 100%;
+    }
+    
+    .cerrar {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
 
-  .imagenestudio {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10px;
-  }
+    /** Sección Estudio */
+    .mapa-horario {
+        padding: 30px 10px;
+    }
 
-  .mapa,
-  .horario {
-    width: 100%;
-    max-width: none;
-    padding: 15px;
-  }
+    .imagenestudio {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
 
-  .horario li {
-    font-size: 1em;
-    padding: 8px 0;
-  }
+    .mapa,
+    .horario {
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+    }
 
-  .horario strong {
-    font-size: 1em;
-  }
+    .horario li {
+        font-size: 1em;
+        padding: 8px 0;
+    }
 
-  /** Sección Sponsors */
-  .sponsors-container-interactivo {
-    flex-direction: column;
-    min-height: auto;
-  }
-  .sponsor-interactivo-card {
-    flex-basis: 200px;
-    flex-grow: 1;
-    border-right: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  /* Mantenemos el color en móvil sin hover para mejor visibilidad en la columna */
-  .sponsor-imagen {
-    filter: grayscale(0%) brightness(1);
-  }
-  .sponsor-info {
-    transform: translateY(0); /* Mostrar siempre en móvil */
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.85),
-      rgba(0, 0, 0, 0.4)
-    );
-  }
+    .horario strong {
+        font-size: 1em;
+    }
 
-  /** Footer */
-  .main-footer {
-    padding: 40px 10%;
-  }
-  .footer-col {
-    width: 100%;
-    min-width: auto;
-    margin-bottom: 25px;
-  }
-  .footer-brand {
-    margin-top: 10px;
-  }
+    /** Sección Sponsors */
+    .sponsors-container-interactivo {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .sponsor-interactivo-card {
+        flex-basis: 200px;
+        flex-grow: 1;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mantenemos el color en móvil sin hover para mejor visibilidad en la columna */
+    .sponsor-imagen {
+        filter: grayscale(0%) brightness(1);
+    }
+
+    .sponsor-info {
+        transform: translateY(0);
+        /* Mostrar siempre en móvil */
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.4)
+        );
+    }
+
+    /** Footer */
+    .main-footer {
+        padding: 40px 10%;
+    }
+
+    .footer-col {
+        width: 100%;
+        min-width: auto;
+        margin-bottom: 25px;
+    }
+
+    .footer-brand {
+        margin-top: 10px;
+    }
 }
 
 /** --- Estilos para Tablet/Desktop intermedio (769px a 1250px) --- */
 @media (min-width: 769px) and (max-width: 1250px) {
-  /*
-  * AJUSTE CRÍTICO: 3 COLUMNAS para pantallas medianas (más de 768px y menos de 1250px)
-  */
-  .galeria-piezas {
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 900px; /* Reducir el ancho máximo para el diseño de 3 columnas */
-  }
+    /*
+     * AJUSTE CRÍTICO: 3 COLUMNAS para pantallas medianas (más de 768px y menos de 1250px)
+     */
+    .galeria-piezas {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 900px;
+        /* Reducir el ancho máximo para el diseño de 3 columnas */
+    }
 
-  .footer-col {
-    width: 48%;
-  }
+    .footer-col {
+        width: 48%;
+    }
 }
