@@ -92,23 +92,28 @@
             </div>
 
             <div class="galeria-piezas">
-                
-                <div class="pieza-card" data-category="retrato">
-                    <img src="Imagenes/Tatuajes/Imagen_01_ejemplo.jpg" alt="Retrato 1">
+
+                <div class="pieza-card" data-category="retrato"
+                    data-images='["Imagenes/Tatuajes/Imagen1Album1.jpg", "Imagenes/Tatuajes/Imagen2Album1.jpg"]'
+                    data-video="Imagenes/Tatuajes/Album1.mp4">
+                    <img src="Imagenes/Tatuajes/Album1.mp4" alt="Retrato 1">
                     <div class="card-caption">Retrato Realista I</div>
                 </div>
 
-                <div class="pieza-card" data-category="animales">
-                    <img src="Imagenes/Tatuajes/Imagen_02_ejemplo.jpg" alt="Animales 1">
-                    <div class="card-caption">Lobo Blanco</div>
+                <div class="pieza-card" data-category="animales"
+                    data-images='["Imagenes/Tatuajes/Animales/AnimalesFoto1/Leon1.jpg", "Imagenes/Tatuajes/Animales/AnimalesFoto1/Leon2.jpg"]'
+                    data-video="Imagenes/Tatuajes/Animales/AnimalesFoto1/VideoLeon.mp4">
+                    <img src="Imagenes/Tatuajes/Animales/AnimalesFoto1/Leon1.jpg" alt="Animales 1">
+                    <div class="card-caption">León</div>
                 </div>
 
-                <div class="pieza-card" data-category="surrealismo">
+                <div class="pieza-card" data-category="surrealismo" data-video="Videos/Tatuaje_03.mp4">
                     <img src="Imagenes/Tatuajes/Imagen_03_ejemplo.jpg" alt="Surrealismo 1">
                     <div class="card-caption">Reloj de Arena Surreal</div>
                 </div>
 
-                <div class="pieza-card" data-category="realismo">
+                <div class="pieza-card" data-category="realismo" 
+                    data-images='["Imagenes/Tatuajes/Imagen_04_ejemplo.jpg", "Imagenes/Tatuajes/Imagen_04_vista2.jpg"]'>
                     <img src="Imagenes/Tatuajes/Imagen_04_ejemplo.jpg" alt="Realismo 2">
                     <div class="card-caption">Realismo Fino</div>
                 </div>
@@ -300,240 +305,332 @@
     </footer>
 
     <div id="modalGaleria" class="modal">
-        <span class="cerrar" id="cerrarModal">x</span>
-        <img class="modal-contenido" id="imgModal">
-        <div id="captionModal"></div>
+        <span class="cerrar" id="cerrarModal">&times;</span>
+        <div class="modal-contenido-expandido">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    </div>
+                <button class="carousel-prev" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-next" aria-label="Siguiente">&#10095;</button>
+            </div>
+            <div id="captionModal" class="modal-caption-expandido"></div>
+        </div>
     </div>
-
     <div class="whatsapp-float">
         <a href="https://api.whatsapp.com/send?phone=34606732394" target="_blank" title="Escríbenos por WhatsApp">
             <i class="fab fa-whatsapp"></i>
             <span class="badge active">1</span>
         </a>
     </div>
-<script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    const navBar = document.querySelector('.main-nav');
-    const links = navLinks.querySelectorAll('a');
 
-    function toggleMenu() {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    }
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navBar = document.querySelector('.main-nav');
+        const links = navLinks.querySelectorAll('a');
 
-    menuToggle.onclick = toggleMenu;
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
 
-    links.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
+        menuToggle.onclick = toggleMenu;
 
-            if (href.startsWith('#') && href.length > 1) {
-                e.preventDefault();
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
 
-                const targetElement = document.querySelector(href);
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
 
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
+                    const targetElement = document.querySelector(href);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+
+                        if (navLinks.classList.contains('active')) {
+                            toggleMenu();
+                        }
+                    }
+                } else if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navBar.classList.add('scrolled');
+            } else {
+                navBar.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Variables de Galería y Modal ---
+            const filterButtons = document.querySelectorAll('.filtro-btn');
+            const galleryCards = document.querySelectorAll('.pieza-card');
+
+            const modal = document.getElementById('modalGaleria');
+            const cerrarModalBtn = document.getElementById('cerrarModal');
+            const modalCaption = document.getElementById('captionModal');
+
+            // Aseguramos que los selectores funcionen con la nueva estructura del modal
+            const carouselTrack = modal.querySelector('.carousel-track');
+            const carouselPrevBtn = modal.querySelector('.carousel-prev');
+            const carouselNextBtn = modal.querySelector('.carousel-next');
+
+            let currentSlide = 0;
+            let carouselItems = []; // Para almacenar los elementos del carrusel (imágenes/videos)
+
+            // --- Variables Mostrar Más/Menos ---
+            const mostrarMasBtn = document.getElementById('mostrarMasBtn');
+            const initialHiddenCards = Array.from(document.querySelectorAll('.pieza-card.hidden-initial'));
+            const piezasSection = document.getElementById('piezas');
+            let allShown = false;
+
+            // --- Funciones de Carrusel ---
+            function showSlide(index) {
+                if (carouselItems.length === 0) return;
+
+                // Asegurarse de que el índice esté dentro de los límites
+                if (index < 0) {
+                    currentSlide = carouselItems.length - 1;
+                } else if (index >= carouselItems.length) {
+                    currentSlide = 0;
+                } else {
+                    currentSlide = index;
+                }
+
+                const offset = -currentSlide * 100;
+                carouselTrack.style.transform = `translateX(${offset}%)`;
+
+                // Pausar todos los videos excepto el actual
+                carouselItems.forEach((item, i) => {
+                    const video = item.querySelector('video');
+                    if (video) {
+                        if (i === currentSlide) {
+                            video.play();
+                        } else {
+                            video.pause();
+                            video.currentTime = 0; // Reiniciar video al cambiar
+                        }
+                    }
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            // --- Manejo del Botón Mostrar Más/Menos ---
+            function toggleGallery() {
+                if (!allShown) {
+                    initialHiddenCards.forEach(card => {
+                        card.classList.remove('hidden-initial');
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 10);
                     });
 
-                    if (navLinks.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                }
-            } else if (navLinks.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    });
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navBar.classList.add('scrolled');
-        } else {
-            navBar.classList.remove('scrolled');
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const filterButtons = document.querySelectorAll('.filtro-btn');
-        const galleryCards = document.querySelectorAll('.pieza-card');
-
-        const modal = document.getElementById('modalGaleria');
-        const modalImg = document.getElementById('imgModal');
-        const captionText = document.getElementById('captionModal');
-        const closeBtn = document.getElementById('cerrarModal');
-        let zoomActivo = false;
-
-        // ➡️ Lógica para Mostrar Más / Mostrar Menos ⬅️
-        const mostrarMasBtn = document.getElementById('mostrarMasBtn');
-        const initialHiddenCards = Array.from(document.querySelectorAll('.pieza-card.hidden-initial'));
-        let allShown = false; 
-
-        function toggleGallery() {
-            if (!allShown) {
-                // Muestra las 8 ocultas
-                initialHiddenCards.forEach(card => {
-                    // 🚨 CRÍTICO: Remueve la clase que tiene 'display: none' en el CSS
-                    card.classList.remove('hidden-initial'); 
-                    
-                    // Solo si la tarjeta no ha sido filtrada a 'none' por las categorías
-                    card.style.display = 'block'; 
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                    }, 10);
-                });
-
-                // Cambia texto y estado
-                mostrarMasBtn.textContent = 'Mostrar Menos Piezas';
-                allShown = true;
-
-            } else {
-                // Oculta las últimas 8
-                initialHiddenCards.forEach(card => {
-                    // 🚨 CRÍTICO: Vuelve a añadir la clase para que el CSS la oculte
-                    card.classList.add('hidden-initial'); 
-                    
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300); // Espera la transición de CSS
-                });
-
-                // Cambia texto y estado
-                mostrarMasBtn.textContent = 'Mostrar Más Piezas';
-                allShown = false;
-            }
-        }
-
-        // Asignar el manejador de eventos
-        mostrarMasBtn.addEventListener('click', toggleGallery);
-        // ------------------------------------
-
-        /**
-         * FUNCIÓN DE FILTRADO (Manteniendo el respeto al estado del botón)
-         */
-        function filterPieces(filter) {
-            
-            // Si el filtro se llama directamente (p.ej. al cargar) o desde un botón, 
-            // aseguramos que tengamos el filtro activo
-            let activeFilter = filter;
-            if (!activeFilter) {
-                 const activeBtn = document.querySelector('.filtro-btn.active');
-                 activeFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
-            }
-
-            galleryCards.forEach(card => {
-                const categories = card.getAttribute('data-category');
-                const isInitiallyHidden = card.classList.contains('hidden-initial');
-
-                const matchesFilter = activeFilter === 'all' || categories === activeFilter;
-
-                // Regla de visibilidad:
-                // Debe coincidir con el filtro activo Y 
-                // NO debe ser una tarjeta inicialmente oculta A MENOS QUE 'allShown' sea true.
-                const shouldShow = matchesFilter && (!isInitiallyHidden || allShown);
-
-                card.style.opacity = '1'; // Resetear opacidad
-
-                if (!shouldShow) {
-                    // Ocultar: No coincide con el filtro O está en el grupo oculto y el modo "Mostrar Más" no está activo
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
+                    mostrarMasBtn.textContent = 'Mostrar Menos Piezas';
+                    allShown = true;
 
                 } else {
-                    // Mostrar
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                    }, 10);
-                }
-            });
+                    initialHiddenCards.forEach(card => {
+                        card.classList.add('hidden-initial');
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    });
 
-            // Lógica para gestionar el botón "Mostrar Más/Menos" después del filtrado
-            if (activeFilter === 'all' && initialHiddenCards.length > 0) {
-                mostrarMasBtn.style.display = 'block';
-                mostrarMasBtn.textContent = allShown ? 'Mostrar Menos Piezas' : 'Mostrar Más Piezas';
-            } else {
-                // Si hay un filtro específico activo, ocultamos el botón
-                mostrarMasBtn.style.display = 'none';
+                    mostrarMasBtn.textContent = 'Mostrar Más Piezas';
+                    allShown = false;
+
+                    if (piezasSection) {
+                        piezasSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                const activeBtn = document.querySelector('.filtro-btn.active');
+                filterPieces(activeBtn ? activeBtn.getAttribute('data-filter') : 'all');
             }
-        }
+            mostrarMasBtn.addEventListener('click', toggleGallery);
 
-        // Lógica para los Botones de Filtro
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                const filterValue = this.getAttribute('data-filter');
-                filterPieces(filterValue);
-            });
-        });
-
-
-        // Lógica para abrir el Modal de Galería
-        galleryCards.forEach(card => {
-            card.addEventListener('click', function () {
-                // Comprobamos si la tarjeta está visible antes de abrir el modal
-                if (window.getComputedStyle(card).display !== 'none' && window.getComputedStyle(card).opacity !== '0') {
-                    const img = this.querySelector('img');
-                    const captionElement = this.querySelector('.card-caption');
-                    const caption = captionElement ? captionElement.innerText : 'Tatuaje';
-
-                    modal.style.display = "block";
-                    modalImg.src = img.src;
-                    captionText.innerHTML = caption;
-
-                    modalImg.style.transform = 'scale(1)';
-                    modalImg.style.cursor = 'zoom-in';
-                    zoomActivo = false;
+            // --- Función de Filtrado ---
+            function filterPieces(filter) {
+                let activeFilter = filter;
+                if (!activeFilter) {
+                    const activeBtn = document.querySelector('.filtro-btn.active');
+                    activeFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
                 }
-            });
-        });
 
-        // Cerrar Modal
-        closeBtn.onclick = function () {
-            modal.style.display = "none";
-        }
-        modal.onclick = function (event) {
-            if (event.target === modal) {
+                galleryCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    const isInitiallyHidden = card.classList.contains('hidden-initial');
+
+                    const matchesFilter = activeFilter === 'all' || categories === activeFilter;
+                    const shouldShow = matchesFilter && (!isInitiallyHidden || allShown);
+
+                    // Pequeño truco para asegurar que la animación se dispare correctamente
+                    card.style.opacity = '1';
+
+                    if (!shouldShow) {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+
+                    } else {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 10);
+                    }
+                });
+
+                if (activeFilter === 'all' && initialHiddenCards.length > 0) {
+                    mostrarMasBtn.style.display = 'block';
+                    mostrarMasBtn.textContent = allShown ? 'Mostrar Menos Piezas' : 'Mostrar Más Piezas';
+                } else {
+                    mostrarMasBtn.style.display = 'none';
+                }
+            }
+
+            // --- Eventos de Filtro ---
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+                    filterPieces(filterValue);
+                });
+            });
+
+            // --- Lógica para Abrir el Modal Expandido ---
+            galleryCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    // Solo abrir si la tarjeta está visible
+                    if (window.getComputedStyle(card).display !== 'none' && window.getComputedStyle(card).opacity !== '0') {
+                        const caption = this.querySelector('.card-caption').innerText;
+                        const imagesJSON = this.getAttribute('data-images');
+                        const videoURL = this.getAttribute('data-video');
+
+                        let images = [];
+                        if (imagesJSON) {
+                            try {
+                                images = JSON.parse(imagesJSON);
+                            } catch (e) {
+                                console.error("Error al parsear data-images:", e);
+                                images = [this.querySelector('img').src]; // Fallback
+                            }
+                        } else {
+                            images = [this.querySelector('img').src]; // Si no hay data-images, usa la principal
+                        }
+
+                        // Limpiar el carrusel
+                        carouselTrack.innerHTML = '';
+                        carouselItems = [];
+
+                        // Añadir imágenes al carrusel
+                        images.forEach(imgSrc => {
+                            const itemDiv = document.createElement('div');
+                            itemDiv.classList.add('carousel-item');
+                            const imgElement = document.createElement('img');
+                            imgElement.src = imgSrc;
+                            imgElement.alt = caption;
+                            itemDiv.appendChild(imgElement);
+                            carouselTrack.appendChild(itemDiv);
+                            carouselItems.push(itemDiv);
+                        });
+
+                        // Añadir video al carrusel (si existe)
+                        if (videoURL) {
+                            const itemDiv = document.createElement('div');
+                            itemDiv.classList.add('carousel-item');
+                            const videoElement = document.createElement('video');
+                            videoElement.src = videoURL;
+                            videoElement.controls = true; // Mostrar controles de video
+                            videoElement.loop = true; // Reproducir en bucle
+                            videoElement.muted = true; // Silenciar por defecto
+                            itemDiv.appendChild(videoElement);
+                            carouselTrack.appendChild(itemDiv);
+                            carouselItems.push(itemDiv);
+                        }
+
+                        modalCaption.innerHTML = caption;
+                        modal.style.display = "block";
+                        currentSlide = 0; // Reiniciar a la primera diapositiva
+                        showSlide(currentSlide); // Mostrar la primera diapositiva
+
+                        // Mostrar/Ocultar botones de navegación si solo hay un elemento
+                        if (carouselItems.length <= 1) {
+                            carouselPrevBtn.style.display = 'none';
+                            carouselNextBtn.style.display = 'none';
+                        } else {
+                            carouselPrevBtn.style.display = 'block';
+                            carouselNextBtn.style.display = 'block';
+                        }
+                    }
+                });
+            });
+
+            // --- Eventos del Modal Expandido ---
+            cerrarModalBtn.onclick = function () {
                 modal.style.display = "none";
+                // Pausar todos los videos al cerrar el modal
+                carouselItems.forEach(item => {
+                    const video = item.querySelector('video');
+                    if (video) {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                });
             }
-        }
-
-        // Zoom en el Modal
-        modalImg.onclick = function (event) {
-            event.stopPropagation();
-            if (!zoomActivo) {
-                this.style.transform = 'scale(1.5)';
-                this.style.cursor = 'grab';
-                zoomActivo = true;
-            } else {
-                this.style.transform = 'scale(1)';
-                this.style.cursor = 'zoom-in';
-                zoomActivo = false;
+            modal.onclick = function (event) {
+                // Si se hace click fuera del contenido (en el fondo oscuro)
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    // Pausar todos los videos al cerrar el modal
+                    carouselItems.forEach(item => {
+                        const video = item.querySelector('video');
+                        if (video) {
+                            video.pause();
+                            video.currentTime = 0;
+                        }
+                    });
+                }
             }
-        }
 
-        // Inicializar: Mostrar las 8 primeras piezas y el botón "Mostrar Más"
-        filterPieces('all');
+            carouselPrevBtn.addEventListener('click', prevSlide);
+            carouselNextBtn.addEventListener('click', nextSlide);
 
-        // Lógica del Badge de WhatsApp
-        const whatsappBadge = document.querySelector('.whatsapp-float .badge');
-        function toggleBadgeVisibility() {
-            whatsappBadge.classList.toggle('active');
-        }
-        if (whatsappBadge) {
-            setInterval(toggleBadgeVisibility, 5000);
-        }
+            // --- Inicialización ---
+            filterPieces('all'); // Mostrar todas las piezas al cargar
 
-    });
-</script>
+            // --- Lógica del Badge de WhatsApp ---
+            const whatsappBadge = document.querySelector('.whatsapp-float .badge');
+            function toggleBadgeVisibility() {
+                if (whatsappBadge) {
+                    whatsappBadge.classList.toggle('active');
+                }
+            }
+            if (whatsappBadge) {
+                setInterval(toggleBadgeVisibility, 5000);
+            }
 
-</body>
+        });
+    </script>
+    </body>
 
 </html>

@@ -363,254 +363,366 @@ body {
 /* 06. SECCIÓN GALERÍA DE PIEZAS (#piezas) Y MODAL */
 /* ================================================= */
 
+/*
+ * ---------------------------------------------------------------------
+ * MODAL DE GALERÍA EXPANDIDO (AJUSTE CRÍTICO: object-fit: cover)
+ * ---------------------------------------------------------------------
+ */
+
+.modal-contenido-expandido {
+    position: relative;
+    background-color: #1a1a1a;
+    margin: auto;
+    /* Usar Flexbox para controlar el espacio vertical entre Carrusel y Caption */
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.4);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 10px;
+    max-height: 95vh;
+    overflow-y: auto; 
+}
+
+/* Si ya tiene animatetop, puede omitir esta parte */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.modal-caption-expandido {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--color-text-light, #fff); 
+    padding: 15px 20px; 
+    margin-top: 0;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    flex-grow: 1; 
+    border-radius: 8px 8px 0 0; 
+    background-color: #000;
+    max-height: 100%; 
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; 
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    height: 100%; 
+}
+
+.carousel-item img,
+.carousel-item video {
+    /* Ocupar el 100% del ancho y alto disponible para que no queden bordes */
+    width: 100%;
+    height: 100%; 
+    
+    /* 💥 CAMBIO CLAVE: Usa 'cover' para llenar el contenedor, recortando el exceso */
+    object-fit: cover; 
+    
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-prev,
+.carousel-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 10;
+}
+
+.carousel-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* --- SECCIÓN GALERÍA PRINCIPAL (sin cambios) --- */
+
 .seccion-piezas {
-  padding: 60px 20px;
-  background-color: transparent;
-  text-align: center;
-  min-height: 80vh;
+    padding: 60px 20px;
+    background-color: transparent;
+    text-align: center;
+    min-height: 80vh;
 }
 
 /** --- Botones de Filtro --- */
 .filtro-botones {
-  margin-bottom: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .filtro-btn {
-  background-color: #fff;
-  color: #333;
-  border: 2px solid #333;
-  padding: 10px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
-  transition: background-color 0.3s, color 0.3s, transform 0.1s;
-  text-transform: capitalize;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    text-transform: capitalize;
 }
 
 .filtro-btn:hover {
-  background-color: #eee;
+    background-color: #eee;
 }
 
 .filtro-btn.active {
-  background-color: #333;
-  color: #fff;
-  border-color: #333;
-  transform: translateY(-2px);
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+    transform: translateY(-2px);
 }
 
 /** --- Galería - AJUSTE A 4 COLUMNAS --- */
 .galeria-piezas {
-  /*
-    * ANTES: grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-    * AHORA: Usamos 4 columnas con tamaño mínimo de 250px para 1200px de ancho máximo
-    */
-  display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .pieza-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  will-change: transform, opacity;
-  transition: transform 0.3s ease-in-out, opacity 0.5s ease;
-  cursor: pointer;
-  opacity: 1;
-  display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    will-change: transform, opacity;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+    cursor: pointer;
+    opacity: 1;
+    display: block;
 }
 
 .pieza-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .pieza-card.hidden-by-filter {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
 }
 
 .pieza-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
 }
 
 .card-caption {
-  padding: 15px;
-  font-size: 1.1em;
-  font-weight: 700;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /** --- Modal de Imagen --- */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-  transition: opacity 0.3s ease;
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: opacity 0.3s ease;
 }
 
 .modal-contenido {
-  margin: auto;
-  display: block;
-  width: 90%;
-  max-width: 900px;
-  max-height: 90%;
-  object-fit: contain;
-  border-radius: 8px;
-  cursor: zoom-in;
-  transition: transform 0.3s ease-in-out;
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease-in-out;
 }
 
 #captionModal {
-  margin: 20px auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  font-size: 1.2em;
+    margin: 20px auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2em;
 }
 
 .cerrar {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 20;
 }
 
 .cerrar:hover,
 .cerrar:focus {
-  color: #bbb;
-  text-decoration: none;
+    color: #bbb;
+    text-decoration: none;
 }
 
 .modal-contenido,
 #captionModal {
-  animation-name: zoom;
-  animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 /* --- Estilos para la Galería de Piezas --- */
 
 /* Clase para ocultar las piezas extra (usada en el HTML) */
 .pieza-card.hidden-initial {
-  display: none; /* Oculta el elemento completamente al cargar */
-  opacity: 0;
+    display: none; /* Oculta el elemento completamente al cargar */
+    opacity: 0;
 }
 
 /* Contenedor del Botón Mostrar Más - Centrado y Espaciado */
 .ver-mas-container {
-  text-align: center; /* Centra el botón */
-  padding: 30px 0; /* Espacio vertical */
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 100%;
+    text-align: center; /* Centra el botón */
+    padding: 30px 0; /* Espacio vertical */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 /* Estilo para el botón "Mostrar Más" (PRIMARY-BTN) - **DEJADO COMO ESTABA POR TI** */
 .primary-btn {
-  background-color: #333; /* Fondo oscuro */
-  color: #efb810; /* Color de texto amarillo/dorado */
-  border: 2px solid #efb810;
-  padding: 12px 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1em;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: background-color 0.3s, color 0.3s, transform 0.1s;
-  text-transform: uppercase;
-  display: inline-block;
+    background-color: #333; /* Fondo oscuro */
+    color: #efb810; /* Color de texto amarillo/dorado */
+    border: 2px solid #efb810;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    text-transform: uppercase;
+    display: inline-block;
 }
 
 .primary-btn:hover {
-  background-color: #efb810;
-  color: #333;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #efb810;
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* --- ESTILOS SUTILES PARA EL BOTÓN MOSTRAR MÁS (SOLUCIÓN) --- */
 /* Sobrescribimos la clase primary-btn solo para el botón Mostrar Más */
 
 #mostrarMasBtn {
-  /* Reiniciar estilos de botón primario */
-  background: none !important;
-  border: none !important;
-  padding: 10px 20px !important;
+    /* Reiniciar estilos de botón primario */
+    background: none !important;
+    border: none !important;
+    padding: 10px 20px !important;
 
-  /* Nuevos estilos sutiles */
-  color: #333;
-  font-size: 1.15rem !important; /* Un poco más grande para destacar */
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  transition: color 0.3s, border-bottom 0.3s, opacity 0.3s !important;
-  text-transform: none !important; /* Sin mayúsculas forzadas */
-  display: inline-flex !important; /* Para alinear texto e ícono */
-  align-items: center !important;
-  gap: 8px !important;
+    /* Nuevos estilos sutiles */
+    color: #333;
+    font-size: 1.15rem !important; /* Un poco más grande para destacar */
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: color 0.3s, border-bottom 0.3s, opacity 0.3s !important;
+    text-transform: none !important; /* Sin mayúsculas forzadas */
+    display: inline-flex !important; /* Para alinear texto e ícono */
+    align-items: center !important;
+    gap: 8px !important;
 
-  /* Subrayado sutil y animado */
-  border-bottom: 2px solid transparent !important;
-  transform: none !important; /* Quitar animación de traslación */
-  box-shadow: none !important;
+    /* Subrayado sutil y animado */
+    border-bottom: 2px solid transparent !important;
+    transform: none !important; /* Quitar animación de traslación */
+    box-shadow: none !important;
 }
 
 #mostrarMasBtn:hover {
-  color: #efb810 !important; /* Color principal */
-  opacity: 0.9;
-  border-bottom: 2px solid #ffffff !important; /* Mostrar subrayado */
-  background: none !important;
-  transform: none !important;
+    color: #efb810 !important; /* Color principal */
+    opacity: 0.9;
+    border-bottom: 2px solid #ffffff !important; /* Mostrar subrayado */
+    background: none !important;
+    transform: none !important;
 }
 
 /* Animación de entrada para las piezas al hacer clic en "Mostrar Más" */
 .galeria-piezas .pieza-card {
-  transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 /* La clase 'hidden-by-filter' del JS también puede usar esta misma transición */
 
 /* Asegúrate de añadir el display: none para la clase que oculta al filtrar */
 .pieza-card.hidden-by-filter {
-  opacity: 0;
+    opacity: 0;
 }
 /* ================================================= */
 /* 07. SECCIÓN SPONSORS (#sponsors) */
