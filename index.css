@@ -1195,7 +1195,7 @@ body {
         text-align: center;
         transition: transform 0.3s ease-in-out, visibility 0.3s;
         
-        /* CORRECCIÓN 1: Sacar el menú fuera de la pantalla por defecto */
+        /* CORRECCIÓN: Sacar el menú fuera de la pantalla por defecto */
         transform: translateX(100%);
         visibility: hidden; 
         
@@ -1203,7 +1203,7 @@ body {
     }
 
     .nav-links.active {
-        /* CORRECCIÓN 2: Mostrar el menú cuando está activo */
+        /* CORRECCIÓN: Mostrar el menú cuando está activo */
         transform: translateX(0); 
         visibility: visible;
     }
@@ -1326,19 +1326,23 @@ body {
     }
 
     /* ------------------------------------------- */
-    /* AJUSTE MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
+    /* CORRECCIÓN MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
     /* ------------------------------------------- */
     
     .modal-contenido-expandido {
         width: 95%;
         max-width: 95vw;
-        max-height: 98vh; 
+        /* Hacemos el modal de altura completa del viewport para estabilidad */
+        height: 100%; 
+        max-height: 100vh;
     }
 
     .carousel-container {
-        /* Altura ajustada para el carrusel para dejar espacio al caption en móvil */
         height: auto;
-        max-height: calc(90vh - 100px); 
+        /* Utilizamos calc(100vh - XXpx) para garantizar que el caption tenga espacio 
+           y el carrusel no se desborde, lo que elimina el borde negro. */
+        max-height: calc(100vh - 120px); 
+        overflow: hidden;
     }
     
     /* ------------------------------------------- */
@@ -1382,8 +1386,8 @@ body {
     }
 
     /** Sección Sponsors */
-    .seccion-sponsors {
-        background-attachment: scroll; /* Cambiado a scroll en móvil para evitar glitches */
+     .seccion-sponsors {
+        background-attachment: scroll; /* Scroll en móvil para evitar glitches */
     }
 
     .sponsors-container-interactivo {
@@ -1398,7 +1402,7 @@ body {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    /* Mantenemos el color en móvil sin hover para mejor visibilidad en la columna */
+    /* Mantenemos el color en móvil sin hover */
     .sponsor-imagen {
         filter: grayscale(0%) brightness(1);
     }
