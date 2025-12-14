@@ -1145,8 +1145,7 @@ body {
   100% {
     transform: translateY(0px);
   }
-}
-/* ================================================= */
+}/* ================================================= */
 /* 11. MEDIA QUERIES (RESPONSIVIDAD) */
 /* ================================================= */
 
@@ -1165,7 +1164,6 @@ body {
     .main-nav {
         justify-content: space-between;
         padding: 10px 20px;
-        /* Aseguramos la posición fija y fondo negro */
         position: fixed;
         background-color: rgba(0, 0, 0, 0.95);
         top: 0;
@@ -1175,12 +1173,10 @@ body {
 
     .nav-logo .logo-img {
         height: 30px;
-        /* Ajuste para móvil */
     }
 
     .menu-toggle {
         display: block;
-        /* Muestra el botón de hamburguesa */
         z-index: 1001;
     }
 
@@ -1188,7 +1184,6 @@ body {
     .nav-links {
         /* Estado por defecto (OCULTO) */
         display: flex;
-        /* Debe ser flex para column */
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -1198,18 +1193,19 @@ body {
         background-color: rgba(0, 0, 0, 0.95);
         padding-top: 100px;
         text-align: center;
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(
-            100%
-        );
-        /* Deslizado fuera de la pantalla (a la derecha) */
+        transition: transform 0.3s ease-in-out, visibility 0.3s;
+        
+        /* CORRECCIÓN 1: Sacar el menú fuera de la pantalla por defecto */
+        transform: translateX(100%);
+        visibility: hidden; 
+        
         gap: 0;
     }
 
     .nav-links.active {
-        /* Estado ABierto (MOSTRADO) */
-        transform: translateX(0);
-        /* Deslizado a la posición visible */
+        /* CORRECCIÓN 2: Mostrar el menú cuando está activo */
+        transform: translateX(0); 
+        visibility: visible;
     }
 
     .nav-links li {
@@ -1330,20 +1326,19 @@ body {
     }
 
     /* ------------------------------------------- */
-    /* ✅ AJUSTE MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
+    /* AJUSTE MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
     /* ------------------------------------------- */
     
     .modal-contenido-expandido {
         width: 95%;
         max-width: 95vw;
-        max-height: 98vh; /* Se asegura que el modal sea grande en altura */
+        max-height: 98vh; 
     }
 
     .carousel-container {
-        /* Asegura que el carrusel utilice la altura completa disponible del modal */
-        height: 100%;
-        /* 98vh (altura del modal) - 50px (espacio aproximado para el caption) */
-        max-height: calc(98vh - 50px);
+        /* Altura ajustada para el carrusel para dejar espacio al caption en móvil */
+        height: auto;
+        max-height: calc(90vh - 100px); 
     }
     
     /* ------------------------------------------- */
@@ -1387,6 +1382,10 @@ body {
     }
 
     /** Sección Sponsors */
+    .seccion-sponsors {
+        background-attachment: scroll; /* Cambiado a scroll en móvil para evitar glitches */
+    }
+
     .sponsors-container-interactivo {
         flex-direction: column;
         min-height: auto;
@@ -1433,13 +1432,12 @@ body {
 /** --- Estilos para Tablet/Desktop intermedio (769px a 1250px) --- */
 @media (min-width: 769px) and (max-width: 1250px) {
     /*
-     * AJUSTE CRÍTICO: 3 COLUMNAS para pantallas medianas (más de 768px y menos de 1250px)
+     * AJUSTE: 3 COLUMNAS para pantallas medianas
      */
     .galeria-piezas {
         grid-template-columns: repeat(3, minmax(200px, 1fr));
         gap: 20px;
         max-width: 900px;
-        /* Reducir el ancho máximo para el diseño de 3 columnas */
     }
 
     .footer-col {
