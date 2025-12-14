@@ -443,7 +443,7 @@ body {
     height: 100%; 
     
     /* ✅ SOLUCIÓN CLAVE: Usar 'contain' para que la imagen/video se ajuste sin recortarse */
-    object-fit: contain; 
+    object-fit: cover; 
     
     display: block;
     margin: 0 auto;
