@@ -159,45 +159,49 @@
                     <img src="Imagenes/Tatuajes/Surrealismo/Ragnarok1.jpg" alt="Animales 1">
                     <div class="card-caption">Ragnarok</div>
                 </div>
+                <!-- HECHO !-->
 
-                <div class="pieza-card" data-category="surrealismo">
-                    <img src="Imagenes/Tatuajes/Imagen_08_ejemplo.jpg" alt="Surrealismo Animal">
-                    <div class="card-caption">Ojo con Águila</div>
+                <div class="pieza-card" data-category="animales"
+                    data-images='["Imagenes/Tatuajes/Animales/Gorila.jpg", "Imagenes/Tatuajes/Animales/Gorila2.jpg"]'>
+                    <img src="Imagenes/Tatuajes/Animales/Gorila3.jpg" alt="Animales 1">
+                    <div class="card-caption">Gorila</div>
                 </div>
 
-                <div class="pieza-card hidden-initial" data-category="retrato">
-                    <img src="Imagenes/Tatuajes/Imagen_09_ejemplo.jpg" alt="Retrato 2">
-                    <div class="card-caption">Retrato de Figura Clásica</div>
+                <!-- HECHO !-->
+
+                <div class="pieza-card" data-category="animales"
+                    data-images='["Imagenes/Tatuajes/Animales/HermanoLeon2.jpg", "Imagenes/Tatuajes/Animales/HermanoLeon3.jpg"]'
+                    data-video="Imagenes/Tatuajes/Animales/HermanoLeonVideo.mp4">
+                    <img src="Imagenes/Tatuajes/Animales/HermanoLeon.jpg" alt="Animales 1">
+                    <div class="card-caption">Hermano Leon</div>
                 </div>
 
-                
-
-                <div class="pieza-card hidden-initial" data-category="surrealismo">
-                    <img src="Imagenes/Tatuajes/Imagen_11_ejemplo.jpg" alt="Surrealismo 2">
-                    <div class="card-caption">Mano y Llama</div>
+                <!-- HECHO !-->
+                <div class="pieza-card" data-category="retrato"
+                    data-images='["Imagenes/Tatuajes/Retrato/CrisBrown.jpg", "Imagenes/Tatuajes/Retrato/CrisBrown2.jpg"]'
+                    data-video="Imagenes/Tatuajes/Retrato/CrisBrownVideo.mp4">
+                    <img src="Imagenes/Tatuajes/Retrato/CrisBrown.jpg" alt="Animales 1">
+                    <div class="card-caption">Cris Brown</div>
                 </div>
 
-                <div class="pieza-card hidden-initial" data-category="animales">
-                    <img src="Imagenes/Tatuajes/Imagen_12_ejemplo.jpg" alt="Animales 3">
-                    <div class="card-caption">Búho en Vuelo</div>
+                <!-- HECHO !-->
+                <div class="pieza-card" data-category="retrato"
+                    data-images='["Imagenes/Tatuajes/Retrato/Dellafuente.jpg", "Imagenes/Tatuajes/Retrato/Dellafuente.jpg"]'
+                    data-video="Imagenes/Tatuajes/Retrato/DellafuenteVideo.mp4">
+                    <img src="Imagenes/Tatuajes/Retrato/Dellafuente.jpg" alt="Animales 1">
+                    <div class="card-caption">Dellafuente</div>
                 </div>
 
-                
-
-                <div class="pieza-card hidden-initial" data-category="surrealismo">
-                    <img src="Imagenes/Tatuajes/Imagen_14_ejemplo.jpg" alt="Surrealismo 3">
-                    <div class="card-caption">Paisaje Onírico</div>
+                <!-- HECHO !-->
+                <div class="pieza-card" data-category="retrato"
+                    data-images='["Imagenes/Tatuajes/Retrato/OlDirtyBastard.jpg", "Imagenes/Tatuajes/Retrato/OlDirtyBastard2.jpg"]'
+                    data-video="Imagenes/Tatuajes/Retrato/OlDirtyBastardVideo.mp4">
+                    <img src="Imagenes/Tatuajes/Retrato/OlDirtyBastard.jpg" alt="Animales 1">
+                    <div class="card-caption">Ol' Dirty Bastard
+                    </div>
                 </div>
 
-                <div class="pieza-card hidden-initial" data-category="animales">
-                    <img src="Imagenes/Tatuajes/Imagen_15_ejemplo.jpg" alt="Animales 4">
-                    <div class="card-caption">Tigre y Humo</div>
-                </div>
 
-                <div class="pieza-card hidden-initial" data-category="retrato">
-                    <img src="Imagenes/Tatuajes/Imagen_16_ejemplo.jpg" alt="Retrato 4">
-                    <div class="card-caption">Retrato con Textura</div>
-                </div>
 
             </div>
             <div class="ver-mas-container">
@@ -343,7 +347,6 @@
             <span class="badge active">1</span>
         </a>
     </div>
-
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -360,20 +363,12 @@
         links.forEach(link => {
             link.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-
                 if (href.startsWith('#') && href.length > 1) {
                     e.preventDefault();
-
                     const targetElement = document.querySelector(href);
-
                     if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-
-                        if (navLinks.classList.contains('active')) {
-                            toggleMenu();
-                        }
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        if (navLinks.classList.contains('active')) toggleMenu();
                     }
                 } else if (navLinks.classList.contains('active')) {
                     toggleMenu();
@@ -390,266 +385,164 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Variables de Galería y Modal ---
             const filterButtons = document.querySelectorAll('.filtro-btn');
             const galleryCards = document.querySelectorAll('.pieza-card');
-
             const modal = document.getElementById('modalGaleria');
             const cerrarModalBtn = document.getElementById('cerrarModal');
             const modalCaption = document.getElementById('captionModal');
-
-            // Aseguramos que los selectores funcionen con la nueva estructura del modal
             const carouselTrack = modal.querySelector('.carousel-track');
             const carouselPrevBtn = modal.querySelector('.carousel-prev');
             const carouselNextBtn = modal.querySelector('.carousel-next');
 
-            let currentSlide = 0;
-            let carouselItems = []; // Para almacenar los elementos del carrusel (imágenes/videos)
-
-            // --- Variables Mostrar Más/Menos ---
             const mostrarMasBtn = document.getElementById('mostrarMasBtn');
-            const initialHiddenCards = Array.from(document.querySelectorAll('.pieza-card.hidden-initial'));
+            const verMasContainer = document.querySelector('.ver-mas-container');
             const piezasSection = document.getElementById('piezas');
+
+            let currentSlide = 0;
+            let carouselItems = [];
             let allShown = false;
 
-            // --- Funciones de Carrusel ---
-            function showSlide(index) {
-                if (carouselItems.length === 0) return;
-
-                // Asegurarse de que el índice esté dentro de los límites
-                if (index < 0) {
-                    currentSlide = carouselItems.length - 1;
-                } else if (index >= carouselItems.length) {
-                    currentSlide = 0;
-                } else {
-                    currentSlide = index;
-                }
-
-                const offset = -currentSlide * 100;
-                carouselTrack.style.transform = `translateX(${offset}%)`;
-
-                // Pausar todos los videos excepto el actual
-                carouselItems.forEach((item, i) => {
-                    const video = item.querySelector('video');
-                    if (video) {
-                        if (i === currentSlide) {
-                            video.play();
-                        } else {
-                            video.pause();
-                            video.currentTime = 0; // Reiniciar video al cambiar
-                        }
-                    }
-                });
-            }
-
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
-
-            function prevSlide() {
-                showSlide(currentSlide - 1);
-            }
-
-            // --- Manejo del Botón Mostrar Más/Menos ---
-            function toggleGallery() {
-                if (!allShown) {
-                    initialHiddenCards.forEach(card => {
-                        card.classList.remove('hidden-initial');
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 10);
-                    });
-
-                    mostrarMasBtn.textContent = 'Mostrar Menos Piezas';
-                    allShown = true;
-
-                } else {
-                    initialHiddenCards.forEach(card => {
-                        card.classList.add('hidden-initial');
-                        card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    });
-
-                    mostrarMasBtn.textContent = 'Mostrar Más Piezas';
-                    allShown = false;
-
-                    if (piezasSection) {
-                        piezasSection.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-                const activeBtn = document.querySelector('.filtro-btn.active');
-                filterPieces(activeBtn ? activeBtn.getAttribute('data-filter') : 'all');
-            }
-            mostrarMasBtn.addEventListener('click', toggleGallery);
-
-            // --- Función de Filtrado ---
+            // --- FUNCIÓN DE FILTRADO CON LÍMITE DE 8 ---
             function filterPieces(filter) {
-                let activeFilter = filter;
-                if (!activeFilter) {
-                    const activeBtn = document.querySelector('.filtro-btn.active');
-                    activeFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
-                }
+                let count = 0; // Contador para limitar a 8
 
                 galleryCards.forEach(card => {
                     const categories = card.getAttribute('data-category');
-                    const isInitiallyHidden = card.classList.contains('hidden-initial');
+                    const matchesFilter = filter === 'all' || categories === filter;
 
-                    const matchesFilter = activeFilter === 'all' || categories === activeFilter;
-                    const shouldShow = matchesFilter && (!isInitiallyHidden || allShown);
+                    let shouldShow = false;
 
-                    // Pequeño truco para asegurar que la animación se dispare correctamente
-                    card.style.opacity = '1';
-
-                    if (!shouldShow) {
-                        card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-
+                    if (filter === 'all') {
+                        if (allShown) {
+                            // Si el usuario dio a "Mostrar más", vemos todas
+                            shouldShow = true;
+                        } else {
+                            // Si no, solo mostramos las primeras 8 que coincidan
+                            if (count < 8) {
+                                shouldShow = true;
+                                count++;
+                            } else {
+                                shouldShow = false;
+                            }
+                        }
                     } else {
+                        // En categorías específicas (Realismo, etc.) mostramos todas las de esa categoría
+                        shouldShow = matchesFilter;
+                    }
+
+                    if (shouldShow && matchesFilter) {
                         card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 10);
+                        setTimeout(() => { card.style.opacity = '1'; }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => { card.style.display = 'none'; }, 300);
                     }
                 });
 
-                if (activeFilter === 'all' && initialHiddenCards.length > 0) {
-                    mostrarMasBtn.style.display = 'block';
+                // CONTROL DEL BOTÓN
+                if (filter === 'all') {
+                    verMasContainer.style.display = 'flex';
                     mostrarMasBtn.textContent = allShown ? 'Mostrar Menos Piezas' : 'Mostrar Más Piezas';
                 } else {
-                    mostrarMasBtn.style.display = 'none';
+                    verMasContainer.style.display = 'none';
                 }
             }
 
-            // --- Eventos de Filtro ---
+            // Inicializar la galería con el filtro 'all' (mostrará las primeras 8)
+            filterPieces('all');
+
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
-
-                    const filterValue = this.getAttribute('data-filter');
-                    filterPieces(filterValue);
+                    filterPieces(this.getAttribute('data-filter'));
                 });
             });
 
-            // --- Lógica para Abrir el Modal Expandido ---
+            mostrarMasBtn.addEventListener('click', () => {
+                allShown = !allShown;
+                filterPieces('all');
+
+                if (!allShown && piezasSection) {
+                    piezasSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // --- LÓGICA DEL MODAL ---
+            function showSlide(index) {
+                if (carouselItems.length === 0) return;
+                if (index < 0) currentSlide = carouselItems.length - 1;
+                else if (index >= carouselItems.length) currentSlide = 0;
+                else currentSlide = index;
+
+                const offset = -currentSlide * 100;
+                carouselTrack.style.transform = `translateX(${offset}%)`;
+
+                carouselItems.forEach((item, i) => {
+                    const video = item.querySelector('video');
+                    if (video) {
+                        if (i === currentSlide) video.play();
+                        else { video.pause(); video.currentTime = 0; }
+                    }
+                });
+            }
+
             galleryCards.forEach(card => {
                 card.addEventListener('click', function () {
-                    // Solo abrir si la tarjeta está visible
                     if (window.getComputedStyle(card).display !== 'none' && window.getComputedStyle(card).opacity !== '0') {
                         const caption = this.querySelector('.card-caption').innerText;
                         const imagesJSON = this.getAttribute('data-images');
                         const videoURL = this.getAttribute('data-video');
 
                         let images = [];
-                        if (imagesJSON) {
-                            try {
-                                images = JSON.parse(imagesJSON);
-                            } catch (e) {
-                                console.error("Error al parsear data-images:", e);
-                                images = [this.querySelector('img').src]; // Fallback
-                            }
-                        } else {
-                            images = [this.querySelector('img').src]; // Si no hay data-images, usa la principal
+                        try {
+                            images = imagesJSON ? JSON.parse(imagesJSON) : [this.querySelector('img').src];
+                        } catch (e) {
+                            images = [this.querySelector('img').src];
                         }
 
-                        // Limpiar el carrusel
                         carouselTrack.innerHTML = '';
                         carouselItems = [];
 
-                        // Añadir imágenes al carrusel
                         images.forEach(imgSrc => {
                             const itemDiv = document.createElement('div');
-                            itemDiv.classList.add('carousel-item');
-                            const imgElement = document.createElement('img');
-                            imgElement.src = imgSrc;
-                            imgElement.alt = caption;
-                            itemDiv.appendChild(imgElement);
+                            itemDiv.className = 'carousel-item';
+                            itemDiv.innerHTML = `<img src="${imgSrc}" alt="${caption}">`;
                             carouselTrack.appendChild(itemDiv);
                             carouselItems.push(itemDiv);
                         });
 
-                        // Añadir video al carrusel (si existe)
                         if (videoURL) {
                             const itemDiv = document.createElement('div');
-                            itemDiv.classList.add('carousel-item');
-                            const videoElement = document.createElement('video');
-                            videoElement.src = videoURL;
-                            videoElement.controls = true; // Mostrar controles de video
-                            videoElement.loop = true; // Reproducir en bucle
-                            videoElement.muted = true; // Silenciar por defecto
-                            itemDiv.appendChild(videoElement);
+                            itemDiv.className = 'carousel-item';
+                            itemDiv.innerHTML = `<video src="${videoURL}" controls loop muted></video>`;
                             carouselTrack.appendChild(itemDiv);
                             carouselItems.push(itemDiv);
                         }
 
                         modalCaption.innerHTML = caption;
                         modal.style.display = "block";
-                        currentSlide = 0; // Reiniciar a la primera diapositiva
-                        showSlide(currentSlide); // Mostrar la primera diapositiva
+                        currentSlide = 0;
+                        showSlide(0);
 
-                        // Mostrar/Ocultar botones de navegación si solo hay un elemento
-                        if (carouselItems.length <= 1) {
-                            carouselPrevBtn.style.display = 'none';
-                            carouselNextBtn.style.display = 'none';
-                        } else {
-                            carouselPrevBtn.style.display = 'block';
-                            carouselNextBtn.style.display = 'block';
-                        }
+                        const hasMany = carouselItems.length > 1;
+                        carouselPrevBtn.style.display = hasMany ? 'block' : 'none';
+                        carouselNextBtn.style.display = hasMany ? 'block' : 'none';
                     }
                 });
             });
 
-            // --- Eventos del Modal Expandido ---
-            cerrarModalBtn.onclick = function () {
+            cerrarModalBtn.onclick = () => {
                 modal.style.display = "none";
-                // Pausar todos los videos al cerrar el modal
                 carouselItems.forEach(item => {
-                    const video = item.querySelector('video');
-                    if (video) {
-                        video.pause();
-                        video.currentTime = 0;
-                    }
+                    const v = item.querySelector('video');
+                    if (v) { v.pause(); v.currentTime = 0; }
                 });
-            }
-            modal.onclick = function (event) {
-                // Si se hace click fuera del contenido (en el fondo oscuro)
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                    // Pausar todos los videos al cerrar el modal
-                    carouselItems.forEach(item => {
-                        const video = item.querySelector('video');
-                        if (video) {
-                            video.pause();
-                            video.currentTime = 0;
-                        }
-                    });
-                }
-            }
+            };
 
-            carouselPrevBtn.addEventListener('click', prevSlide);
-            carouselNextBtn.addEventListener('click', nextSlide);
-
-            // --- Inicialización ---
-            filterPieces('all'); // Mostrar todas las piezas al cargar
-
-            // --- Lógica del Badge de WhatsApp ---
-            const whatsappBadge = document.querySelector('.whatsapp-float .badge');
-            function toggleBadgeVisibility() {
-                if (whatsappBadge) {
-                    whatsappBadge.classList.toggle('active');
-                }
-            }
-            if (whatsappBadge) {
-                setInterval(toggleBadgeVisibility, 5000);
-            }
-
+            window.onclick = (e) => { if (e.target === modal) cerrarModalBtn.onclick(); };
+            carouselNextBtn.onclick = () => showSlide(currentSlide + 1);
+            carouselPrevBtn.onclick = () => showSlide(currentSlide - 1);
         });
     </script>
 </body>

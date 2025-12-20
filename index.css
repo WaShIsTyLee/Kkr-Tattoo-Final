@@ -652,13 +652,11 @@ body {
 
 /* Contenedor del Botón Mostrar Más - Centrado y Espaciado */
 .ver-mas-container {
-    text-align: center; /* Centra el botón */
-    padding: 30px 0; /* Espacio vertical */
-    margin-top: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Esto lo centra horizontalmente */
     width: 100%;
+    margin: 30px 0;
 }
-
 /* Estilo para el botón "Mostrar Más" (PRIMARY-BTN) - **DEJADO COMO ESTABA POR TI** */
 .primary-btn {
     background-color: #333; /* Fondo oscuro */
