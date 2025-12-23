@@ -1338,28 +1338,28 @@ body {
     margin-right: auto;
   }
 
-  /** --- GALERÍA ACTUALIZADA (SIN NOMBRES NI BORDES) --- */
+  /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL (LIMPIA) */
   .galeria-piezas {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px; /* Mantenemos el espacio de 15px original */
   }
 
   .pieza-card {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background-color: transparent !important; /* Quita el blanco */
+    border: none !important;            /* Quita el borde */
+    box-shadow: none !important;        /* Quita la sombra */
     padding: 0 !important;
   }
 
   .card-caption {
-    display: none !important; /* Quita el nombre en móvil */
+    display: none !important;           /* Quita el nombre */
   }
 
   .pieza-card img {
     border-radius: 8px;
     width: 100%;
     height: auto;
+    display: block;
   }
 
   /* ------------------------------------------- */
@@ -1367,7 +1367,7 @@ body {
   /* ------------------------------------------- */
   #captionModal,
   .modal-caption-expandido {
-    display: none !important; /* Quita el nombre al abrir la imagen */
+    display: none !important;
   }
 
   .modal-contenido-expandido {
@@ -1379,7 +1379,7 @@ body {
 
   .carousel-container {
     height: auto;
-    max-height: calc(100vh - 80px); /* Ajuste para que ocupe casi todo el alto */
+    max-height: calc(100vh - 120px);
     overflow: hidden;
   }
 
@@ -1423,7 +1423,7 @@ body {
   }
 
   .sponsor-interactivo-card {
-    flex-basis: 150px;
+    flex-basis: 200px;
     flex-grow: 1;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
