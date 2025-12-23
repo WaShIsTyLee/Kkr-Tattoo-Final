@@ -1220,7 +1220,6 @@ body {
 
   /* ESTILOS DE LA LISTA DE ENLACES (OCULTO/ABIERTO) */
   .nav-links {
-    /* Estado por defecto (OCULTO) */
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -1232,16 +1231,12 @@ body {
     padding-top: 100px;
     text-align: center;
     transition: transform 0.3s ease-in-out, visibility 0.3s;
-
-    /* CORRECCIÓN: Sacar el menú fuera de la pantalla por defecto */
     transform: translateX(100%);
     visibility: hidden;
-
     gap: 0;
   }
 
   .nav-links.active {
-    /* CORRECCIÓN: Mostrar el menú cuando está activo */
     transform: translateX(0);
     visibility: visible;
   }
@@ -1275,7 +1270,6 @@ body {
 
   /* --- ÍCONOS SOCIALES DEL HEADER (MÓVIL) --- */
   .header-social-list {
-    /* Centrar en pantallas estrechas */
     bottom: 10px;
     right: 50%;
     transform: translateX(50%);
@@ -1295,11 +1289,6 @@ body {
   .social a {
     font-size: 1.25rem;
     border-width: 1px;
-  }
-
-  .social li:has(a:hover, a:focus-visible)::after {
-    /* Ajustar la posición del tooltip */
-    inset-block-start: -75%;
   }
 
   /** Sección Artista */
@@ -1349,18 +1338,28 @@ body {
     margin-right: auto;
   }
 
-  .artista-historia-card h3 {
-    font-size: 1.5em;
-  }
-
-  .artista-historia-card p {
-    font-size: 1em;
-  }
-
-  /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL */
+  /** --- GALERÍA ACTUALIZADA (SIN NOMBRES NI BORDES) --- */
   .galeria-piezas {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .pieza-card {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .card-caption {
+    display: none !important; /* Quita el nombre en móvil */
+  }
+
+  .pieza-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
   }
 
   /* ------------------------------------------- */
@@ -1368,28 +1367,23 @@ body {
   /* ------------------------------------------- */
   #captionModal,
   .modal-caption-expandido {
-    display: none !important;
+    display: none !important; /* Quita el nombre al abrir la imagen */
   }
 
   .modal-contenido-expandido {
     width: 95%;
     max-width: 95vw;
-    /* Hacemos el modal de altura completa del viewport para estabilidad */
     height: 100%;
     max-height: 100vh;
   }
 
   .carousel-container {
     height: auto;
-    /* Utilizamos calc(100vh - XXpx) para garantizar que el caption tenga espacio 
-           y el carrusel no se desborde, lo que elimina el borde negro. */
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 80px); /* Ajuste para que ocupe casi todo el alto */
     overflow: hidden;
   }
 
-  /* ------------------------------------------- */
-
-  /** Galería Modal (Modal simple de una sola imagen) */
+  /** Galería Modal (Modal simple) */
   .modal-contenido {
     width: 100%;
   }
@@ -1418,19 +1412,9 @@ body {
     padding: 15px;
   }
 
-  .horario li {
-    font-size: 1em;
-    padding: 8px 0;
-  }
-
-  .horario strong {
-    font-size: 1em;
-  }
-
   /** Sección Sponsors */
   .seccion-sponsors {
     background-attachment: scroll;
-    /* Scroll en móvil para evitar glitches */
   }
 
   .sponsors-container-interactivo {
@@ -1439,23 +1423,19 @@ body {
   }
 
   .sponsor-interactivo-card {
-    flex-basis: 200px;
+    flex-basis: 150px;
     flex-grow: 1;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-  /* Mantenemos el color en móvil sin hover */
   .sponsor-imagen {
     filter: grayscale(0%) brightness(1);
   }
 
   .sponsor-info {
     transform: translateY(0);
-    /* Mostrar siempre en móvil */
-    background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.4));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4));
   }
 
   /** Footer */
@@ -1468,18 +1448,10 @@ body {
     min-width: auto;
     margin-bottom: 25px;
   }
-
-  .footer-brand {
-    margin-top: 10px;
-  }
 }
 
 /** --- Estilos para Tablet/Desktop intermedio (769px a 1250px) --- */
 @media (min-width: 769px) and (max-width: 1250px) {
-
-  /*
-     * AJUSTE: 3 COLUMNAS para pantallas medianas
-     */
   .galeria-piezas {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 20px;
@@ -1489,5 +1461,4 @@ body {
   .footer-col {
     width: 48%;
   }
-
 }
