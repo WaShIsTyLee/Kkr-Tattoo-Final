@@ -77,19 +77,22 @@ body {
 
 /* ➡️ ESTILOS PARA LA IMAGEN DEL LOGO */
 .nav-logo .logo-img {
-  height: 45px; /* Define la altura de tu logo */
+  height: 45px;
+  /* Define la altura de tu logo */
   width: auto;
   display: block;
   transition: transform 0.3s ease-in-out;
 }
 
 .nav-logo a:hover .logo-img {
-  transform: scale(1.05); /* Efecto sutil al pasar el ratón */
+  transform: scale(1.05);
+  /* Efecto sutil al pasar el ratón */
 }
 
 .nav-links {
   list-style: none;
-  display: flex; /* Por defecto, en escritorio es flex (fila) */
+  display: flex;
+  /* Por defecto, en escritorio es flex (fila) */
   gap: 30px;
 }
 
@@ -131,7 +134,8 @@ body {
 
 /** Estilos para el botón de menú hamburguesa (Móvil) */
 .menu-toggle {
-  display: none; /* Oculto en escritorio */
+  display: none;
+  /* Oculto en escritorio */
   background: none;
   border: none;
   cursor: pointer;
@@ -223,7 +227,7 @@ body {
   transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.social a > i {
+.social a>i {
   position: relative;
   z-index: 1;
 }
@@ -358,6 +362,7 @@ body {
   margin-bottom: 15px;
   color: #555;
 }
+
 /* ================================================= */
 /* 06. SECCIÓN GALERÍA DE PIEZAS (#piezas) Y MODAL */
 /* ================================================= */
@@ -369,361 +374,388 @@ body {
  */
 
 .modal-contenido-expandido {
-    position: relative;
-    background-color: #1a1a1a;
-    margin: auto;
-    /* Usar Flexbox para controlar el espacio vertical entre Carrusel y Caption */
-    display: flex;
-    flex-direction: column;
-    padding: 0; 
-    border: 1px solid #888;
-    width: 70%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.4);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    border-radius: 10px;
-    max-height: 95vh;
-    overflow-y: auto; 
+  position: relative;
+  background-color: #1a1a1a;
+  margin: auto;
+  /* Usar Flexbox para controlar el espacio vertical entre Carrusel y Caption */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.4);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+  max-height: 95vh;
+  overflow-y: auto;
 }
 
 /* Si ya tiene animatetop, puede omitir esta parte */
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
 
 .modal-caption-expandido {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: var(--color-text-light, #fff); 
-    padding: 15px 20px; 
-    margin-top: 0;
-    font-size: 1.1rem;
-    flex-shrink: 0;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: var(--color-text-light, #fff);
+  padding: 15px 20px;
+  margin-top: 0;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 /* Carrusel */
 .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    flex-grow: 1; 
-    border-radius: 8px 8px 0 0; 
-    background-color: #000;
-    
-    /* 💡 AJUSTE DE ALTURA PARA ASEGURAR ESPACIO VISIBLE */
-    height: 80vh; /* Altura fija para el carrusel (ej: 80% de la altura de la ventana) */
-    max-height: 100%; 
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  flex-grow: 1;
+  border-radius: 8px 8px 0 0;
+  background-color: #000;
+
+  /* 💡 AJUSTE DE ALTURA PARA ASEGURAR ESPACIO VISIBLE */
+  height: 80vh;
+  /* Altura fija para el carrusel (ej: 80% de la altura de la ventana) */
+  max-height: 100%;
 }
 
 .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%; 
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
 }
 
 .carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    height: 100%; 
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  height: 100%;
 }
 
 .carousel-item img,
 .carousel-item video {
-    /* Ocupar el 100% del ancho y alto disponible para que no queden bordes */
-    width: 100%;
-    height: 100%; 
-    
-    /* ✅ SOLUCIÓN CLAVE: Usar 'contain' para que la imagen/video se ajuste sin recortarse */
-    object-fit: cover; 
-    
-    display: block;
-    margin: 0 auto;
+  /* Ocupar el 100% del ancho y alto disponible para que no queden bordes */
+  width: 100%;
+  height: 100%;
+
+  /* ✅ SOLUCIÓN CLAVE: Usar 'contain' para que la imagen/video se ajuste sin recortarse */
+  object-fit: cover;
+
+  display: block;
+  margin: 0 auto;
 }
 
 .carousel-prev,
 .carousel-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  z-index: 10;
 }
 
 .carousel-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 .carousel-prev:hover,
 .carousel-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* --- SECCIÓN GALERÍA PRINCIPAL (sin cambios) --- */
 
 .seccion-piezas {
-    padding: 60px 20px;
-    background-color: transparent;
-    text-align: center;
-    min-height: 80vh;
+  padding: 60px 20px;
+  background-color: transparent;
+  text-align: center;
+  min-height: 80vh;
 }
 
 /** --- Botones de Filtro --- */
 .filtro-botones {
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .filtro-btn {
-    background-color: #fff;
-    color: #333;
-    border: 2px solid #333;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s, transform 0.1s;
-    text-transform: capitalize;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+  text-transform: capitalize;
 }
 
 .filtro-btn:hover {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 .filtro-btn.active {
-    background-color: #333;
-    color: #fff;
-    border-color: #333;
-    transform: translateY(-2px);
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+  transform: translateY(-2px);
 }
 
 /** --- Galería - AJUSTE A 4 COLUMNAS --- */
 .galeria-piezas {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .pieza-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    will-change: transform, opacity;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
-    cursor: pointer;
-    opacity: 1;
-    display: block;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  will-change: transform, opacity;
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+  cursor: pointer;
+  opacity: 1;
+  display: block;
+}
+
+#captionModal,
+.modal-caption-expandido {
+  display: none !important;
 }
 
 .pieza-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .pieza-card.hidden-by-filter {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease;
 }
 
 .pieza-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
 }
 
 .card-caption {
-    padding: 15px;
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /** --- Modal de Imagen --- */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: opacity 0.3s ease;
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: opacity 0.3s ease;
 }
 
 .modal-contenido {
-    margin: auto;
-    display: block;
-    width: 90%;
-    max-width: 900px;
-    max-height: 90%;
-    object-fit: contain;
-    border-radius: 8px;
-    cursor: zoom-in;
-    transition: transform 0.3s ease-in-out;
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease-in-out;
 }
 
 #captionModal {
-    margin: 20px auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    font-size: 1.2em;
+  margin: 20px auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 1.2em;
 }
 
 .cerrar {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-    z-index: 20;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 20;
 }
 
 .cerrar:hover,
 .cerrar:focus {
-    color: #bbb;
-    text-decoration: none;
+  color: #bbb;
+  text-decoration: none;
 }
 
 .modal-contenido,
 #captionModal {
-    animation-name: zoom;
-    animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 /* --- Estilos para la Galería de Piezas --- */
 
 /* Clase para ocultar las piezas extra (usada en el HTML) */
 .pieza-card.hidden-initial {
-    display: none; /* Oculta el elemento completamente al cargar */
-    opacity: 0;
+  display: none;
+  /* Oculta el elemento completamente al cargar */
+  opacity: 0;
 }
 
 /* Contenedor del Botón Mostrar Más - Centrado y Espaciado */
 .ver-mas-container {
-    display: flex;
-    justify-content: center; /* Esto lo centra horizontalmente */
-    width: 100%;
-    margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  /* Esto lo centra horizontalmente */
+  width: 100%;
+  margin: 30px 0;
 }
+
 /* Estilo para el botón "Mostrar Más" (PRIMARY-BTN) - **DEJADO COMO ESTABA POR TI** */
 .primary-btn {
-    background-color: #333; /* Fondo oscuro */
-    color: #efb810; /* Color de texto amarillo/dorado */
-    border: 2px solid #efb810;
-    padding: 12px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: background-color 0.3s, color 0.3s, transform 0.1s;
-    text-transform: uppercase;
-    display: inline-block;
+  background-color: #333;
+  /* Fondo oscuro */
+  color: #efb810;
+  /* Color de texto amarillo/dorado */
+  border: 2px solid #efb810;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 .primary-btn:hover {
-    background-color: #efb810;
-    color: #333;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #efb810;
+  color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* --- ESTILOS SUTILES PARA EL BOTÓN MOSTRAR MÁS (SOLUCIÓN) --- */
 /* Sobrescribimos la clase primary-btn solo para el botón Mostrar Más */
 
 #mostrarMasBtn {
-    /* Reiniciar estilos de botón primario */
-    background: none !important;
-    border: none !important;
-    padding: 10px 20px !important;
+  /* Reiniciar estilos de botón primario */
+  background: none !important;
+  border: none !important;
+  padding: 10px 20px !important;
 
-    /* Nuevos estilos sutiles */
-    color: #333;
-    font-size: 1.15rem !important; /* Un poco más grande para destacar */
-    font-weight: 600 !important;
-    cursor: pointer !important;
-    transition: color 0.3s, border-bottom 0.3s, opacity 0.3s !important;
-    text-transform: none !important; /* Sin mayúsculas forzadas */
-    display: inline-flex !important; /* Para alinear texto e ícono */
-    align-items: center !important;
-    gap: 8px !important;
+  /* Nuevos estilos sutiles */
+  color: #333;
+  font-size: 1.15rem !important;
+  /* Un poco más grande para destacar */
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: color 0.3s, border-bottom 0.3s, opacity 0.3s !important;
+  text-transform: none !important;
+  /* Sin mayúsculas forzadas */
+  display: inline-flex !important;
+  /* Para alinear texto e ícono */
+  align-items: center !important;
+  gap: 8px !important;
 
-    /* Subrayado sutil y animado */
-    border-bottom: 2px solid transparent !important;
-    transform: none !important; /* Quitar animación de traslación */
-    box-shadow: none !important;
+  /* Subrayado sutil y animado */
+  border-bottom: 2px solid transparent !important;
+  transform: none !important;
+  /* Quitar animación de traslación */
+  box-shadow: none !important;
 }
 
 #mostrarMasBtn:hover {
-    color: #efb810 !important; /* Color principal */
-    opacity: 0.9;
-    border-bottom: 2px solid #ffffff !important; /* Mostrar subrayado */
-    background: none !important;
-    transform: none !important;
+  color: #efb810 !important;
+  /* Color principal */
+  opacity: 0.9;
+  border-bottom: 2px solid #ffffff !important;
+  /* Mostrar subrayado */
+  background: none !important;
+  transform: none !important;
 }
 
 /* Animación de entrada para las piezas al hacer clic en "Mostrar Más" */
 .galeria-piezas .pieza-card {
-    transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
+
 /* La clase 'hidden-by-filter' del JS también puede usar esta misma transición */
 
 /* Asegúrate de añadir el display: none para la clase que oculta al filtrar */
 .pieza-card.hidden-by-filter {
-    opacity: 0;
+  opacity: 0;
 }
+
 /* ================================================= */
 /* 07. SECCIÓN SPONSORS (#sponsors) */
 /* ================================================= */
@@ -804,6 +836,7 @@ body {
   background-size: 80%;
   background-position: center;
 }
+
 .tautau-ajuste {
   background-size: 70%;
   background-repeat: no-repeat;
@@ -1046,10 +1079,12 @@ body {
 .footer-col.footer-links {
   text-align: center;
 }
+
 .footer-col.footer-links ul {
   display: inline-block;
   text-align: left;
 }
+
 .footer-col.footer-links li {
   justify-content: flex-start;
 }
@@ -1137,312 +1172,322 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0px);
   }
-}/* ================================================= */
+}
+
+/* ================================================= */
 /* 11. MEDIA QUERIES (RESPONSIVIDAD) */
 /* ================================================= */
 
 /** --- Estilos para pantallas pequeñas (General) --- */
 @media (max-width: 860px) {
-    /** NAV y Menú Móvil - CORRECCIÓN CRÍTICA DE MENÚ MÓVIL */
-    .marble_header {
-        padding-top: 50px;
-        height: 550px;
-    }
 
-    .header-content h1 {
-        font-size: 2em;
-    }
+  /** NAV y Menú Móvil - CORRECCIÓN CRÍTICA DE MENÚ MÓVIL */
+  .marble_header {
+    padding-top: 50px;
+    height: 550px;
+  }
 
-    .main-nav {
-        justify-content: space-between;
-        padding: 10px 20px;
-        position: fixed;
-        background-color: rgba(0, 0, 0, 0.95);
-        top: 0;
-        left: 0;
-        z-index: 1000;
-    }
+  .header-content h1 {
+    font-size: 2em;
+  }
 
-    .nav-logo .logo-img {
-        height: 30px;
-    }
+  .main-nav {
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.95);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
 
-    .menu-toggle {
-        display: block;
-        z-index: 1001;
-    }
+  .nav-logo .logo-img {
+    height: 30px;
+  }
 
-    /* ESTILOS DE LA LISTA DE ENLACES (OCULTO/ABIERTO) */
-    .nav-links {
-        /* Estado por defecto (OCULTO) */
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        padding-top: 100px;
-        text-align: center;
-        transition: transform 0.3s ease-in-out, visibility 0.3s;
-        
-        /* CORRECCIÓN: Sacar el menú fuera de la pantalla por defecto */
-        transform: translateX(100%);
-        visibility: hidden; 
-        
-        gap: 0;
-    }
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
 
-    .nav-links.active {
-        /* CORRECCIÓN: Mostrar el menú cuando está activo */
-        transform: translateX(0); 
-        visibility: visible;
-    }
+  /* ESTILOS DE LA LISTA DE ENLACES (OCULTO/ABIERTO) */
+  .nav-links {
+    /* Estado por defecto (OCULTO) */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding-top: 100px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, visibility 0.3s;
 
-    .nav-links li {
-        width: 100%;
-        margin: 10px 0;
-    }
+    /* CORRECCIÓN: Sacar el menú fuera de la pantalla por defecto */
+    transform: translateX(100%);
+    visibility: hidden;
 
-    .nav-links a {
-        font-size: 1.5em;
-        padding: 15px 0;
-    }
+    gap: 0;
+  }
 
-    .nav-links a:hover {
-        color: #ffffff;
-        transform: scale(1.08) translateY(-3px);
-        text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
-    }
+  .nav-links.active {
+    /* CORRECCIÓN: Mostrar el menú cuando está activo */
+    transform: translateX(0);
+    visibility: visible;
+  }
 
-    .nav-links a::after {
-        display: block;
-        height: 2px;
-        bottom: 5px;
-    }
+  .nav-links li {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    .nav-links a:hover::after {
-        transform: scaleX(1);
-        background: #efb810;
-    }
+  .nav-links a {
+    font-size: 1.5em;
+    padding: 15px 0;
+  }
 
-    /* --- ÍCONOS SOCIALES DEL HEADER (MÓVIL) --- */
-    .header-social-list {
-        /* Centrar en pantallas estrechas */
-        bottom: 10px;
-        right: 50%;
-        transform: translateX(50%);
-    }
+  .nav-links a:hover {
+    color: #ffffff;
+    transform: scale(1.08) translateY(-3px);
+    text-shadow: 0 0 5px #efb810, 0 0 10px #efb810;
+  }
 
-    .social {
-        flex-wrap: nowrap;
-        flex-direction: row;
-        gap: 0.8rem;
-    }
+  .nav-links a::after {
+    display: block;
+    height: 2px;
+    bottom: 5px;
+  }
 
-    .social li {
-        flex-basis: 3rem;
-        flex-shrink: 0;
-    }
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+    background: #efb810;
+  }
 
-    .social a {
-        font-size: 1.25rem;
-        border-width: 1px;
-    }
+  /* --- ÍCONOS SOCIALES DEL HEADER (MÓVIL) --- */
+  .header-social-list {
+    /* Centrar en pantallas estrechas */
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
 
-    .social li:has(a:hover, a:focus-visible)::after {
-        /* Ajustar la posición del tooltip */
-        inset-block-start: -75%;
-    }
+  .social {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 0.8rem;
+  }
 
-    /** Sección Artista */
-    .artista {
-        padding: 20px 0;
-    }
+  .social li {
+    flex-basis: 3rem;
+    flex-shrink: 0;
+  }
 
-    .artista-titulo,
-    .piezas-titulo,
-    .sponsors-titulo,
-    .estudio-titulo {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-    }
+  .social a {
+    font-size: 1.25rem;
+    border-width: 1px;
+  }
 
-    .artista-contenido {
-        flex-direction: column;
-        padding: 10px;
-        align-items: center;
-    }
+  .social li:has(a:hover, a:focus-visible)::after {
+    /* Ajustar la posición del tooltip */
+    inset-block-start: -75%;
+  }
 
-    .artista-info-izquierda {
-        align-items: center;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
+  /** Sección Artista */
+  .artista {
+    padding: 20px 0;
+  }
 
-    .artista-info-izquierda img {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        margin-bottom: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transform: none;
-    }
+  .artista-titulo,
+  .piezas-titulo,
+  .sponsors-titulo,
+  .estudio-titulo {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
 
-    .artista-nombre {
-        text-align: center;
-        font-size: 1.3em;
-    }
+  .artista-contenido {
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+  }
 
-    .artista-historia-card {
-        width: 100%;
-        max-width: 90%;
-        padding: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .artista-info-izquierda {
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 
-    .artista-historia-card h3 {
-        font-size: 1.5em;
-    }
+  .artista-info-izquierda img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: none;
+  }
 
-    .artista-historia-card p {
-        font-size: 1em;
-    }
+  .artista-nombre {
+    text-align: center;
+    font-size: 1.3em;
+  }
 
-    /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL */
-    .galeria-piezas {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
+  .artista-historia-card {
+    width: 100%;
+    max-width: 90%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    /* ------------------------------------------- */
-    /* CORRECCIÓN MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
-    /* ------------------------------------------- */
-    
-    .modal-contenido-expandido {
-        width: 95%;
-        max-width: 95vw;
-        /* Hacemos el modal de altura completa del viewport para estabilidad */
-        height: 100%; 
-        max-height: 100vh;
-    }
+  .artista-historia-card h3 {
+    font-size: 1.5em;
+  }
 
-    .carousel-container {
-        height: auto;
-        /* Utilizamos calc(100vh - XXpx) para garantizar que el caption tenga espacio 
+  .artista-historia-card p {
+    font-size: 1em;
+  }
+
+  /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL */
+  .galeria-piezas {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  /* ------------------------------------------- */
+  /* CORRECCIÓN MODAL EXPANDIDO (CARRUSEL) PARA MÓVIL */
+  /* ------------------------------------------- */
+  #captionModal,
+  .modal-caption-expandido {
+    display: none !important;
+  }
+
+  .modal-contenido-expandido {
+    width: 95%;
+    max-width: 95vw;
+    /* Hacemos el modal de altura completa del viewport para estabilidad */
+    height: 100%;
+    max-height: 100vh;
+  }
+
+  .carousel-container {
+    height: auto;
+    /* Utilizamos calc(100vh - XXpx) para garantizar que el caption tenga espacio 
            y el carrusel no se desborde, lo que elimina el borde negro. */
-        max-height: calc(100vh - 120px); 
-        overflow: hidden;
-    }
-    
-    /* ------------------------------------------- */
-    
-    /** Galería Modal (Modal simple de una sola imagen) */
-    .modal-contenido {
-        width: 100%;
-    }
-    
-    .cerrar {
-        top: 10px;
-        right: 20px;
-        font-size: 30px;
-    }
+    max-height: calc(100vh - 120px);
+    overflow: hidden;
+  }
 
-    /** Sección Estudio */
-    .mapa-horario {
-        padding: 30px 10px;
-    }
+  /* ------------------------------------------- */
 
-    .imagenestudio {
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 10px;
-    }
+  /** Galería Modal (Modal simple de una sola imagen) */
+  .modal-contenido {
+    width: 100%;
+  }
 
-    .mapa,
-    .horario {
-        width: 100%;
-        max-width: none;
-        padding: 15px;
-    }
+  .cerrar {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+  }
 
-    .horario li {
-        font-size: 1em;
-        padding: 8px 0;
-    }
+  /** Sección Estudio */
+  .mapa-horario {
+    padding: 30px 10px;
+  }
 
-    .horario strong {
-        font-size: 1em;
-    }
+  .imagenestudio {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
 
-    /** Sección Sponsors */
-     .seccion-sponsors {
-        background-attachment: scroll; /* Scroll en móvil para evitar glitches */
-    }
+  .mapa,
+  .horario {
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+  }
 
-    .sponsors-container-interactivo {
-        flex-direction: column;
-        min-height: auto;
-    }
+  .horario li {
+    font-size: 1em;
+    padding: 8px 0;
+  }
 
-    .sponsor-interactivo-card {
-        flex-basis: 200px;
-        flex-grow: 1;
-        border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
+  .horario strong {
+    font-size: 1em;
+  }
 
-    /* Mantenemos el color en móvil sin hover */
-    .sponsor-imagen {
-        filter: grayscale(0%) brightness(1);
-    }
+  /** Sección Sponsors */
+  .seccion-sponsors {
+    background-attachment: scroll;
+    /* Scroll en móvil para evitar glitches */
+  }
 
-    .sponsor-info {
-        transform: translateY(0);
-        /* Mostrar siempre en móvil */
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.4)
-        );
-    }
+  .sponsors-container-interactivo {
+    flex-direction: column;
+    min-height: auto;
+  }
 
-    /** Footer */
-    .main-footer {
-        padding: 40px 10%;
-    }
+  .sponsor-interactivo-card {
+    flex-basis: 200px;
+    flex-grow: 1;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-    .footer-col {
-        width: 100%;
-        min-width: auto;
-        margin-bottom: 25px;
-    }
+  /* Mantenemos el color en móvil sin hover */
+  .sponsor-imagen {
+    filter: grayscale(0%) brightness(1);
+  }
 
-    .footer-brand {
-        margin-top: 10px;
-    }
+  .sponsor-info {
+    transform: translateY(0);
+    /* Mostrar siempre en móvil */
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.4));
+  }
+
+  /** Footer */
+  .main-footer {
+    padding: 40px 10%;
+  }
+
+  .footer-col {
+    width: 100%;
+    min-width: auto;
+    margin-bottom: 25px;
+  }
+
+  .footer-brand {
+    margin-top: 10px;
+  }
 }
 
 /** --- Estilos para Tablet/Desktop intermedio (769px a 1250px) --- */
 @media (min-width: 769px) and (max-width: 1250px) {
-    /*
+
+  /*
      * AJUSTE: 3 COLUMNAS para pantallas medianas
      */
-    .galeria-piezas {
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-        gap: 20px;
-        max-width: 900px;
-    }
+  .galeria-piezas {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+  }
 
-    .footer-col {
-        width: 48%;
-    }
+  .footer-col {
+    width: 48%;
+  }
+
 }
