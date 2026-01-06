@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kkr-tattoo.com/</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kkr-tattoo.com/#artista</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kkr-tattoo.com/#piezas</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kkr-tattoo.com/#estudio</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kkr-tattoo.com/#sponsors</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kkr-tattoo.com/#contacto</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

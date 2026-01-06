@@ -275,6 +275,26 @@ body {
 /* ================================================= */
 /* 04. FONDO DEL CONTENIDO (BODY MARBLE) */
 /* ================================================= */
+.seo-h1 {
+  text-align: center;
+  margin: 0;
+}
+
+/* Marca invisible (SEO safe) */
+.seo-brand {
+  display: block;
+  font-size: 0.01px;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Texto visible */
+.seo-claim {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+}
 
 .content-background {
   background-image: url("Imagenes/Body/body_withe_marble.jpg");
@@ -1341,18 +1361,23 @@ body {
   /** Galería - AJUSTE A 2 COLUMNAS EN MÓVIL (LIMPIA) */
   .galeria-piezas {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px; /* Mantenemos el espacio de 15px original */
+    gap: 15px;
+    /* Mantenemos el espacio de 15px original */
   }
 
   .pieza-card {
-    background-color: transparent !important; /* Quita el blanco */
-    border: none !important;            /* Quita el borde */
-    box-shadow: none !important;        /* Quita la sombra */
+    background-color: transparent !important;
+    /* Quita el blanco */
+    border: none !important;
+    /* Quita el borde */
+    box-shadow: none !important;
+    /* Quita la sombra */
     padding: 0 !important;
   }
 
   .card-caption {
-    display: none !important;           /* Quita el nombre */
+    display: none !important;
+    /* Quita el nombre */
   }
 
   .pieza-card img {
